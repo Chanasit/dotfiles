@@ -1,0 +1,49 @@
+{
+  "codeLens.enable": false,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": ["go"],
+  "coc.preferences.colorSupport": true,
+  "suggest.timeout": 5000,
+  "suggest.maxPreviewWidth": 200,
+  "suggest.maxCompleteItemCount": 50,
+  "typescript.format.semicolons": "insert",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.useAliasesForRenames": false,
+  "tsserver.enable": true,
+  "tsserver.log": "verbose",
+  "tsserver.maxTsServerMemory": 8000,
+  "tsserver.disableAutomaticTypeAcquisition": true,
+  "angular.experimental-ivy": true,
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    },
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "trace.server": "verbose",
+      "filetypes": ["go"]
+    },
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    },
+    "swift": {
+      "command": "xcrun",
+      "args": ["sourcekit-lsp"],
+      "filetypes": ["swift", "c", "cpp"],
+      "initializationOptions": {},
+      "settings": {},
+      "rootPatterns": ["Cross.toml"],
+      "requireRootPattern": true
+    }
+  }
+}
