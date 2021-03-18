@@ -27,7 +27,7 @@ autocmd VimEnter *
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 let maplocalleader = ","
-set updatetime=100
+set updatetime=200
 set timeoutlen=1000 ttimeoutlen=50
 set history=10000
 set undofile
@@ -118,12 +118,8 @@ nnoremap <silent> <leader>z :FloatermToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git Gutter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gitgutter_max_signs=500
 let g:gitgutter_enabled = 1
-let g:gitgutter_signs = 1
-let g:gitgutter_set_sign_backgrounds = 1
-let g:gitgutter_highlight_lines = 0
-let g:gitgutter_highlight_linenrs = 1
+let g:gitgutter_max_signs=500
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Easy Motion Overide f
