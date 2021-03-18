@@ -13,6 +13,7 @@ Plug 'mg979/vim-visual-multi'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Automatically install missing plugins on startup

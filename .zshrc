@@ -169,7 +169,8 @@ if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/google-
 
 # NNN file manager
 export NNN_COLORS='4321'
-# export NNN_PLUG='t:preview-tui;i:img-preview;v:treeview'
+export NNN_PLUG='t:preview-tui;i:img-preview;v:treeview'
+export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
 
 export ZVM_CURSOR_STYLE_ENABLED=false
