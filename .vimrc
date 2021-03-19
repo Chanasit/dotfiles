@@ -90,7 +90,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-colorscheme xcodelight
+colorscheme xcodelighthc
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
