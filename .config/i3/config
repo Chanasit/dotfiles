@@ -177,10 +177,13 @@ mode "resize" {
 bindsym Mod1+r mode "resize"
 bindsym Mod1+space exec (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap th || setxkbmap us
 
+gaps inner 10
+gaps outer 10
+smart_gaps on
+smart_borders no_gaps
+
 exec --no-startup-id nitrogen --set-centered ~/Wallpapers/001.jpg --head=0
 exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
-gaps inner 5
-gaps outer 5
 
 # class                 border  bground text    indicator child_border
 client.focused          #282A36 #282A36 #F8F8F2 #282A36   #282A36
@@ -194,10 +197,10 @@ client.background       #F8F8F2
 # Start i3bar to display a workspace bar
 bar {
   position top
-  separator_symbol ":|:"
   tray_output primary
-  workspace_buttons yes
+  separator_symbol ":|:"
   status_command ~/.config/i3/i3script.sh
+  # status_command exec i3status --config ~/.config/i3/i3status.conf
   colors {
     background #282A36
     statusline #F8F8F2
