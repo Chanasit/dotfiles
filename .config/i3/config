@@ -178,7 +178,7 @@ bindsym Mod1+r mode "resize"
 bindsym Mod1+space exec (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap th || setxkbmap us
 
 exec --no-startup-id nitrogen --set-centered ~/Wallpapers/001.jpg --head=0
-
+exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
 gaps inner 5
 gaps outer 5
 
