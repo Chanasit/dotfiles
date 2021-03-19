@@ -9,9 +9,9 @@ do
 
     if [ $LG == "us" ]
     then
-        dat="[{ \"full_text\": \"LANG: $LG\", \"color\":\"#009E00\" },"
+        dat="[{ \"full_text\": \"LANG: $LG\", \"color\":\"#FFFFFF\" },"
     else
-        dat="[{ \"full_text\": \"LANG: $LG\", \"color\":\"#C60101\" },"
+        dat="[{ \"full_text\": \"LANG: $LG\", \"color\":\"#FFFFFF\" },"
     fi
     echo "${line/[/$dat}" || exit 1
 done
