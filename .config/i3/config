@@ -28,6 +28,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Monitor and Wallpapers
+exec --no-startup-id nitrogen --set-centered ~/Wallpapers/001.jpg --head=0
+exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -146,8 +150,17 @@ bindsym Mod1+Shift+0 move container to workspace number $ws10
 bindsym Mod1+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod1+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Create Log out, Reboot, Poweroff bindings
+mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
+        bindsym r exec --no-startup-id systemctl reboot
+        bindsym s exec --no-startup-id systemctl suspend; mode "default"
+        bindsym l exit
+        bindsym p exec --no-startup-id systemctl poweroff
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym Mod1+Shift+e mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -175,15 +188,8 @@ mode "resize" {
 }
 
 bindsym Mod1+r mode "resize"
+
 bindsym Mod1+space exec (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap th || setxkbmap us
-
-gaps inner 10
-gaps outer 10
-smart_gaps on
-smart_borders no_gaps
-
-exec --no-startup-id nitrogen --set-centered ~/Wallpapers/001.jpg --head=0
-exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
 
 # class                 border  bground text    indicator child_border
 client.focused          #282A36 #282A36 #F8F8F2 #282A36   #282A36
@@ -213,3 +219,8 @@ bar {
     binding_mode       #FF5555 #FF5555 #F8F8F2
   }
 }
+
+gaps inner 10
+gaps outer 10
+smart_gaps on
+smart_borders no_gaps
