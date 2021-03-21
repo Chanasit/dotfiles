@@ -89,17 +89,17 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-colorscheme xcodelighthc
+colorscheme gruvbox
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set floaterm window's background to #FFFFFF
-hi Floaterm guibg=#FFFFFF
+" Set floaterm window's background to #222222
+hi Floaterm guibg=#222222
 
-" Set floating window border line color to #FFFFFF, and background to #FFFFFF
-hi FloatermBorder guibg=#FFFFFF guifg=#222222
+" Set floating window border line color to #222222, and background to #222222
+hi FloatermBorder guibg=#222222 guifg=#FFFFFF
 
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
@@ -124,7 +124,7 @@ let g:gitgutter_max_signs=500
 " => Visual Multi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:VM_leader = '\'
-let g:VM_theme = "lightblue1"
+let g:VM_theme = "olive"
 let g:VM_maps = {}
 let g:VM_maps["Select All"]        = '<leader>a'
 let g:VM_maps["Visual All"]        = '<leader>a'
@@ -135,7 +135,7 @@ let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "alduin"
+let g:airline_theme = "minimalist"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 0

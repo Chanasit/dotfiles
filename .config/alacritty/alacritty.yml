@@ -2,32 +2,34 @@ env:
   TERM: screen-256color
 
 colors:
-  name: Grayscale (light)
-  author: Chris Kempson
+  # Default colors
   primary:
-    background: "#f7f7f7"
-    foreground: "#464646"
-  cursor:
-    text: "#f7f7f7"
-    cursor: "#464646"
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
+
+  # Normal colors
   normal:
-    black: "#101010"
-    red: "#7c7c7c"
-    green: "#8e8e8e"
-    yellow: "#a0a0a0"
-    blue: "#686868"
-    magenta: "#747474"
-    cyan: "#868686"
-    white: "#b9b9b9"
+    black: '#282828'
+    red: '#cc241d'
+    green: '#98971a'
+    yellow: '#d79921'
+    blue: '#458588'
+    magenta: '#b16286'
+    cyan: '#689d6a'
+    white: '#a89984'
+
+  # Bright colors
   bright:
-    black: "#525252"
-    red: "#7c7c7c"
-    green: "#8e8e8e"
-    yellow: "#a0a0a0"
-    blue: "#686868"
-    magenta: "#747474"
-    cyan: "#868686"
-    white: "#f7f7f7"
+    black: '#928374'
+    red: '#fb4934'
+    green: '#b8bb26'
+    yellow: '#fabd2f'
+    blue: '#83a598'
+    magenta: '#d3869b'
+    cyan: '#8ec07c'
+    white: '#ebdbb2'
 
 mouse:
   hide_when_typing: true
