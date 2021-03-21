@@ -11,7 +11,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 call plug#end()
@@ -120,13 +119,6 @@ nnoremap <silent> <leader>z :FloatermToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled = 1
 let g:gitgutter_max_signs=500
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Easy Motion Overide f
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Move to word
-map  ff <Plug>(easymotion-bd-w)
-nmap ff <Plug>(easymotion-overwin-w)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual Multi
