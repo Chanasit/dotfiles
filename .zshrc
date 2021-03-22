@@ -148,7 +148,7 @@ export KUBECONFIG=$HOME/.kube/bn-sme-production-cluster:$HOME/.kube/bn-sme-stagi
 # FZF config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
-export FZF_DEFAULT_OPTS="--color=bg+:#FFFFFF,bg:#FFFFFF,border:#FFFFFF,spinner:#719899,hl:#719872,fg:#616161,header:#719872,info:#727100,pointer:#E12672,marker:#E17899,fg+:#616161,prompt:#0099BD,hl+:#719899"
+export FZF_DEFAULT_OPTS="--color=bg+:#222222,bg:#222222,border:#3A3A3A,spinner:#719899,hl:#719872,fg:#616161,header:#719872,info:#727100,pointer:#E12672,marker:#E17899,fg+:#616161,prompt:#0099BD,hl+:#719899"
 export FZF_COMPLETION_TRIGGER='~~'
 
 # P10K config

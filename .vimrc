@@ -99,7 +99,7 @@ colorscheme gruvbox
 hi Floaterm guibg=#222222
 
 " Set floating window border line color to #222222, and background to #222222
-hi FloatermBorder guibg=#222222 guifg=#FFFFFF
+hi FloatermBorder guibg=#222222 guifg=#3A3A3A
 
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
