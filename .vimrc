@@ -94,11 +94,7 @@ colorscheme gruvbox
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Set floaterm window's background to #222222
 hi Floaterm guibg=#222222
-
-" Set floating window border line color to #222222, and background to #222222
 hi FloatermBorder guibg=#222222 guifg=#3A3A3A
 
 let g:floaterm_opener = "tabe"
@@ -106,13 +102,15 @@ let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
 let g:floaterm_complete_options = {'shortcut': 'floaterm', 'priority': 5, 'filter_length': [5, 20]}
+let g:floaterm_wintype = "float"
 
 nnoremap <silent> <leader>d :FloatermNew nnn -de<cr>
 nnoremap <silent> <leader>r :FloatermNew rg<cr>
 nnoremap <silent> <leader>g :FloatermNew lazygit<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
 nnoremap <silent> <leader>k :FloatermNew k9s<cr>
-nnoremap <silent> <leader>z :FloatermToggle<cr>
+nnoremap <silent> <leader>s :FloatermNew spt<cr>
+nnoremap <silent> <leader>p :FloatermNew python3<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git Gutter
