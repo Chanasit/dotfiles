@@ -1,5 +1,7 @@
 # customize
 .config/ranger/__pycache__/
+.config/spotify-tui/.spotify_token_cache.json
+.config/spotify-tui/client.yml
 
 # non-dot files
 # /[^.]*
