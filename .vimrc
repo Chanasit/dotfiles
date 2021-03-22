@@ -12,6 +12,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'airblade/vim-gitgutter'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
