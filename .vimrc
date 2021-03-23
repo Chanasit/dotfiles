@@ -112,6 +112,7 @@ nnoremap <silent> <leader>f :FloatermNew fzf<cr>
 nnoremap <silent> <leader>k :FloatermNew k9s<cr>
 nnoremap <silent> <leader>s :FloatermNew spt<cr>
 nnoremap <silent> <leader>p :FloatermNew python3<cr>
+nnoremap <silent> <leader>t :FloatermNew htop<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git Gutter
