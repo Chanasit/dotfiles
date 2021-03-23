@@ -153,10 +153,10 @@ export FZF_COMPLETION_TRIGGER='~~'
 
 # P10K config
 [[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
-POWERLEVEL9K_DIR_MAX_LENGTH=1
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_last"
-ZLE_RPROMPT_INDENT=0
+export POWERLEVEL9K_DIR_MAX_LENGTH=1
+export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+export POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_last"
+export ZVM_CURSOR_STYLE_ENABLED=false
 
 # Bash Completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
@@ -172,8 +172,6 @@ export NNN_COLORS='4321'
 export NNN_PLUG='t:preview-tui;i:img-preview;v:treeview'
 export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
-
-export ZVM_CURSOR_STYLE_ENABLED=false
 
 ##############################################################
 # => Alias Bash Script
