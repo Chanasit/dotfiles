@@ -180,6 +180,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias vi="nvim"
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
+  alias open="nautilus"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   alias vi="nvim"
 fi
@@ -187,7 +188,6 @@ alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
 alias watch='watch '
 alias emacs="emacs -nw"
-alias excel="open -a Microsoft\ Excel "
 alias grep="rg"
 alias clang="clang-11"
 alias python="python3"
@@ -199,8 +199,6 @@ alias tf="terraform"
 alias os="openstack"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
 alias icloud="~/Library/Mobile\ Documents/com~apple~CloudDocs/"
-alias spotify="open -a spotify"
-alias dota2="open -a Dota\ 2"
 alias bt="blueutil"
 alias nnn="nnn -dea"
 alias lg="lazygit"

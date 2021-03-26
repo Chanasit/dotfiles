@@ -186,10 +186,20 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym Mod1+r mode "default"
 }
-
 bindsym Mod1+r mode "resize"
 
+# Language Switcher
 bindsym Mod1+space exec (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap th || setxkbmap us
+
+# Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # class                 border  bground text    indicator child_border
 client.focused          #282A36 #282A36 #F8F8F2 #282A36   #282A36
