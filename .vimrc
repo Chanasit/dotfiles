@@ -14,6 +14,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'airblade/vim-gitgutter'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -113,6 +114,7 @@ nnoremap <silent> <leader>k :FloatermNew k9s<cr>
 nnoremap <silent> <leader>s :FloatermNew spt<cr>
 nnoremap <silent> <leader>p :FloatermNew ipython<cr>
 nnoremap <silent> <leader>t :FloatermNew htop<cr>
+nnoremap <silent> <leader>q :FloatermNew googler<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git Gutter
