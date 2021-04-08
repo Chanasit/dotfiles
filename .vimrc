@@ -14,6 +14,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'airblade/vim-gitgutter'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-fugitive'
+Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
 call plug#end()
 
 " Automatically install missing plugins on startup
