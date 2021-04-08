@@ -213,7 +213,7 @@ bar {
   position top
   tray_output primary
   separator_symbol ":|:"
-  font pango:JetBrainsMono Nerd Font 12
+  font pango:JetBrainsMono Nerd Font 11
   status_command ~/.config/i3/i3script.sh
   # status_command exec i3status --config ~/.config/i3/i3status.conf
   colors {
