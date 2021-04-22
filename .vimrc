@@ -129,7 +129,7 @@ let g:gitgutter_max_signs=500
 " => Visual Multi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:VM_leader = '\'
-let g:VM_theme = "olive"
+let g:VM_theme = "iceblue"
 let g:VM_maps = {}
 let g:VM_maps["Select All"]        = '<leader>a'
 let g:VM_maps["Visual All"]        = '<leader>a'
