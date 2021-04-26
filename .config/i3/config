@@ -189,7 +189,15 @@ mode "resize" {
 bindsym Mod1+r mode "resize"
 
 # Language Switcher
-bindsym Mod1+space exec (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap th || setxkbmap us
+
+## Configure key repeat rate
+exec_always "sh -c 'sleep 1; exec xset r rate 250 40'"
+# Use CapsLock as Ctrl
+exec_always "sh -c 'sleep 2; exec setxkbmap -option ctrl:nocaps'"
+# Also use CapsLock as escape
+exec_always "sh -c 'sleep 3; exec xcape -e 'Control_L=Escape' -t 150'"
+# Set keyboard layout and language
+exec_always "sh -c 'sleep 1; exec setxkbmap -option grp:alt_space_toggle us,th'"
 
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
@@ -215,7 +223,6 @@ bar {
   separator_symbol ":|:"
   font pango:JetBrainsMono Nerd Font 11
   status_command ~/.config/i3/i3script.sh
-  # status_command exec i3status --config ~/.config/i3/i3status.conf
   colors {
     background #282A36
     statusline #F8F8F2
