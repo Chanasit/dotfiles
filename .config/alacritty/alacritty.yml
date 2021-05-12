@@ -2,32 +2,32 @@ env:
   TERM: screen-256color
 
 colors:
-  # Default colors
+  name: Matrix
+  author: OK100
   primary:
-    background: '#282a36'
-    foreground: '#eff0eb'
-
-  # Normal colors
+    background: "#000000"
+    foreground: "#00cc00"
+  cursor:
+    text: "#000000"
+    cursor: "#00cc00"
   normal:
-    black: '#282a36'
-    red: '#ff5c57'
-    green: '#5af78e'
-    yellow: '#f3f99d'
-    blue: '#57c7ff'
-    magenta: '#ff6ac1'
-    cyan: '#9aedfe'
-    white: '#f1f1f0'
-
-  # Bright colors
+    black: "#000000"
+    red: "#55ff55"
+    green: "#00cc00"
+    yellow: "#00cc00"
+    blue: "#005500"
+    magenta: "#55ff55"
+    cyan: "#00cc00"
+    white: "#00cc00"
   bright:
-    black: '#686868'
-    red: '#ff5c57'
-    green: '#5af78e'
-    yellow: '#f3f99d'
-    blue: '#57c7ff'
-    magenta: '#ff6ac1'
-    cyan: '#9aedfe'
-    white: '#f1f1f0'
+    black: "#000000"
+    red: "#55ff55"
+    green: "#55ff55"
+    yellow: "#55ff55"
+    blue: "#005500"
+    magenta: "#55ff55"
+    cyan: "#55ff55"
+    white: "#00cc00"
 
 mouse:
   hide_when_typing: true

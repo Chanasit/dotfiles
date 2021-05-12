@@ -100,8 +100,8 @@ colorscheme xcodelighthc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#222222
-hi FloatermBorder guibg=#222222 guifg=#3A3A3A
+hi Floaterm guibg=#FFFFFF
+hi FloatermBorder guibg=#FFFFFF guifg=#3A3A3A
 
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
@@ -122,10 +122,13 @@ nnoremap <silent> <leader>t :FloatermNew htop<cr>
 nnoremap <silent> <leader>q :FloatermNew googler<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Git Gutter
+" => Bracey
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gitgutter_enabled = 1
-let g:gitgutter_max_signs=500
+nnoremap <silent> <leader>h :Bracey<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Visual Multi
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual Multi
