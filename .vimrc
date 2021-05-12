@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Yggdroot/indentLine'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-commentary'
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -17,6 +18,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -93,7 +95,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-colorscheme xcodewwdc
+colorscheme xcodelighthc
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
