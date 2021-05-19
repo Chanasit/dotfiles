@@ -2,32 +2,32 @@ env:
   TERM: screen-256color
 
 colors:
-  name: Grayscale (light)
+  name: Google (light)
   author: Chris Kempson
   primary:
-    background: "#f7f7f7"
-    foreground: "#464646"
+    background: "#ffffff"
+    foreground: "#373b41"
   cursor:
-    text: "#f7f7f7"
-    cursor: "#464646"
+    text: "#ffffff"
+    cursor: "#373b41"
   normal:
-    black: "#101010"
-    red: "#7c7c7c"
-    green: "#8e8e8e"
-    yellow: "#a0a0a0"
-    blue: "#686868"
-    magenta: "#747474"
-    cyan: "#868686"
-    white: "#b9b9b9"
+    black: "#1d1f21"
+    red: "#cc342b"
+    green: "#198844"
+    yellow: "#fba922"
+    blue: "#3971ed"
+    magenta: "#a36ac7"
+    cyan: "#3971ed"
+    white: "#ffffff"
   bright:
-    black: "#525252"
-    red: "#7c7c7c"
-    green: "#8e8e8e"
-    yellow: "#a0a0a0"
-    blue: "#686868"
-    magenta: "#747474"
-    cyan: "#868686"
-    white: "#f7f7f7"
+    black: "#969896"
+    red: "#cc342b"
+    green: "#198844"
+    yellow: "#fba922"
+    blue: "#3971ed"
+    magenta: "#a36ac7"
+    cyan: "#3971ed"
+    white: "#ffffff"
 
 mouse:
   hide_when_typing: true
@@ -37,7 +37,7 @@ mouse:
 selection:
   save_to_clipboard: true
 
-background_opacity: 0.95
+background_opacity: 1
 
 cursor:
   vi_mode_style: None

@@ -134,7 +134,7 @@ nnoremap <silent> <leader>h :Bracey<cr>
 " => Visual Multi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:VM_leader = '\'
-let g:VM_theme = "iceblue"
+let g:VM_theme = "sand"
 let g:VM_maps = {}
 let g:VM_maps["Select All"]        = '<leader>a'
 let g:VM_maps["Visual All"]        = '<leader>a'
@@ -145,7 +145,7 @@ let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "alduin"
+let g:airline_theme = "supernova"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 0
