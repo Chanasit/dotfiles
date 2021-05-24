@@ -23,6 +23,7 @@ config: ## install configuration
 	echo "symlink dotfile config \n"
 	ln -vsfn ${PWD}/.config/alacritty ${HOME}/.config/alacritty
 	ln -vsfn ${PWD}/.config/htop ${HOME}/.config/htop
+	ln -vsfn ${PWD}/.config/i3 ${HOME}/.config/i3
 	ln -vsfn ${PWD}/.config/ranger ${HOME}/.config/ranger
 	ln -vsfn ${PWD}/.config/nvim ${HOME}/.config/nvim
 	ln -vsfn ${PWD}/.config/spotify-tui ${HOME}/.config/spotify-tui

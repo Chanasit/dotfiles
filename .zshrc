@@ -37,10 +37,10 @@ plugins=(
     osx
     kubectl
     docker
-    zsh-nvm
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-    zsh-vi-mode
+    # zsh-nvm
+    # zsh-syntax-highlighting
+    # zsh-autosuggestions
+    # zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -89,8 +89,7 @@ export GO111MODULE=on
 export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then export GOROOT=/snap/go/current
-elif [[ "$OSTYPE" == "darwin"* ]]; then export GOROOT=/usr/local/Cellar/go/1.16.3/libexec
+if [[ "$OSTYPE" == "darwin"* ]]; then export GOROOT=/usr/local/Cellar/go/1.16.3/libexec
 fi
 
 # Clang LLVM
