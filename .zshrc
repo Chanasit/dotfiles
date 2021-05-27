@@ -34,9 +34,10 @@ NVM_COMPLETION=true
 
 # ZSH Plugins
 plugins=(
-    osx
-    kubectl
-    docker
+  osx
+  kubectl
+  docker
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
