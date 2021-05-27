@@ -42,13 +42,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 ##############################################################
-# => Keys Binding
-##############################################################
-# bindkey -v
-# bindkey -v '^?' backward-delete-char
-# bindkey "^[[1;3C" forward-word
-# bindkey "^[[1;3D" backward-word
-##############################################################
 # => Export Global Environments Variable
 ##############################################################
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -81,8 +74,8 @@ fi
 # export GOPATH=$HOME/go
 # export GOBIN=$HOME/go/bin
 # export GOCACHE=$HOME/.cache
-# export GO111MODULE=on
-# export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"
+export GO111MODULE=on
+export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"
 # export PATH=$PATH:$GOPATH/bin
 # export PATH=$PATH:$GOROOT/bin
 # if [[ "$OSTYPE" == "darwin"* ]]; then export GOROOT=/usr/local/Cellar/go/1.16.3/libexec
