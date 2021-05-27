@@ -95,13 +95,13 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-colorscheme xcodelighthc
+colorscheme github
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#FFFFFF
-hi FloatermBorder guibg=#FFFFFF guifg=#3A3A3A
+hi Floaterm guibg=#FFF
+hi FloatermBorder guibg=#FFF guifg=#3A3A3A
 
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2

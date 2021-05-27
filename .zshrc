@@ -37,10 +37,6 @@ plugins=(
     osx
     kubectl
     docker
-    # zsh-nvm
-    # zsh-syntax-highlighting
-    # zsh-autosuggestions
-    # zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -82,15 +78,15 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then export PKG_CONFIG_PATH=/usr/lib/x86_64-l
 fi
 
 # GO path
-export GOPATH=$HOME/go
-export GOBIN=$HOME/go/bin
-export GOCACHE=$HOME/.cache
-export GO111MODULE=on
-export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-if [[ "$OSTYPE" == "darwin"* ]]; then export GOROOT=/usr/local/Cellar/go/1.16.3/libexec
-fi
+# export GOPATH=$HOME/go
+# export GOBIN=$HOME/go/bin
+# export GOCACHE=$HOME/.cache
+# export GO111MODULE=on
+# export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"
+# export PATH=$PATH:$GOPATH/bin
+# export PATH=$PATH:$GOROOT/bin
+# if [[ "$OSTYPE" == "darwin"* ]]; then export GOROOT=/usr/local/Cellar/go/1.16.3/libexec
+# fi
 
 # Clang LLVM
 export PATH="/usr/local/opt/llvm/bin:$PATH"
@@ -167,10 +163,11 @@ if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/google-cloud-
 if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/completion.zsh.inc"; fi
 
 # NNN file manager
-export NNN_COLORS='4321'
+export NNN_COLORS='1234'
 export NNN_PLUG='t:preview-tui;i:img-preview;v:treeview'
 export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 
 ##############################################################
 # => Alias Bash Script
