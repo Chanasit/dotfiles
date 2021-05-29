@@ -58,7 +58,7 @@ bindsym Mod1+Shift+Right move right
 bindsym Mod1+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+s layout toggle tabbed splitv split
+bindsym Mod1+x layout toggle tabbed splitv split
 
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -140,12 +140,24 @@ bindsym Mod1+r mode "resize"
 
 ## Configure key repeat rate
 exec_always "sh -c 'sleep 1; exec xset r rate 250 40'"
+
 # Use CapsLock as Ctrl
 exec_always "sh -c 'sleep 2; exec setxkbmap -option ctrl:nocaps'"
+
 # Also use CapsLock as escape
 exec_always "sh -c 'sleep 3; exec xcape -e 'Control_L=Escape' -t 150'"
+
 # Set keyboard layout and language
 exec_always "sh -c 'sleep 1; exec setxkbmap -option grp:alt_space_toggle us,th'"
+
+# Use CapsLock as Ctrl
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+
+# Also use CapsLock as escape
+exec --no-startup-id xcape -e 'Control_L=Escape' -t 150
+
+# Set keyboard layout and language
+exec --no-startup-id setxkbmap -option grp:alt_space_toggle us,th
 
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
