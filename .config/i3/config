@@ -55,10 +55,10 @@ bindsym Mod1+Shift+Up move up
 bindsym Mod1+Shift+Right move right
 
 # enter fullscreen mode for the focused container
-bindsym Mod1+f fullscreen toggle
+bindsym Mod1+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+x layout toggle tabbed splitv split
+bindsym Mod1+Shift+x layout toggle tabbed splitv split
 
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
