@@ -1,16 +1,5 @@
 export OSTYPE = $(shell uname)
 
-fonts: ## install font package
-	echo "fonts install \n"
-	cp -r ${PWD}/.fonts/. ${HOME}/Library/Fonts/NerdFonts/
-
-brew: ## install brew package (osx)
-	brew install --formula $(shell cat brew_formula.txt)
-	brew install --cask $(shell cat brew_cask.txt)
-
-snap: ## TODO: install snap package (ubuntu)
-	echo "......"
-
 config: ## install configuration
 	echo "install vim plug \n"
 	curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -35,9 +24,25 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.curlrc ${HOME}/.curlrc
 	vim '+PlugInstall'
 
+fonts: ## install font package
+	echo "fonts install \n"
+ifeq (${OSTYPE}, Linux)
+	echo "..."
+endif
+ifeq (${OSTYPE}, Darwin)
+	cp -r ${PWD}/.fonts/. ${HOME}/Library/Fonts/NerdFonts/
+endif
+
+brew: ## install osx package
+	brew install --formula $(shell cat brew_formula.txt)
+	brew install --cask $(shell cat brew_cask.txt)
+
+dnf: ## install fedora package
+	dnf install $(shell cat dnf.txt)
+
 install: ## install all packages base on OSTYPE
 ifeq (${OSTYPE}, Linux)
-	echo ".........."
+	make -i fonts dnf config
 endif
 ifeq (${OSTYPE}, Darwin)
 	make -i fonts brew config
@@ -47,5 +52,4 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 	| sort \
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
 .DEFAULT_GOAL := help

@@ -76,10 +76,10 @@ fi
 # GO path
 # export GOPATH=$HOME/go
 # export GOBIN=$HOME/go/bin
-# export GOCACHE=$HOME/.cache
+export GOCACHE=$HOME/.cache
 export GO111MODULE=on
 export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"
-# export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
 # export PATH=$PATH:$GOROOT/bin
 # if [[ "$OSTYPE" == "darwin"* ]]; then export GOROOT=/usr/local/Cellar/go/1.16.3/libexec
 # fi
@@ -94,7 +94,6 @@ export CXX=/usr/bin/g++
 #HASHKELL
 export PATH="$HOME/.cabal/bin:$PATH"
 
-
 # NVM path
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -102,6 +101,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Custom binary file (ubuntu)
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # YARN
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

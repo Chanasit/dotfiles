@@ -3,7 +3,7 @@
 	name = Chanasit
 	email = kai.chr160@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	ignorecase = false
 [url "git@github.com:"]
 	insteadOf = https://github.com/

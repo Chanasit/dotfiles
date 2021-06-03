@@ -1,0 +1,12 @@
+neovim
+tmux
+alacritty
+nnn
+ripgrep
+xrandr
+xclip
+xset
+maim
+i3
+polybar
+albert
