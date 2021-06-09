@@ -6,13 +6,6 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 fi
 
 ##############################################################
-# => ZSH Startup with P10K
-##############################################################
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-##############################################################
 # => ZSH Plugins
 ##############################################################
 timezsh() {
@@ -22,7 +15,7 @@ timezsh() {
 ZSH="$HOME/.oh-my-zsh"
 UPDATE_ZSH_DAYS=13
 ZSH_CUSTOM=$ZSH/custom
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="cypher"
 CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
@@ -74,8 +67,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then export PKG_CONFIG_PATH=/usr/lib/x86_64-l
 fi
 
 # GO path
-# export GOPATH=$HOME/go
-# export GOBIN=$HOME/go/bin
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
 export GOCACHE=$HOME/.cache
 export GO111MODULE=on
 export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"

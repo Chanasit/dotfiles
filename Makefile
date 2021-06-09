@@ -20,7 +20,6 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.vimrc ${HOME}/.vimrc
 	ln -vsfn ${PWD}/.zshrc ${HOME}/.zshrc
 	ln -vsfn ${PWD}/.tmux.conf.local ${HOME}/.tmux.conf.local
-	ln -vsfn ${PWD}/.p10k.zsh ${HOME}/.p10k.zsh
 	ln -vsfn ${PWD}/.curlrc ${HOME}/.curlrc
 	vim '+PlugInstall'
 
