@@ -167,6 +167,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias open="nautilus"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
+alias ls="ls --color=none"
 alias vi="nvim"
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
