@@ -162,13 +162,12 @@ export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 # => Alias Bash Script
 ##############################################################
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  alias vi="nvim"
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
   alias open="nautilus"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-  alias vi="nvim"
 fi
+alias vi="nvim"
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
 alias watch='watch '
