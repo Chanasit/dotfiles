@@ -47,6 +47,12 @@ set noswapfile
 set nocursorline
 set shortmess+=c
 
+" folding
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 " interface
 set so=8
 set number
