@@ -136,7 +136,7 @@ nnoremap <silent> <leader>h :Bracey<cr>
 " => Visual Multi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:VM_leader = '\'
-let g:VM_theme = "sand"
+let g:VM_theme = "lightpurple2"
 let g:VM_maps = {}
 let g:VM_maps["Select All"]        = '<leader>a'
 let g:VM_maps["Visual All"]        = '<leader>a'
@@ -150,7 +150,7 @@ let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 let g:airline_theme = "supernova"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_splits = 0
@@ -208,7 +208,3 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm(): "\<C-g>u\<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 command! -nargs=0 Format :call CocAction('format')
-command! -nargs=? Fold :call CocAction('fold', <f-args>)
-command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')
-
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
