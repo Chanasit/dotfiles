@@ -170,7 +170,7 @@ exec_always --no-startup-id nitrogen --set-centered ~/Wallpapers/001.jpg --head=
 exec_always --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
 
 # Status Bar https://github.com/polybar/polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Screenshots https://github.com/naelstrof/maim
 bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
@@ -186,3 +186,8 @@ client.unfocused        #333333 #222222 #888888 #292D2E   #222222
 client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
+
+bar {
+  tray_output primary
+  status_command i3status
+}
