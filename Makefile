@@ -23,29 +23,16 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.curlrc ${HOME}/.curlrc
 	vim '+PlugInstall'
 
-fonts: ## install font package
-	echo "fonts install \n"
-ifeq (${OSTYPE}, Linux)
-	echo "..."
-endif
-ifeq (${OSTYPE}, Darwin)
-	cp -r ${PWD}/.fonts/. ${HOME}/Library/Fonts/NerdFonts/
-endif
+fedora: ## install all Fedora packages
+	cp -r ${PWD}/.fonts/. ${HOME}/.local/share/fonts/
+	dnf install $(shell cat dnf.txt)
+	make -i config
 
-brew: ## install osx package
+macos: ## install all MacOS packages
+	cp -r ${PWD}/.fonts/. ${HOME}/Library/Fonts/NerdFonts/
 	brew install --formula $(shell cat brew_formula.txt)
 	brew install --cask $(shell cat brew_cask.txt)
-
-dnf: ## install fedora package
-	dnf install $(shell cat dnf.txt)
-
-install: ## install all packages base on OSTYPE
-ifeq (${OSTYPE}, Linux)
-	make -i fonts dnf config
-endif
-ifeq (${OSTYPE}, Darwin)
-	make -i fonts brew config
-endif
+	make -i config
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
