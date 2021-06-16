@@ -188,6 +188,5 @@ alias bt="blueutil"
 alias nnn="nnn -dea"
 alias lg="lazygit"
 alias gs='git status'
-alias g3='git t'
-alias gd='git df'
+alias g3='git log --graph --decorate --oneline'
 alias gf='git fetch --all'
