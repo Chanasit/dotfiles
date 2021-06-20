@@ -106,8 +106,8 @@ colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#EEEEEE
-hi FloatermBorder guibg=#EEEEEE guifg=#3A3A3A
+hi Floaterm guibg=#FEFEFE
+hi FloatermBorder guibg=#FEFEFE guifg=#3A3A3A
 
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2

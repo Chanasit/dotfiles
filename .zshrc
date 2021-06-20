@@ -33,7 +33,10 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-vi-mode
+  zsh-kubectl-prompt
 )
+
+RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,7 +130,7 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
 # KUBE config
-export KUBECONFIG=$HOME/.kube/bn-sme-production-cluster:$HOME/.kube/bn-sme-staging-cluster:$HOME/.kube/config
+export KUBECONFIG=$HOME/.kube/config
 
 # FZF config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
