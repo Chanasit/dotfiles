@@ -34,10 +34,15 @@ font pango:JetBrains Mono Regular Nerd Font Complete 11
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +10% && dunstify --replace=2 -t 800 -u normal "Volume $($HOME/bin/getProgressString 20 █ - $(pactl --get-volume)) $(pactl --get-volume)%"
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -10% && dunstify --replace=2 -t 800 -u normal "Volume $($HOME/bin/getProgressString 20 █ - $(pactl --get-volume)) $(pactl --get-volume)%"
+bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute && dunstify --replace=2 -t 800 -u normal "Volume $(pactl --get-mute >/dev/null && echo muted || echo unmuted)"
+bindsym XF86AudioMicMute exec /usr/bin/pactl set-source-mute && dunstify --replace=2 -t 800 -u normal "Mic $(pactl --default-source --get-mute >/dev/null && echo muted || echo unmuted)"
+# bindcode 190 exec touch /tmp/micmute
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -165,51 +170,8 @@ mode "resize" {
   bindsym Escape mode "default"
   bindsym Mod1+r mode "default"
 }
+
 bindsym Mod1+r mode "resize"
-
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-exec --no-startup-id nm-applet &
-
-# Bluetooth https://github.com/blueman-project/blueman
-exec --no-startup-id blueman-applet &
-
-# MacOS Spot light https://github.com/albertlauncher/albert
-exec --no-startup-id albert &
-
-# Keyboard indicator https://github.com/christophgysin/pasystray
-exec --no-startup-id pasystray &
-
-# Dunst notify https://github.com/dunst-project/dunst
-exec --no-startup-id dunst &
-
-## Configure key repeat rate
-exec_always --no-startup-id sleep 1; exec xset r rate 250 40
-exec_always --no-startup-id sleep 1; exec xset m default
-
-# Use CapsLock as Ctrl
-exec_always --no-startup-id sleep 1; exec setxkbmap -option ctrl:nocaps
-
-# Set keyboard layout and language
-exec_always --no-startup-id sleep 1; exec setxkbmap -option grp:alt_space_toggle us,th
-
-# Compositor WM https://github.com/yshui/picom
-exec_always --no-startup-id sleep 1; picom
-
-# Monitor and Wallpapers https://github.com/l3ib/nitrogen
-exec_always --no-startup-id nitrogen --set-centered ~/Wallpapers/001.jpg --head=0
-exec_always --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
-
-# Screenshots https://github.com/naelstrof/maim
-bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/$(date)"
-
-## Clipboard Screenshots https://github.com/naelstrof/maim
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-
 # Start i3bar to display a workspace bar
 bar {
   position top
@@ -227,3 +189,46 @@ bar {
 		urgent_workspace   $valencia   $valencia   $black
 	}
 }
+
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+exec nm-applet &
+
+# Bluetooth https://github.com/blueman-project/blueman
+exec -startup-id blueman-applet &
+
+# MacOS Spot light https://github.com/albertlauncher/albert
+exec albert &
+
+# Keyboard indicator https://github.com/christophgysin/pasystray
+exec pasystray &
+
+# Dunst notify https://github.com/dunst-project/dunst
+exec dunst &
+
+# Use CapsLock as Ctrl
+exec exec setxkbmap -option ctrl:nocaps &
+
+# Set keyboard layout and language
+exec exec setxkbmap -option grp:alt_space_toggle us,th &
+
+## Configure key repeat rate
+exec sleep 1; exec xset r rate 250 40 &
+exec sleep 1; exec xset m default &
+
+# Compositor WM https://github.com/yshui/picom
+exec sleep 1; picom &
+
+# Monitor and Wallpapers https://github.com/l3ib/nitrogen
+exec_always --no-startup-id nitrogen --set-centered ~/Wallpapers/001.jpg --head=0
+exec_always --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
+
+# Screenshots https://github.com/naelstrof/maim
+bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/$(date)"
+
+## Clipboard Screenshots https://github.com/naelstrof/maim
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
