@@ -18,6 +18,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/spotify-tui ${HOME}/.config/spotify-tui
 	ln -vsfn ${PWD}/.editorconfig ${HOME}/.editorconfig
 	ln -vsfn ${PWD}/.vimrc ${HOME}/.vimrc
+	ln -vsfn ${PWD}/.vim/colors ${HOME}/.vim/colors
 	ln -vsfn ${PWD}/.zshrc ${HOME}/.zshrc
 	ln -vsfn ${PWD}/.tmux.conf.local ${HOME}/.tmux.conf.local
 	ln -vsfn ${PWD}/.curlrc ${HOME}/.curlrc

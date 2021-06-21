@@ -41,7 +41,7 @@ background_opacity: 0.97
 
 # Font configuration (changes require restart)
 font:
-  size: 13
+  size: 10
   normal:
     family: JetBrainsMono Nerd Font
     style: Regular
