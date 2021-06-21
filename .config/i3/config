@@ -38,11 +38,6 @@ font pango:JetBrains Mono Regular Nerd Font Complete 11
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +10% && dunstify --replace=2 -t 800 -u normal "Volume $($HOME/bin/getProgressString 20 █ - $(pactl --get-volume)) $(pactl --get-volume)%"
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -10% && dunstify --replace=2 -t 800 -u normal "Volume $($HOME/bin/getProgressString 20 █ - $(pactl --get-volume)) $(pactl --get-volume)%"
-bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute && dunstify --replace=2 -t 800 -u normal "Volume $(pactl --get-mute >/dev/null && echo muted || echo unmuted)"
-bindsym XF86AudioMicMute exec /usr/bin/pactl set-source-mute && dunstify --replace=2 -t 800 -u normal "Mic $(pactl --default-source --get-mute >/dev/null && echo muted || echo unmuted)"
-# bindcode 190 exec touch /tmp/micmute
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -197,7 +192,7 @@ exec xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec nm-applet &
 
 # Bluetooth https://github.com/blueman-project/blueman
-exec -startup-id blueman-applet &
+exec blueman-applet &
 
 # MacOS Spot light https://github.com/albertlauncher/albert
 exec albert &
@@ -208,22 +203,24 @@ exec pasystray &
 # Dunst notify https://github.com/dunst-project/dunst
 exec dunst &
 
-# Use CapsLock as Ctrl
-exec exec setxkbmap -option ctrl:nocaps &
-
-# Set keyboard layout and language
-exec exec setxkbmap -option grp:alt_space_toggle us,th &
-
-## Configure key repeat rate
-exec sleep 1; exec xset r rate 250 40 &
-exec sleep 1; exec xset m default &
-
 # Compositor WM https://github.com/yshui/picom
 exec sleep 1; picom &
 
+
+## Configure key repeat rate
+exec_always --no-startup-id "sleep 1; xset r rate 250 40"
+exec_always --no-startup-id "sleep 1; xset m default"
+
+# Use CapsLock as Ctrl
+exec_always --no-startup-id "setxkbmap -option ctrl:nocaps"
+
+# Set keyboard layout and language
+exec_always --no-startup-id "setxkbmap -option grp:alt_space_toggle us,th"
+
+
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
-exec_always --no-startup-id nitrogen --set-centered ~/Wallpapers/001.jpg --head=0
-exec_always --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 144
+exec_always --no-startup-id "nitrogen --set-centered ~/Wallpapers/001.jpg --head=0"
+exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144"
 
 # Screenshots https://github.com/naelstrof/maim
 bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
