@@ -109,7 +109,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 export FZF_COMPLETION_TRIGGER='~~'
 
 # NNN file manager
-export NNN_COLORS='1234'
+export NNN_COLORS='#0a1b2c3d'
 export NNN_PLUG='t:preview-tui;i:img-preview;v:treeview'
 export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
@@ -122,6 +122,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
 fi
+alias tmux="tmux attach -t hack || tmux new -s hack"
 alias vi="nvim"
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'

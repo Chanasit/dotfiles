@@ -4,13 +4,13 @@
 # TOKYO SKYLINE THEME
 # set color variables
 # optional theme colorscheme
-set $grey                #212121
+set $grey                #f1f3f4
 set $valencia            #e64a19
 set $magenta             #a673a6
 set $blue                #7182A8
 set $cyan                #6da3a1
-set $black               #000000
-set $white               #b7bbbd
+set $black               #616161
+set $white               #f1f3f4
 set $yellow              #27c282
 set $red                 #aa0e50
 set $green               #1dcc9f
@@ -19,7 +19,7 @@ set $green               #1dcc9f
 set $bg-color 	         #212121
 set $inactive-bg-color   #818181
 set $text-color          #ffffff
-set $inactive-text-color #515151
+set $inactive-text-color #616161
 set $urgent-bg-color     #e64a19
 
 # set window colors
@@ -92,8 +92,8 @@ bindsym Mod1+Shift+x layout toggle tabbed splitv split
 # name the workspaces (icons require fontawesome)
 set $tag1  "1  "
 set $tag2  "2  "
-set $tag3  "3  "
-set $tag4  "4  "
+set $tag3  "3  "
+set $tag4  "4  "
 set $tag5  "5  "
 set $tag6  "6 six"
 set $tag7  "7 seven"
@@ -171,7 +171,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  status_command i3status
+  status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
 		background   $white
@@ -181,7 +181,7 @@ bar {
 		focused_workspace  $grey       $white      $black
 		active_workspace   $grey       $white      $black
 		inactive_workspace $grey       $black      $white
-		urgent_workspace   $valencia   $valencia   $black
+		urgent_workspace   $green      $green      $black
 	}
 }
 

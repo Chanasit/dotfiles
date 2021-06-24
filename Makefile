@@ -13,6 +13,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 	ln -vsfn ${PWD}/.config/htop/htoprc ${HOME}/.config/htop/htoprc
 	ln -vsfn ${PWD}/.config/i3/config ${HOME}/.config/i3/config
+	ln -vsfn ${PWD}/.config/i3/i3status.conf ${HOME}/.config/i3/i3status.conf
 	ln -vsfn ${PWD}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
 	ln -vsfn ${PWD}/.config/nvim/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
 	ln -vsfn ${PWD}/.editorconfig ${HOME}/.editorconfig
