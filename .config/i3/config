@@ -20,7 +20,7 @@ set $bg-color 	         #212121
 set $inactive-bg-color   #818181
 set $text-color          #ffffff
 set $inactive-text-color #616161
-set $urgent-bg-color     #e64a19
+set $urgent-bg-color     #1dcc9f
 
 # set window colors
 # class                 border              background         text                 indicator
