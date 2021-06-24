@@ -169,13 +169,13 @@ mode "resize" {
 bindsym Mod1+r mode "resize"
 # Start i3bar to display a workspace bar
 bar {
-  position bottom
+  position top
   tray_output primary
   status_command i3status
 	colors {
 		# whole color settings
-		background   $black
-		statusline   $white
+		background   $white
+		statusline   $black
 		separator    $grey
 		# type             border      backgr.     font
 		focused_workspace  $grey       $white      $black
@@ -219,8 +219,8 @@ exec_always --no-startup-id "setxkbmap -option grp:alt_space_toggle us,th"
 
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
-exec_always --no-startup-id "nitrogen --set-centered ~/Wallpapers/001.jpg --head=0"
-exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144"
+exec_always --no-startup-id "nitrogen --set-centered $HOME/Wallpapers/001.jpg"
+exec_always --no-startup-id "autorandr -c"
 
 # Screenshots https://github.com/naelstrof/maim
 bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"

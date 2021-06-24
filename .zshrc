@@ -58,6 +58,9 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then export PKG_CONFIG_PATH="/usr/local/opt/
 elif [[ "$OSTYPE" == "darwin"* ]]; then export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
 fi
 
+# yarn path
+export PATH="$PATH:$HOME/.yarn/bin"
+
 # GO path
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
