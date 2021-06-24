@@ -46,22 +46,22 @@ tmux_conf_new_session_prompt=false
 tmux_conf_24b_colour=true
 
 # default theme
-tmux_conf_theme_colour_1="#080808"
+tmux_conf_theme_colour_1="#212121"
 tmux_conf_theme_colour_2="#303030"
 tmux_conf_theme_colour_3="#8a8a8a"
 tmux_conf_theme_colour_4="#e4e4e4"
 tmux_conf_theme_colour_5="#e4e4e4"
-tmux_conf_theme_colour_6="#080808"
+tmux_conf_theme_colour_6="#212121"
 tmux_conf_theme_colour_7="#e4e4e4"
-tmux_conf_theme_colour_8="#080808"
+tmux_conf_theme_colour_8="#212121"
 tmux_conf_theme_colour_9="#e4e4e4"
-tmux_conf_theme_colour_10="#080808"
+tmux_conf_theme_colour_10="#212121"
 tmux_conf_theme_colour_11="#8a8a8a"
 tmux_conf_theme_colour_12="#8a8a8a"
 tmux_conf_theme_colour_13="#e4e4e4"
-tmux_conf_theme_colour_14="#080808"
-tmux_conf_theme_colour_15="#080808"
-tmux_conf_theme_colour_16="#080808"
+tmux_conf_theme_colour_14="#212121"
+tmux_conf_theme_colour_15="#212121"
+tmux_conf_theme_colour_16="#212121"
 tmux_conf_theme_colour_17="#e4e4e4"
 
 # default theme (ansi)

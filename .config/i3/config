@@ -16,10 +16,10 @@ set $red                 #aa0e50
 set $green               #1dcc9f
 
 # theme colors
-set $bg-color 	         #212121
+set $bg-color 	         #385898
 set $inactive-bg-color   #818181
-set $text-color          #ffffff
-set $inactive-text-color #616161
+set $text-color          #f1f3f4
+set $inactive-text-color #818181
 set $urgent-bg-color     #1dcc9f
 
 # set window colors
@@ -30,7 +30,7 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 client.background       $bg-color
 
-font pango:JetBrains Mono Regular Nerd Font Complete 11
+font pango:JetBrains Mono Regular Nerd Font Complete 0
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -167,10 +167,12 @@ mode "resize" {
 }
 
 bindsym Mod1+r mode "resize"
+
 # Start i3bar to display a workspace bar
 bar {
   position top
   tray_output primary
+  font pango:JetBrains Mono Regular Nerd Font Complete 12
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
@@ -184,9 +186,6 @@ bar {
 		urgent_workspace   $green      $green      $black
 	}
 }
-
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 exec nm-applet &
@@ -204,7 +203,8 @@ exec pasystray &
 exec dunst &
 
 # Compositor WM https://github.com/yshui/picom
-exec sleep 1; picom &
+exec picom &
+exec xautolock -detectsleep -time 11 -locker "xkb-switch -s us; i3lock -e -f -i $HOME/Wallpapers/001.jpg" -notify 30 -notifier "notify-send -u normal -t 20000 -- 'Locking screen in 30 seconds'" &
 
 
 ## Configure key repeat rate
@@ -217,9 +217,8 @@ exec_always --no-startup-id "setxkbmap -option ctrl:nocaps"
 # Set keyboard layout and language
 exec_always --no-startup-id "setxkbmap -option grp:alt_space_toggle us,th"
 
-
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
-exec_always --no-startup-id "nitrogen --set-centered $HOME/Wallpapers/001.jpg"
+exec_always --no-startup-id "nitrogen --set-centered $HOME/Wallpapers/001.jpg --head=0"
 exec_always --no-startup-id "autorandr -c"
 
 # Screenshots https://github.com/naelstrof/maim
