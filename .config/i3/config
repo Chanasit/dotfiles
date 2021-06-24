@@ -220,6 +220,7 @@ exec_always --no-startup-id "setxkbmap -option grp:alt_space_toggle us,th"
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always --no-startup-id "nitrogen --set-centered $HOME/Wallpapers/001.jpg --head=0"
 exec_always --no-startup-id "autorandr -c"
+# exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144"
 
 # Screenshots https://github.com/naelstrof/maim
 bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
