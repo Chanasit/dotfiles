@@ -30,6 +30,11 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 client.background       $bg-color
 
+# i3gaps
+for_window [class="^.*"] border pixel 2
+gaps inner 5
+gaps outer 5
+
 font pango:JetBrains Mono Regular Nerd Font Complete 0
 
 # Use pactl to adjust volume in PulseAudio.
@@ -90,7 +95,7 @@ bindsym Mod1+Shift+x layout toggle tabbed splitv split
 
 # We use variables to avoid repeating the names in multiple places.
 # name the workspaces (icons require fontawesome)
-set $tag1  "1  "
+set $tag1  "1  "
 set $tag2  "2  "
 set $tag3  "3  "
 set $tag4  "4  "
