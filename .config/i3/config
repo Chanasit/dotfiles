@@ -4,37 +4,39 @@
 # TOKYO SKYLINE THEME
 # set color variables
 # optional theme colorscheme
-set $grey                #f1f3f4
+set $grey                #FFFFFF
 set $valencia            #e64a19
 set $magenta             #a673a6
 set $blue                #7182A8
 set $cyan                #6da3a1
-set $black               #616161
-set $white               #f1f3f4
+set $black               #313131
+set $white               #FFFFFF
 set $yellow              #27c282
 set $red                 #aa0e50
 set $green               #1dcc9f
 
 # theme colors
-set $bg-color 	         #385898
-set $inactive-bg-color   #818181
-set $text-color          #f1f3f4
-set $inactive-text-color #818181
+set $bg-color 	         #aa0e50
+set $inactive-bg-color   #FFFFFF
+set $text-color          #FFFFFF
+set $inactive-text-color #FFFFFF
 set $urgent-bg-color     #1dcc9f
 
 # set window colors
 # class                 border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $white               $bg-color
+client.focused          $bg-color           $bg-color          $text-color          $bg-color
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 client.background       $bg-color
 
+for_window [class=".*"] border pixel 2
+for_window [class="albert"] border pixel 0
 # i3gaps
 gaps inner 5
 gaps outer 5
 
-font pango:JetBrains Mono Regular Nerd Font Complete 0
+font pango:JetBrains Mono Nerd Font Complete 0
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -145,6 +147,14 @@ mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
 }
 bindsym Mod1+Shift+e mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
 
+# Screenshots https://github.com/naelstrof/maim
+bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/$(date)"
+
+## Clipboard Screenshots https://github.com/naelstrof/maim
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
@@ -176,18 +186,17 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:JetBrains Mono Regular Nerd Font Complete 12
+  font pango:JetBrains Mono Bold Nerd Font Complete 12
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
-		background   $white
-		statusline   $black
-		separator    $grey
+		background   $black
+		statusline   $white
 		# type             border      backgr.     font
-		focused_workspace  $grey       $white      $black
-		active_workspace   $grey       $white      $black
-		inactive_workspace $grey       $black      $white
-		urgent_workspace   $green      $green      $black
+		focused_workspace  $white       $white      $black
+		active_workspace   $black       $white      $black
+		inactive_workspace $black       $black      $white
+		urgent_workspace   $green       $green      $black
 	}
 }
 
@@ -201,6 +210,9 @@ exec blueman-applet &
 exec albert &
 
 # Keyboard indicator https://github.com/christophgysin/pasystray
+exec gxkb &
+
+# PulseAudio Tray
 exec pasystray &
 
 # Dunst notify https://github.com/dunst-project/dunst
@@ -208,28 +220,18 @@ exec dunst &
 
 # Compositor WM https://github.com/yshui/picom
 exec picom &
-exec xautolock -detectsleep -time 11 -locker "xkb-switch -s us; i3lock -e -f -i $HOME/Wallpapers/001.jpg" -notify 30 -notifier "notify-send -u normal -t 20000 -- 'Locking screen in 30 seconds'" &
 
-
-## Configure key repeat rate
-exec_always --no-startup-id "sleep 1; xset r rate 250 40"
-exec_always --no-startup-id "sleep 1; xset m default"
-
-# Use CapsLock as Ctrl
-exec_always --no-startup-id "setxkbmap -option ctrl:nocaps"
-
-# Set keyboard layout and language
-exec_always --no-startup-id "setxkbmap -option grp:alt_space_toggle us,th"
+exec xautolock -detectsleep -time 11 -locker "xkb-switch -s us; i3lock -e -f -i $HOME/Wallpapers/001.jpg" -notify 30 -notifier "notify-send -u normal -t 20000 -- 'Locking screen in 30 seconds'"
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
-exec_always --no-startup-id "nitrogen --set-centered $HOME/Wallpapers/001.jpg --head=0"
-exec_always --no-startup-id "autorandr -c"
-# exec_always --no-startup-id "xrandr --output DP-0 --mode 1920x1080 --rate 144"
+exec_always nitrogen --set-centered $HOME/Wallpapers/001.jpg --head=0
+exec_always autorandr -c
+# exec xrandr --output DP-0 --mode 1920x1080 --rate 144
 
-# Screenshots https://github.com/naelstrof/maim
-bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/$(date)"
+## Configure key repeat rate
+exec_always xset r rate 250 40
+exec_always xset m default
 
-## Clipboard Screenshots https://github.com/naelstrof/maim
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+# Use CapsLock as Ctrl && Set keyboard layout and language
+exec_always setxkbmap -option ctrl:nocaps
+exec_always setxkbmap -option grp:alt_space_toggle us,th
