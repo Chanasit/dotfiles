@@ -111,7 +111,7 @@ export FZF_COMPLETION_TRIGGER='~~'
 # NNN file manager
 export NNN_COLORS='#0a1b2c3d'
 export NNN_PLUG='t:preview-tui;i:img-preview;v:treeview'
-export NNN_OPTS='H'
+# export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 
@@ -136,7 +136,6 @@ alias pip_pypy="pip_pypy3"
 alias k="kubectl"
 alias y="yay"
 alias tf="terraform"
-alias nnn="nnn -dea"
 alias gs='git status'
 alias g3='git log --graph --decorate --oneline'
 alias gf='git fetch --all'
