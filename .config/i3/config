@@ -4,22 +4,22 @@
 # TOKYO SKYLINE THEME
 # set color variables
 # optional theme colorscheme
-set $grey                #FFFFFF
+set $grey                #f9f9f9
 set $valencia            #e64a19
 set $magenta             #a673a6
 set $blue                #7182A8
 set $cyan                #6da3a1
 set $black               #313131
-set $white               #FFFFFF
+set $white               #f9f9f9
 set $yellow              #27c282
 set $red                 #aa0e50
 set $green               #1dcc9f
 
 # theme colors
-set $bg-color 	         #aa0e50
-set $inactive-bg-color   #FFFFFF
-set $text-color          #FFFFFF
-set $inactive-text-color #FFFFFF
+set $bg-color 	         #f9f9f9
+set $inactive-bg-color   #313131
+set $text-color          #313131
+set $inactive-text-color #313131
 set $urgent-bg-color     #1dcc9f
 
 # set window colors
@@ -30,7 +30,7 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 client.background       $bg-color
 
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1.2
 for_window [class="albert"] border pixel 0
 # i3gaps
 gaps inner 5
@@ -39,11 +39,10 @@ gaps outer 5
 font pango:JetBrains Mono Nerd Font Complete 0
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pulse-audio-notify up"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pulse-audio-notify down"
+bindsym XF86AudioMute exec --no-startup-id "pulse-audio-notify mute"
+# bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -163,16 +162,16 @@ mode "resize" {
   # Pressing right will grow the window’s width.
   # Pressing up will shrink the window’s height.
   # Pressing down will grow the window’s height.
-  bindsym $left       resize shrink width 10 px or 10 ppt
-  bindsym $down       resize grow height 10 px or 10 ppt
-  bindsym $up         resize shrink height 10 px or 10 ppt
-  bindsym $right      resize grow width 10 px or 10 ppt
+  bindsym $left       resize shrink width 12 px or 12 ppt
+  bindsym $down       resize grow height 12 px or 12 ppt
+  bindsym $up         resize shrink height 12 px or 12 ppt
+  bindsym $right      resize grow width 12 px or 12 ppt
 
   # same bindings, but for the arrow keys
-  bindsym Right        resize shrink width 10 px or 10 ppt
-  bindsym Down        resize grow height 10 px or 10 ppt
-  bindsym Up          resize shrink height 10 px or 10 ppt
-  bindsym Left       resize grow width 10 px or 10 ppt
+  bindsym Right        resize shrink width 12 px or 12 ppt
+  bindsym Down        resize grow height 12 px or 12 ppt
+  bindsym Up          resize shrink height 12 px or 12 ppt
+  bindsym Left       resize grow width 12 px or 12 ppt
 
   # back to normal: Enter or Escape or Mod1+r
   bindsym Return mode "default"

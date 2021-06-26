@@ -127,7 +127,6 @@ alias vi="nvim"
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
 alias watch='watch '
-alias grep="rg"
 alias clang="clang-11"
 alias python="python3"
 alias pip="pip3"

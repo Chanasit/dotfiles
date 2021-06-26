@@ -97,7 +97,7 @@
 /.keybase-installer
 /.lein
 /.lesshst
-/.local
+# /.local
 /.m2
 /.matplotlib
 /.mitmproxy
