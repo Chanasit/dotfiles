@@ -228,8 +228,7 @@ exec_always autorandr -c
 # exec xrandr --output DP-0 --mode 1920x1080 --rate 144
 
 ## Configure key repeat rate
-exec_always xset r rate 250 40
-exec_always xset m default
+exec_always xset r rate 300 60
 
 # Use CapsLock as Ctrl && Set keyboard layout and language
 exec_always setxkbmap -option ctrl:nocaps

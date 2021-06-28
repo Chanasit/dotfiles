@@ -14,8 +14,8 @@ colors:
     cyan: "#3465a3"
     white: "#808080"
   bright:
-    black: "#000000"
-    red: "#ff1100"
+    black: "#818181"
+    red: "#ff4444"
     green: "#177F80"
     yellow: "#ef5939"
     blue: "#204a87"
@@ -30,7 +30,7 @@ selection:
   save_to_clipboard: true
 background_opacity: 0.97
 font:
-  size: 13
+  size: 12
   normal:
     family: JetBrainsMono Nerd Font
     style: Regular
