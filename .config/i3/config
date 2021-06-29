@@ -30,7 +30,7 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 client.background       $bg-color
 
-for_window [class=".*"] border pixel 1.2
+for_window [class=".*"] border pixel 2
 for_window [class="albert"] border pixel 0
 # i3gaps
 gaps inner 2
@@ -45,8 +45,8 @@ bindsym XF86AudioMute exec --no-startup-id "pulse-audio-notify mute"
 # bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessDown exec --no-startup-id "xrandr-light-notify up"
-bindsym XF86MonBrightnessUp exec --no-startup-id "xrandr-light-notify down"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xrandr-light-notify down"
+bindsym XF86MonBrightnessUp exec --no-startup-id "xrandr-light-notify up"
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -189,7 +189,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:jetBrains Mono Nerd Font Complete 12
+  font pango:jetBrains Mono Nerd Font Complete 11
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
@@ -207,7 +207,7 @@ bar {
 exec nm-applet &
 
 # Bluetooth https://github.com/blueman-project/blueman
-exec blueman-applet &
+exec blueman-tray &
 
 # MacOS Spot light https://github.com/albertlauncher/albert
 exec albert &
