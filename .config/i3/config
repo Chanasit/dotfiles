@@ -207,7 +207,7 @@ bar {
 exec nm-applet &
 
 # Bluetooth https://github.com/blueman-project/blueman
-exec blueman-tray &
+exec blueman-applet &
 
 # MacOS Spot light https://github.com/albertlauncher/albert
 exec albert &
@@ -223,6 +223,9 @@ exec dunst &
 
 # Compositor WM https://github.com/yshui/picom
 exec picom &
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+exec redshift &
 
 exec xautolock -detectsleep -time 11 -locker "xkb-switch -s us; i3lock -e -f -i $HOME/Wallpapers/001.jpg" -notify 30 -notifier "notify-send -u normal -t 20000 -- 'Locking screen in 30 seconds'"
 

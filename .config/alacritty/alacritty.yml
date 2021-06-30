@@ -45,3 +45,4 @@ window:
   dynamic_padding: false
   decorations: full
   startup_mode: Windowed
+  energy: Powersave
