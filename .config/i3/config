@@ -30,11 +30,11 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 client.background       $bg-color
 
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 for_window [class="albert"] border pixel 0
 # i3gaps
-gaps inner 2
-gaps outer 2
+gaps inner 1
+gaps outer 1
 
 font pango:JetBrains Mono Nerd Font Complete 0
 
@@ -189,7 +189,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:jetBrains Mono Nerd Font Complete 11
+  font pango:jetBrains Mono Nerd Font Complete 8
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
