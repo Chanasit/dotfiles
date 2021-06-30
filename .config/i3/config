@@ -227,14 +227,15 @@ exec picom &
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 exec redshift &
 
-exec fusuma &
+exec fusuma -d
+
+exec autorandr -c
+# exec xrandr --output DP-0 --mode 1920x1080 --rate 144
 
 exec xautolock -detectsleep -time 11 -locker "xkb-switch -s us; i3lock -e -f -i $HOME/Wallpapers/001.jpg" -notify 30 -notifier "notify-send -u normal -t 20000 -- 'Locking screen in 30 seconds'"
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always nitrogen --set-centered $HOME/Wallpapers/001.jpg --head=0
-exec_always autorandr -c
-# exec xrandr --output DP-0 --mode 1920x1080 --rate 144
 
 ## Configure key repeat rate
 exec_always xset r rate 250 40
