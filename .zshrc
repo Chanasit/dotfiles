@@ -69,13 +69,6 @@ export GO111MODULE=on
 export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"
 export PATH=$PATH:$GOPATH/bin
 
-# Clang LLVM
-# export PATH="/usr/local/opt/llvm/bin:$PATH"
-# export LDFLAGS="-L/usr/local/opt/llvm/lib"
-# export CPPFLAGS="-I/usr/local/opt/llvm/include"
-# export CC=/usr/bin/gcc
-# export CXX=/usr/bin/g++
-
 # Custom binary file (ubuntu)
 export PATH=$PATH:$HOME/.local/bin
 

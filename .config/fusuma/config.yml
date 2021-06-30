@@ -1,0 +1,31 @@
+swipe:
+  3:
+    begin:
+      command: xdotool mousedown 1
+    update:
+      command: xdotool mousemove_relative -- $move_x, $move_y
+      interval: 0.01
+      accel: 3
+    end:
+      command: xdotool mouseup 1
+pinch:
+  in:
+    command: 'xdotool key ctrl+equal'
+  out:
+    command: 'xdotool key ctrl+minus'
+
+threshold:
+  swipe: 0.3
+  pinch: 1
+
+interval:
+  swipe: 0.3
+  pinch: 1
+
+# threshold:
+#   swipe: 0.4
+#   pinch: 0.4
+
+# interval:
+#   swipe: 0.8
+#   pinch: 0.1
