@@ -22,6 +22,8 @@ set $text-color          #313131
 set $inactive-text-color #313131
 set $urgent-bg-color     #1dcc9f
 
+set $wallpaper           $HOME/Wallpapers/default.png
+
 # set window colors
 # class                 border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          $bg-color
@@ -47,6 +49,9 @@ bindsym XF86AudioMute exec --no-startup-id "pulse-audio-notify mute"
 # Sreen brightness controls
 bindsym XF86MonBrightnessDown exec --no-startup-id "xrandr-light-notify down"
 bindsym XF86MonBrightnessUp exec --no-startup-id "xrandr-light-notify up"
+
+# i3lcok screen https://github.com/i3/i3lock
+bindsym Mod1+Shift+i exec --no-startup-id "xkb-switch -s us; i3lock -e -f -i $wallpaper"
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -206,13 +211,13 @@ bar {
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 exec nm-applet &
 
-# Bluetooth https://github.com/blueman-project/blueman
+# Bluetooth: https://github.com/blueman-project/blueman
 exec blueman-applet &
 
-# MacOS Spot light https://github.com/albertlauncher/albert
+# Albert: MacOS Spot light https://github.com/albertlauncher/albert
 exec albert &
 
-# Keyboard indicator https://github.com/christophgysin/pasystray
+# Keyboard indicator: https://github.com/christophgysin/pasystray
 exec gxkb &
 
 # PulseAudio Tray
@@ -224,18 +229,20 @@ exec dunst &
 # Compositor WM https://github.com/yshui/picom
 exec picom &
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
+# Redshift https://github.com/jonls/redshift
 exec redshift &
 
+# Fusuma https://github.com/iberianpig/fusuma
 exec fusuma -d
 
-exec autorandr -c
-# exec xrandr --output DP-0 --mode 1920x1080 --rate 144
+# Autorandr https://github.com/phillipberndt/autorandr
+exec autorandr -c ## exec xrandr --output DP-0 --mode 1920x1080 --rate 144
 
-exec xautolock -detectsleep -time 11 -locker "xkb-switch -s us; i3lock -e -f -i $HOME/Wallpapers/001.jpg" -notify 30 -notifier "notify-send -u normal -t 20000 -- 'Locking screen in 30 seconds'"
+# autolock https://linux.die.net/man/1/xautolock
+exec xautolock -detectsleep -time 11 -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper"
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
-exec_always nitrogen --set-centered $HOME/Wallpapers/001.jpg --head=0
+exec_always nitrogen --set-centered $wallpaper --head=0
 
 ## Configure key repeat rate
 exec_always xset r rate 250 40
