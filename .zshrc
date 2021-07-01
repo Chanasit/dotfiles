@@ -131,3 +131,4 @@ alias tf="terraform"
 alias gs='git status'
 alias g3='git log --graph --decorate --oneline'
 alias gf='git fetch --all'
+alias gd='git diff'

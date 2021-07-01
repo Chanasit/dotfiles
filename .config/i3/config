@@ -235,6 +235,10 @@ exec redshift &
 # Fusuma https://github.com/iberianpig/fusuma
 exec fusuma -d
 
+## Configure key repeat rate
+exec xset r rate 250 40
+exec xset m 26/10 4
+
 # Autorandr https://github.com/phillipberndt/autorandr
 exec autorandr -c ## exec xrandr --output DP-0 --mode 1920x1080 --rate 144
 
@@ -244,8 +248,6 @@ exec xautolock -detectsleep -time 11 -locker "xkb-switch -s us; i3lock -e -f -i 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always nitrogen --set-centered $wallpaper --head=0
 
-## Configure key repeat rate
-exec_always xset r rate 250 40
 
 # Use CapsLock as Ctrl && Set keyboard layout and language
 exec_always setxkbmap -option ctrl:nocaps
