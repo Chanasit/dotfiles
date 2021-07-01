@@ -194,7 +194,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:jetBrains Mono Nerd Font Complete 8
+  font pango:jetBrains Mono Nerd Font Complete 6
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings

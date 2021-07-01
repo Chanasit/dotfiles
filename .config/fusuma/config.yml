@@ -4,7 +4,7 @@ swipe:
       command: xdotool mousedown 1
     update:
       command: xdotool mousemove_relative -- $move_x, $move_y
-      interval: 0.01
+      interval: 0.1
       accel: 2
     end:
       command: xdotool mouseup 1
