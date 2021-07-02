@@ -101,6 +101,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
+set background=light
 colorscheme github
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
