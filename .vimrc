@@ -106,8 +106,8 @@ colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#FEFEFE
-hi FloatermBorder guibg=#FEFEFE guifg=#3A3A3A
+hi Floaterm guibg=#e1e1e1
+hi FloatermBorder guibg=#e1e1e1 guifg=#414141
 
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
@@ -147,7 +147,7 @@ let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "alduin"
+let g:airline_theme = "google_light"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 1

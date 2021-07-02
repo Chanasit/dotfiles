@@ -16,11 +16,11 @@ set $red                 #aa0e50
 set $green               #1dcc9f
 
 # theme colors
-set $bg-color 	         #27c282
-set $inactive-bg-color   #313131
+set $bg-color 	         #a673a6
+set $inactive-bg-color   #f9f9f9
 set $text-color          #313131
 set $inactive-text-color #313131
-set $urgent-bg-color     #1dcc9f
+set $urgent-bg-color     #a673a6
 
 set $wallpaper           $HOME/Wallpapers/default.png
 
@@ -35,8 +35,8 @@ client.background       $bg-color
 for_window [class=".*"] border pixel 1
 for_window [class="albert"] border pixel 0
 # i3gaps
-gaps inner 2
-gaps outer 2
+gaps inner 1
+gaps outer 1
 
 font pango:JetBrains Mono Nerd Font Complete 0
 
@@ -193,7 +193,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:jetBrains Mono Nerd Font Complete 7
+  font pango:jetBrains Mono Nerd Font Complete 12
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
@@ -203,7 +203,7 @@ bar {
 		focused_workspace  $white       $white      $black
 		active_workspace   $black       $white      $black
 		inactive_workspace $black       $black      $white
-		urgent_workspace   $green       $green      $black
+		urgent_workspace   $magenta     $magenta    $black
 	}
 }
 
