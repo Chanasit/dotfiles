@@ -73,6 +73,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.local/bin
 
 # RUST
+export CARGO_HOME="$HOME/.cargo"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Terraform Config

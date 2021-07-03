@@ -9,7 +9,7 @@ set $valencia            #e64a19
 set $magenta             #a673a6
 set $blue                #7182A8
 set $cyan                #6da3a1
-set $black               #313131
+set $black               #555555
 set $white               #f9f9f9
 set $yellow              #27c282
 set $red                 #aa0e50
@@ -35,10 +35,10 @@ client.background       $bg-color
 for_window [class=".*"] border pixel 1
 for_window [class="albert"] border pixel 0
 # i3gaps
-gaps inner 1
-gaps outer 1
+# gaps inner 1
+# gaps outer 1
 
-font pango:JetBrains Mono Nerd Font Complete 0
+font pango:JetBrains Mono Nerd Font Mono 0
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id "$HOME/.local/bin/pulse-audio-notify up"
@@ -64,7 +64,7 @@ set $right l
 floating_modifier Mod1
 
 # start a terminal
-bindsym Mod1+Return exec alacritty
+bindsym Mod1+Return exec urxvt
 
 # kill focused window
 bindsym Mod1+Shift+q kill
@@ -152,7 +152,7 @@ mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
 }
 bindsym Mod1+Shift+e mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
 
-# bindsym Mod1+Shift+d exec --no-startup-id i3-dmenu-desktop
+bindsym Mod1+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 # Screenshots https://github.com/naelstrof/maim
 bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
@@ -193,7 +193,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:jetBrains Mono Nerd Font Complete 12
+  font pango:JetBrains Mono Nerd Font Mono 11
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
@@ -219,14 +219,8 @@ exec gxkb
 # PulseAudio Tray
 exec pasystray
 
-# Albert Tray
-exec albert
-
 # Dunst notify https://github.com/dunst-project/dunst
 exec dunst
-
-# Compositor WM https://github.com/yshui/picom
-exec picom
 
 # Redshift https://github.com/jonls/redshift
 exec redshift

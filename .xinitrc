@@ -1,4 +1,5 @@
 #!/bin/sh
+xrdb -merge .Xresources
 xset +fp /usr/share/fonts/TTF           # Prepend a custom font path to Xorg's list of known font paths
 xset +fp /usr/share/fonts/noto           # Prepend a custom font path to Xorg's list of known font paths
 xset +fp /usr/share/fonts/75dpi           # Prepend a custom font path to Xorg's list of known font paths

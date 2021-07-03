@@ -320,7 +320,7 @@ tmux_conf_copy_to_os_clipboard=true
 # this is the place to override or undo settings
 
 # set color
-set -g default-terminal "xterm-256color"
+set -g default-terminal "screen-256color"
 
 # increase history size
 set -g history-limit 10000
