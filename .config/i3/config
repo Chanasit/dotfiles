@@ -41,9 +41,9 @@ gaps outer 1
 font pango:JetBrains Mono Nerd Font Complete 0
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pulse-audio-notify up"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pulse-audio-notify down"
-bindsym XF86AudioMute exec --no-startup-id "pulse-audio-notify mute"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "$HOME/.local/bin/pulse-audio-notify up"
+bindsym XF86AudioLowerVolume exec --no-startup-id "$HOME/.local/bin/pulse-audio-notify down"
+bindsym XF86AudioMute exec --no-startup-id "$HOME/.local/bin/pulse-audio-notify mute"
 # bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 
 # Sreen brightness controls

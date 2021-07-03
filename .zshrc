@@ -1,9 +1,9 @@
 ##############################################################
 # => ZSH Startup with Tmux
 ##############################################################
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#   tmux attach -t hack || tmux new -s hack
-# fi
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+startx
+fi
 
 ##############################################################
 # => ZSH Plugins
