@@ -73,20 +73,6 @@ URxvt*boldFont       : xft:JetBrainsMono Nerd Font Mono:size=8:bold
 URxvt*italicFont     : xft:JetBrainsMono Nerd Font Mono:size=8:italic
 URxvt*boldItalicFont : xft:JetBrainsMono Nerd Font Mono:size=8:bold:italic
 
-! Terminus italics are ugly, so I do not use them.
-! URxvt*boldFont       : xft:Terminus:size=12:bold
-! URxvt*italicFont     : xft:Terminus:size=12:italic
-! URxvt*boldItalicFont : xft:Terminus:size=12:bold:italic
-!
-URxvt.keysym.C-M-1 : command:\033]710;xft:DejaVu Sans Mono for Powerline:size=11\007
-URxvt.keysym.C-M-2 : command:\033]710;xft:Droid Sans Mono for Powerline:size=11\007
-URxvt.keysym.C-M-3 : command:\033]710;xft:Roboto Mono for Powerline:size=11\007
-URxvt.keysym.C-M-4 : command:\033]710;xft:Fira Mono for Powerline:size=11\007
-URxvt.keysym.C-M-5 : command:\033]710;xft:Noto Mono for Powerline:size=11\007
-! ---
-URxvt.keysym.C-M-9 : command:\033]710;xft:Terminess Powerline:size=13\007
-URxvt.keysym.C-M-0 : command:\033]710;xft:Terminess Powerline:size=13:bold\007
-
 URxvt*letterSpace    : 0
 URxvt*internalBorder : 1
 URxvt*scrollBar      : false
@@ -101,47 +87,11 @@ URxvt*foreground     : base05
 URxvt*background     : base00
 URxvt*borderColor    : base0A
 URxvt*cursorColor    : base0D
-
-! Keysyms
-URxvt*keysym.Home    : \033[1~
-URxvt*keysym.End     : \033[4~
-URxvt*keysym.KP_Home : \033[1~
-URxvt*keysym.KP_End  : \033[4~
-URxvt*keysym.S-F1  : \033[11;2~
-URxvt*keysym.S-F2  : \033[12;2~
-URxvt*keysym.S-F3  : \033[13;2~
-URxvt*keysym.S-F4  : \033[14;2~
-URxvt*keysym.S-F5  : \033[15;2~
-URxvt*keysym.S-F6  : \033[17;2~
-URxvt*keysym.S-F7  : \033[18;2~
-URxvt*keysym.S-F8  : \033[19;2~
-URxvt*keysym.S-F9  : \033[20;2~
-URxvt*keysym.S-F10 : \033[21;2~
-URxvt*keysym.S-F11 : \033[23;2~
-URxvt*keysym.S-F12 : \033[24;2~
-
-! Scroll 1 line
-URxvt*keysym.Control-K: command:\033]720;1\007
-URxvt*keysym.Control-J: command:\033]721;1\007
-
-! Scroll 8 lines
-URxvt*keysym.Control-P: command:\033]720;8\007
-URxvt*keysym.Control-N: command:\033]721;8\007
 ! ------------------------------------------------------------
 ! URxvt plugins
 ! ------------------------------------------------------------
-
 ! Perl extensions
-URxvt.perl-ext             : default,url-select,resize-font,unichr,clipboard
-
-! Plugin: url-select
-URxvt.keysym.Control-O     : perl:url-select:select_next
-URxvt.url-select.launcher  : tmux new-window w3m
-URxvt.url-select.underline : true
-URxvt.clipboard.autocopy   : true
-URxvt.keysym.Control-C     : perl:clipboard:copy
-URxvt.keysym.Control-V     : perl:clipboard:paste
-! Press 'y' to copy the selected URL to PRIMARY and clipboard
+URxvt.perl-ext             : default,resize-font,unichr
 
 ! Plugin: resize-font
 URxvt.keysym.Control-H : resize-font:smaller

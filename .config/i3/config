@@ -207,6 +207,9 @@ bar {
 	}
 }
 
+# Redshift https://github.com/jonls/redshift
+exec --no-startup-id redshift-gtk
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 exec nm-applet
 
@@ -221,9 +224,6 @@ exec pasystray
 
 # Dunst notify https://github.com/dunst-project/dunst
 exec dunst
-
-# Redshift https://github.com/jonls/redshift
-exec redshift
 
 # Fusuma https://github.com/iberianpig/fusuma
 exec fusuma

@@ -8,11 +8,6 @@ swipe:
       accel: 1
     end:
       command: xdotool mouseup 1
-  4:
-    left:
-      command: "i3-msg 'workspace prev'"
-    right:
-      command: "i3-msg 'workspace next'"
 pinch:
   in:
     command: 'xdotool key ctrl+equal'
@@ -20,12 +15,12 @@ pinch:
     command: 'xdotool key ctrl+minus'
 
 threshold:
-  swipe: 0.3
-  pinch: 0.5
+  swipe: 0.2
+  pinch: 0.3
 
 interval:
-  swipe: 0.3
-  pinch: 0.5
+  swipe: 0.2
+  pinch: 0.3
 
 # threshold:
 #   swipe: 0.4
