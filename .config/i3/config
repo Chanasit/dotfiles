@@ -193,7 +193,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:JetBrains Mono Nerd Font Mono 10
+  font pango:JetBrains Mono Nerd Font Mono 11
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
@@ -208,7 +208,7 @@ bar {
 }
 
 # Redshift https://github.com/jonls/redshift
-exec --no-startup-id redshift-gtk
+exec redshift-gtk
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 exec nm-applet
