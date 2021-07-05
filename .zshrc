@@ -1,5 +1,5 @@
 ##############################################################
-# => ZSH Startup with Tmux
+# => Start Xorg Server
 ##############################################################
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 startx
@@ -8,10 +8,6 @@ fi
 ##############################################################
 # => ZSH Plugins
 ##############################################################
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
 ZSH="$HOME/.oh-my-zsh"
 UPDATE_ZSH_DAYS=13
 ZSH_CUSTOM=$ZSH/custom
@@ -25,9 +21,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # ZSH Plugins
 plugins=(
-  osx
-  kubectl
   docker
+  kubectl
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-vi-mode
@@ -53,10 +48,6 @@ export AWS_SHARED_CREDENTIALS_FILE="$HOME/.aws/credentials"
 
 # SSH path
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then export PKG_CONFIG_PATH="/usr/local/opt/python@3.9/lib/pkgconfig"
-elif [[ "$OSTYPE" == "darwin"* ]]; then export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
-fi
 
 # yarn path
 export PATH="$PATH:$HOME/.yarn/bin"
@@ -112,10 +103,8 @@ export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 ##############################################################
 # => Alias Bash Script
 ##############################################################
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  alias pbcopy='xclip -selection clipboard'
-  alias pbpaste='xclip -selection clipboard -o'
-fi
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 alias tmux="tmux attach -t hack || tmux new -s hack"
 alias vi="nvim"
 alias ping='ping -c 5'
