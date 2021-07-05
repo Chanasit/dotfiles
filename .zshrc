@@ -2,7 +2,7 @@
 # => Start Xorg Server
 ##############################################################
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-startx
+  startx
 fi
 
 ##############################################################
@@ -69,9 +69,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Terraform Config
 export TF_LOG=
-# Terraform Completion
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
 
 # Android Home
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -90,13 +87,11 @@ export KUBECONFIG=$HOME/.kube/config
 # FZF config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
-# export FZF_DEFAULT_OPTS="--color=bg+:#222222,bg:#222222,border:#3A3A3A,spinner:#719899,hl:#719872,fg:#616161,header:#719872,info:#727100,pointer:#E12672,marker:#E17899,fg+:#616161,prompt:#0099BD,hl+:#719899"
-export FZF_COMPLETION_TRIGGER='~~'
 
 # NNN file manager
 export NNN_COLORS='#0a1b2c3d'
 export NNN_PLUG='t:preview-tui;i:img-preview;v:treeview'
-# export NNN_OPTS='H'
+export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 
@@ -105,7 +100,7 @@ export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 ##############################################################
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-alias tmux="tmux attach -t hack || tmux new -s hack"
+alias tmux="tmux attach -t $USERNAME || tmux new -s $USERNAME"
 alias vi="nvim"
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'

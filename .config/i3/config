@@ -41,10 +41,10 @@ for_window [class="albert"] border pixel 0
 font pango:JetBrains Mono Nerd Font Mono 0
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id "$HOME/.local/bin/pulse-audio-notify up"
-bindsym XF86AudioLowerVolume exec --no-startup-id "$HOME/.local/bin/pulse-audio-notify down"
-bindsym XF86AudioMute exec --no-startup-id "$HOME/.local/bin/pulse-audio-notify mute"
-# bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+bindsym XF86AudioRaiseVolume  exec   --no-startup-id "pamixer -i 5 && dunstify -t 600 $(pamixer --get-volume-human)"
+bindsym XF86AudioLowerVolume  exec   --no-startup-id "pamixer -d 5 && dunstify -t 600 $(pamixer --get-volume-human)"
+bindsym XF86AudioMute         exec   --no-startup-id "pamixer --toggle-mute && dunstify -t 600 $(pamixer --get-volume-human)"
+bindsym XF86AudioMicMute      exec   --no-startup-id "pamixer --default-source --toggle-mute && if pamixer --default-source --get-mute; then dunstify -t 600 'muted'; else dunstify -t 600 'unmuted'; fi"
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5"
@@ -235,7 +235,7 @@ exec xset r rate 250 40
 exec autorandr -c ## exec xrandr --output DP-0 --mode 1920x1080 --rate 144
 
 # autolock https://linux.die.net/man/1/xautolock
-exec xautolock -detectsleep -time 5 -notify 15 -notifier "notify-send 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 5; systemctl suspend;"
+exec xautolock -detectsleep -time 5 -notify 15 -notifier "dunstify -t 600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 5; systemctl suspend;"
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always nitrogen --set-centered $wallpaper --head=0

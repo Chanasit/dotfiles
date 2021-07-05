@@ -107,7 +107,7 @@ hi FloatermBorder guibg=#f1f1f1 guifg=#414141
 
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
-let g:floaterm_width = 0.5
+let g:floaterm_width = 0.8
 let g:floaterm_height = 0.5
 let g:floaterm_complete_options = {'shortcut': 'floaterm', 'priority': 5, 'filter_length': [5, 20]}
 let g:floaterm_wintype = "float"
