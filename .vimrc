@@ -113,7 +113,7 @@ let g:floaterm_wintype = "float"
 
 nnoremap <silent> <leader>d :FloatermNew nnn -de<cr>
 nnoremap <silent> <leader>r :FloatermNew rg<cr>
-nnoremap <silent> <leader>g :FloatermNew lazygit<cr>
+nnoremap <silent> <leader>g :FloatermNew gitui<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
 nnoremap <silent> <leader>k :FloatermNew k9s<cr>
 nnoremap <silent> <leader>s :FloatermNew spt<cr>
