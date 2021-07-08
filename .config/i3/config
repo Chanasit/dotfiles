@@ -4,41 +4,41 @@
 # TOKYO SKYLINE THEME
 # set color variables
 # optional theme colorscheme
-set $grey                #f9f9f9
-set $valencia            #e64a19
-set $magenta             #a673a6
-set $blue                #7182A8
-set $cyan                #6da3a1
-set $black               #555555
-set $white               #f9f9f9
-set $yellow              #27c282
-set $red                 #aa0e50
-set $green               #1dcc9f
+set $grey                     #f9f9f9
+set $valencia                 #e64a19
+set $magenta                  #a673a6
+set $blue                     #7182A8
+set $cyan                     #6da3a1
+set $black                    #555555
+set $white                    #f9f9f9
+set $yellow                   #27c282
+set $red                      #aa0e50
+set $green                    #1dcc9f
 
 # theme colors
-set $bg-color 	         #a673a6
-set $inactive-bg-color   #f9f9f9
-set $text-color          #313131
-set $inactive-text-color #313131
-set $urgent-bg-color     #a673a6
+set $bg-color 	              #27c282
+set $inactive-bg-color        #f9f9f9
+set $text-color               #313131
+set $inactive-text-color      #313131
+set $urgent-bg-color          #27c282
+set $wallpaper                $HOME/Wallpapers/default.png
 
-set $wallpaper           $HOME/Wallpapers/default.png
+# Custom Vim binding for some shortcut
+set $left h
+set $down j
+set $up k
+set $right l
 
 # set window colors
-# class                 border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          $bg-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
-client.background       $bg-color
+# class                       border              background         text                 indicator
+client.focused                $bg-color           $bg-color          $text-color          $bg-color
+client.unfocused              $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.focused_inactive       $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.urgent                 $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
+client.background             $bg-color
 
-for_window [class=".*"] border pixel 1
-for_window [class="albert"] border pixel 0
-# i3gaps
-# gaps inner 1
-# gaps outer 1
-
-font pango:JetBrains Mono Nerd Font Mono 0
+for_window [class=".*"]       border pixel 3
+font                          pango:JetBrains Mono Nerd Font Mono 0
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume  exec   --no-startup-id "pamixer -i 5 && dunstify -t 600 $(pamixer --get-volume-human)"
@@ -48,69 +48,76 @@ bindsym XF86AudioMicMute      exec   --no-startup-id "pamixer --default-source -
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5"
-bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 5"
+bindsym XF86MonBrightnessUp   exec --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
-bindsym Mod1+Shift+i exec --no-startup-id "xkb-switch -s us; i3lock -e -f -i $wallpaper; systemctl suspend;"
-
-# use these keys for focus, movement, and resize directions when reaching for
-# the arrows is not convenient
-set $left h
-set $down j
-set $up k
-set $right l
-
-# use Mouse+Mod1 to drag floating windows to their wanted position
-floating_modifier Mod1
+bindsym Mod1+Shift+i          exec --no-startup-id "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force suspend;"
 
 # start a terminal
-bindsym Mod1+Return exec alacritty
+bindsym Mod1+Return           exec alacritty
 
 # kill focused window
-bindsym Mod1+Shift+q kill
+bindsym Mod1+Shift+q          kill
+
+# reload the configuration file
+bindsym Mod1+Shift+c          reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod1+Shift+r          restart
+
+# i3 dmenu
+bindsym Mod1+Shift+d          exec --no-startup-id i3-dmenu-desktop
+
+# Screenshots https://github.com/naelstrof/maim
+bindsym Print                 exec --no-startup-id maim "$HOME/Pictures/$(date)"
+bindsym Shift+Print           exec --no-startup-id maim --select "$HOME/Pictures/$(date)"
+
+## Clipboard Screenshots https://github.com/naelstrof/maim
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # change focus
-bindsym Mod1+$left focus left
-bindsym Mod1+$down focus down
-bindsym Mod1+$up focus up
-bindsym Mod1+$right focus right
+bindsym Mod1+$left            focus left
+bindsym Mod1+$down            focus down
+bindsym Mod1+$up              focus up
+bindsym Mod1+$right           focus right
 
 # alternatively, you can use the cursor keys:
-bindsym Mod1+Left focus left
-bindsym Mod1+Down focus down
-bindsym Mod1+Up focus up
-bindsym Mod1+Right focus right
+bindsym Mod1+Left             focus left
+bindsym Mod1+Down             focus down
+bindsym Mod1+Up               focus up
+bindsym Mod1+Right            focus right
 
 # move focused window
-bindsym Mod1+Shift+$left move left
-bindsym Mod1+Shift+$down move down
-bindsym Mod1+Shift+$up move up
-bindsym Mod1+Shift+$right move right
+bindsym Mod1+Shift+$left      move left
+bindsym Mod1+Shift+$down      move down
+bindsym Mod1+Shift+$up        move up
+bindsym Mod1+Shift+$right     move right
 
 # alternatively, you can use the cursor keys:
-bindsym Mod1+Shift+Left move left
-bindsym Mod1+Shift+Down move down
-bindsym Mod1+Shift+Up move up
-bindsym Mod1+Shift+Right move right
+bindsym Mod1+Shift+Left       move left
+bindsym Mod1+Shift+Down       move down
+bindsym Mod1+Shift+Up         move up
+bindsym Mod1+Shift+Right      move right
 
 # enter fullscreen mode for the focused container
-bindsym Mod1+Shift+f fullscreen toggle
+bindsym Mod1+Shift+f          fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+Shift+x layout toggle tabbed splitv split
+bindsym Mod1+Shift+x          layout toggle tabbed splitv split
 
 # We use variables to avoid repeating the names in multiple places.
 # name the workspaces (icons require fontawesome)
-set $tag1  "1  "
-set $tag2  "2  "
-set $tag3  "3  "
-set $tag4  "4  "
-set $tag5  "5  "
-set $tag6  "6 six"
-set $tag7  "7 seven"
-set $tag8  "8 eight"
-set $tag9  "9 nine"
-set $tag10 "10 ten"
+set $tag1                     "1  "
+set $tag2                     "2  "
+set $tag3                     "3 three"
+set $tag4                     "4 four"
+set $tag5                     "5 five"
+set $tag6                     "6 six"
+set $tag7                     "7 seven"
+set $tag8                     "8 eight"
+set $tag9                     "9 nine"
+set $tag10                    "10 ten"
 
 # switch to workspace
 bindsym Mod1+1 workspace number $tag1
@@ -136,11 +143,6 @@ bindsym Mod1+Shift+8 move container to workspace number $tag8
 bindsym Mod1+Shift+9 move container to workspace number $tag9
 bindsym Mod1+Shift+0 move container to workspace number $tag10
 
-# reload the configuration file
-bindsym Mod1+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod1+Shift+r restart
-
 # Create Log out, Reboot, Poweroff bindings
 mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
   bindsym r exec --no-startup-id systemctl reboot
@@ -152,34 +154,20 @@ mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
 }
 bindsym Mod1+Shift+e mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
 
-bindsym Mod1+Shift+d exec --no-startup-id i3-dmenu-desktop
-
-# Screenshots https://github.com/naelstrof/maim
-bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/$(date)"
-
-## Clipboard Screenshots https://github.com/naelstrof/maim
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-  # These bindings trigger as soon as you enter the resize mode
-
-  # Pressing left will shrink the window’s width.
-  # Pressing right will grow the window’s width.
-  # Pressing up will shrink the window’s height.
   # Pressing down will grow the window’s height.
-  bindsym $left       resize shrink width 12 px or 12 ppt
-  bindsym $down       resize grow height 12 px or 12 ppt
-  bindsym $up         resize shrink height 12 px or 12 ppt
-  bindsym $right      resize grow width 12 px or 12 ppt
+  bindsym $left         resize shrink width 12 px or 12 ppt
+  bindsym $down         resize grow height 12 px or 12 ppt
+  bindsym $up           resize shrink height 12 px or 12 ppt
+  bindsym $right        resize grow width 12 px or 12 ppt
 
   # same bindings, but for the arrow keys
-  bindsym Right        resize shrink width 12 px or 12 ppt
-  bindsym Down        resize grow height 12 px or 12 ppt
-  bindsym Up          resize shrink height 12 px or 12 ppt
-  bindsym Left       resize grow width 12 px or 12 ppt
+  bindsym Right         resize shrink width 12 px or 12 ppt
+  bindsym Down          resize grow height 12 px or 12 ppt
+  bindsym Up            resize shrink height 12 px or 12 ppt
+  bindsym Left          resize grow width 12 px or 12 ppt
 
   # back to normal: Enter or Escape or Mod1+r
   bindsym Return mode "default"
@@ -199,16 +187,15 @@ bar {
 		# whole color settings
 		background   $black
 		statusline   $white
-		# type             border      backgr.     font
+		# type             border       backgr.     font
 		focused_workspace  $white       $white      $black
 		active_workspace   $black       $white      $black
 		inactive_workspace $black       $black      $white
-		urgent_workspace   $magenta     $magenta    $black
+		urgent_workspace   $green       $green      $black
 	}
 }
-
-# Redshift https://github.com/jonls/redshift
-# exec redshift-gtk
+# Keyboard indicator: https://github.com/christophgysin/pasystray
+exec gxkb
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 exec nm-applet
@@ -216,29 +203,17 @@ exec nm-applet
 # Bluetooth: https://github.com/blueman-project/blueman
 exec blueman-applet
 
-# Keyboard indicator: https://github.com/christophgysin/pasystray
-exec gxkb
-
 # PulseAudio Tray
 exec pasystray
 
 # Dunst notify https://github.com/dunst-project/dunst
 exec dunst
 
-# exec fusuma -d
+# autolock https://linux.die.net/man/1/xautolock
+exec xautolock -detectsleep -time 10 -notify 15 -notifier "dunstify -t 600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force off;"
+
+# Monitor and Wallpapers https://github.com/l3ib/nitrogen
+exec_always feh --bg-scale $wallpaper $wallpaper
 
 ## Configure key repeat rate
 exec xset r rate 250 40
-# exec xset m 26/10 4
-
-# Autorandr https://github.com/phillipberndt/autorandr
-# exec autorandr -c ## exec xrandr --output DP-0 --mode 1920x1080 --rate 144
-
-# autolock https://linux.die.net/man/1/xautolock
-exec xautolock -detectsleep -time 5 -notify 15 -notifier "dunstify -t 600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 5; systemctl suspend;"
-
-# Monitor and Wallpapers https://github.com/l3ib/nitrogen
-exec_always nitrogen --set-centered $wallpaper --head=0
-
-
-# Use CapsLock as Ctrl && Set keyboard layout and language

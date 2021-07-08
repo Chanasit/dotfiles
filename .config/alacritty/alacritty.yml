@@ -29,9 +29,8 @@ mouse:
     modifiers: Shift
 selection:
   save_to_clipboard: true
-background_opacity: 0.95
 font:
-  size: 13
+  size: 14
   normal:
     family: JetBrainsMono Nerd Font Mono
     style: Regular
