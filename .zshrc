@@ -98,9 +98,11 @@ export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 ##############################################################
 # => Alias Bash Script
 ##############################################################
+alias rg='rg --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias tmux="tmux attach -t $USERNAME || tmux new -s $USERNAME"
+alias vim="nvim"
 alias vi="nvim"
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
@@ -108,8 +110,6 @@ alias watch='watch '
 alias clang="clang-11"
 alias python="python3"
 alias pip="pip3"
-alias pypy="pypy3"
-alias pip_pypy="pip_pypy3"
 alias k="kubectl"
 alias y="yay"
 alias tf="terraform"

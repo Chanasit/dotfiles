@@ -1,14 +1,6 @@
 export OSTYPE = $(shell uname)
 
 config: ## install configuration
-	echo "install vim plug \n"
-	curl -fLo ${HOME}/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	echo "install powerlevel10k \n"
-	rm -rf ${HOME}/.oh-my-zsh/custom/themes/powerlevel10k
-	git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${HOME}/.oh-my-zsh/custom/themes/powerlevel10k
-	echo "install oh-my-tmux \n"
-	rm -rf ${HOME}/.tmux
-	git clone https://github.com/gpakosz/.tmux.git ${HOME}/.tmux
 	echo "symlink dotfile config \n"
 	ln -vsfn ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 	ln -vsfn ${PWD}/.config/htop/htoprc ${HOME}/.config/htop/htoprc
@@ -26,18 +18,6 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
 	ln -vsfn ${PWD}/.curlrc ${HOME}/.curlrc
 	ln -vsfn ${PWD}/.xinitrc ${HOME}/.xinitrc
-	vim '+PlugInstall'
-
-fedora: ## install all Fedora packages
-	cp -r ${PWD}/.fonts/. ${HOME}/.local/share/fonts/
-	dnf install $(shell cat dnf.txt)
-	make -i config
-
-macos: ## install all MacOS packages
-	cp -r ${PWD}/.fonts/. ${HOME}/Library/Fonts/NerdFonts/
-	brew install --formula $(shell cat brew_formula.txt)
-	brew install --cask $(shell cat brew_cask.txt)
-	make -i config
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \

@@ -103,24 +103,16 @@ colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Floaterm guibg=#f1f1f1
 hi FloatermBorder guibg=#f1f1f1 guifg=#414141
-
-let g:floaterm_opener = "tabe"
+let g:floaterm_opener = "drop"
 let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.8
-let g:floaterm_height = 0.5
-let g:floaterm_complete_options = {'shortcut': 'floaterm', 'priority': 5, 'filter_length': [5, 20]}
+let g:floaterm_height = 0.6
 let g:floaterm_wintype = "float"
 
-nnoremap <silent> <leader>d :FloatermNew nnn -de<cr>
-nnoremap <silent> <leader>r :FloatermNew rg<cr>
+nnoremap <silent> <leader>d :FloatermNew nnn<cr>
+nnoremap <silent> <leader>r :FloatermNew rg -g "!{.git,node_modules,vendor}/*" 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew gitui<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
-nnoremap <silent> <leader>k :FloatermNew k9s<cr>
-nnoremap <silent> <leader>s :FloatermNew spt<cr>
-nnoremap <silent> <leader>p :FloatermNew ipython<cr>
-nnoremap <silent> <leader>y :FloatermNew gomu<cr>
-nnoremap <silent> <leader>t :FloatermNew htop<cr>
-nnoremap <silent> <leader>q :FloatermNew googler<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Bracey

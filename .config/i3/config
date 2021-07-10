@@ -110,14 +110,14 @@ bindsym Mod1+Shift+x          layout toggle tabbed splitv split
 # name the workspaces (icons require fontawesome)
 set $tag1                     "1  "
 set $tag2                     "2  "
-set $tag3                     "3 three"
-set $tag4                     "4 four"
-set $tag5                     "5 five"
-set $tag6                     "6 six"
-set $tag7                     "7 seven"
-set $tag8                     "8 eight"
-set $tag9                     "9 nine"
-set $tag10                    "10 ten"
+set $tag3                     "3  "
+set $tag4                     "4  "
+set $tag5                     "5"
+set $tag6                     "6"
+set $tag7                     "7"
+set $tag8                     "8"
+set $tag9                     "9"
+set $tag10                    "10"
 
 # switch to workspace
 bindsym Mod1+1 workspace number $tag1
@@ -181,7 +181,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:JetBrains Mono Nerd Font Mono 11
+  font pango:JetBrains Mono Nerd Font Mono 10
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
