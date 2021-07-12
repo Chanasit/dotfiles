@@ -66,7 +66,7 @@ bindsym Mod1+Shift+c          reload
 bindsym Mod1+Shift+r          restart
 
 # i3 dmenu
-bindsym Mod1+Shift+d          exec --no-startup-id i3-dmenu-desktop
+bindsym Mod1+Shift+d          exec --no-startup-id dmenu_run -i -nb '$white' -nf '$green' -sb '$green'
 
 # Screenshots https://github.com/naelstrof/maim
 bindsym Print                 exec --no-startup-id maim "$HOME/Pictures/$(date)"
