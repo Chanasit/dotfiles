@@ -103,7 +103,7 @@ colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi Floaterm guibg=#f1f1f1
 hi FloatermBorder guibg=#f1f1f1 guifg=#414141
-let g:floaterm_opener = "drop"
+let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.6
@@ -149,7 +149,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COC VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-highlight', 'coc-go', 'coc-prettier', 'coc-emmet']
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-highlight', 'coc-go', 'coc-prettier', 'coc-emmet', 'coc-python']
 inoremap <silent><expr> <Tab> coc#refresh()
 
 function! s:check_back_space() abort
