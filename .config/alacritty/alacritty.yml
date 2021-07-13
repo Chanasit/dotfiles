@@ -3,7 +3,7 @@ env:
   WINIT_X11_SCALE_FACTOR: "1.0"
 colors:
   primary:
-    background: "#f8f8ff"
+    background: "#FFFFFF"
     foreground: "#000000"
   normal:
     black: "#000000"

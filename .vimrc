@@ -97,7 +97,6 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 set termguicolors
 set background=light
 colorscheme github
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

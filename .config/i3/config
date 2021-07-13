@@ -37,7 +37,8 @@ client.focused_inactive       $inactive-bg-color  $inactive-bg-color $inactive-t
 client.urgent                 $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 client.background             $bg-color
 
-for_window [class=".*"]       border pixel 3
+for_window [class=".*"]       border pixel 1
+for_window [class="albert"]   border pixel 0
 font                          pango:JetBrains Mono Nerd Font Mono 0
 
 # Use pactl to adjust volume in PulseAudio.
@@ -66,7 +67,7 @@ bindsym Mod1+Shift+c          reload
 bindsym Mod1+Shift+r          restart
 
 # i3 dmenu
-bindsym Mod1+Shift+d          exec --no-startup-id dmenu_run -i -nb '$white' -nf '$green' -sb '$green'
+# bindsym Mod1+Shift+d          exec --no-startup-id dmenu_run -i -nb '$white' -nf '$blue' -sb '$blue'
 
 # Screenshots https://github.com/naelstrof/maim
 bindsym Print                 exec --no-startup-id maim "$HOME/Pictures/$(date)"
@@ -194,6 +195,10 @@ bar {
 		urgent_workspace   $green       $green      $black
 	}
 }
+
+# picom
+exec picom
+
 # Keyboard indicator: https://github.com/christophgysin/pasystray
 exec gxkb
 
@@ -202,6 +207,12 @@ exec nm-applet
 
 # Bluetooth: https://github.com/blueman-project/blueman
 exec blueman-applet
+
+# albert
+exec albert
+
+# redshift
+exec redshift-gtk
 
 # PulseAudio Tray
 exec pasystray
