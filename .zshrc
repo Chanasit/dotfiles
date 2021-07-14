@@ -1,3 +1,8 @@
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 ##############################################################
 # => Start Xorg Server
 ##############################################################
@@ -6,32 +11,11 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 
 ##############################################################
-# => ZSH Plugins
+# => Source Zprezto Config
 ##############################################################
-ZSH="$HOME/.oh-my-zsh"
-UPDATE_ZSH_DAYS=13
-ZSH_CUSTOM=$ZSH/custom
-ZSH_THEME="cypher"
-CASE_SENSITIVE="true"
-HYPHEN_INSENSITIVE="true"
-DISABLE_AUTO_UPDATE="true"
-DISABLE_LS_COLORS="true"
-DISABLE_AUTO_TITLE="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# ZSH Plugins
-plugins=(
-  docker
-  kubectl
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  zsh-vi-mode
-  zsh-kubectl-prompt
-)
-
-RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
-
-source $ZSH/oh-my-zsh.sh
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
 ##############################################################
 # => Export Global Environments Variable
@@ -86,14 +70,15 @@ export KUBECONFIG=$HOME/.kube/config
 
 # FZF config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
 
 # NNN file manager
+BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 export NNN_COLORS='#0a1b2c3d'
 export NNN_PLUG='t:preview-tui;i:img-preview;v:treeview'
 export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
-export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
 
 ##############################################################
 # => Alias Bash Script
@@ -116,4 +101,4 @@ alias tf="terraform"
 alias gs='git status'
 alias g3='git log --graph --decorate --oneline'
 alias gf='git fetch --all'
-alias gd='git diff'
+alias l='nnn -deH'

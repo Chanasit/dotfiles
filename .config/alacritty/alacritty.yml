@@ -27,6 +27,7 @@ mouse:
   hide_when_typing: true
   hints:
     modifiers: Shift
+background_opacity: 0.95
 selection:
   save_to_clipboard: true
 font:
