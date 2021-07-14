@@ -16,7 +16,7 @@ set $red                      #aa0e50
 set $green                    #1dcc9f
 
 # theme colors
-set $bg-color 	              #27c282
+set $bg-color 	              #555555
 set $inactive-bg-color        #f9f9f9
 set $text-color               #313131
 set $inactive-text-color      #313131
@@ -52,7 +52,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp   exec --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
-bindsym Mod1+Shift+i          exec --no-startup-id "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force suspend;"
+bindsym Mod1+Shift+i          exec --no-startup-id "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 0.6; xset dpms force suspend;"
 
 # start a terminal
 bindsym Mod1+Return           exec alacritty
@@ -103,6 +103,9 @@ bindsym Mod1+Shift+Right      move right
 
 # enter fullscreen mode for the focused container
 bindsym Mod1+Shift+f          fullscreen toggle
+
+# pop container
+bindsym Mod1+Shift+p          floating toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym Mod1+Shift+x          layout toggle tabbed splitv split
@@ -197,7 +200,7 @@ bar {
 }
 
 # picom
-exec picom
+exec picom -CG
 
 # Keyboard indicator: https://github.com/christophgysin/pasystray
 exec gxkb
@@ -221,7 +224,7 @@ exec pasystray
 exec dunst
 
 # autolock https://linux.die.net/man/1/xautolock
-exec xautolock -detectsleep -time 10 -notify 15 -notifier "dunstify -t 600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force off;"
+exec xautolock -detectsleep -time 15 -notify 15 -notifier "dunstify -t 600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 0.6; systemctl suspend;"
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
