@@ -69,6 +69,7 @@ export DOCKER_BUILDKIT=1
 export PATH=~/.nvm/versions/node/v16.5.0/bin:$PATH
 export NVM_DIR=~/.nvm
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
+# source /usr/share/nvm/init-nvm.sh
 
 # KUBE config
 export KUBECONFIG=$HOME/.kube/config
@@ -106,4 +107,5 @@ alias tf="terraform"
 alias gs='git status'
 alias g3='git log --graph --decorate --oneline'
 alias gf='git fetch --all'
+alias gd='git diff'
 alias n='nnn -deH'
