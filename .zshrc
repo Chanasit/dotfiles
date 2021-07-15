@@ -65,6 +65,11 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export COMPOSE_DOCKER_CLI_BUILD=1
 export DOCKER_BUILDKIT=1
 
+# NVM Home
+export PATH=~/.nvm/versions/node/v16.5.0/bin:$PATH
+export NVM_DIR=~/.nvm
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
+
 # KUBE config
 export KUBECONFIG=$HOME/.kube/config
 
