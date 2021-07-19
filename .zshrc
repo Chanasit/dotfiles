@@ -1,8 +1,4 @@
 # Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 ##############################################################
 # => Start Xorg Server
 ##############################################################
@@ -11,7 +7,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 
 ##############################################################
-# => Source Zprezto Config
+# => Source ZPREZTO Config
 ##############################################################
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -87,7 +83,7 @@ export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
 
 ##############################################################
-# => Alias Bash Script
+# => Alias ZSH Script
 ##############################################################
 alias rg='rg --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
 alias pbcopy='xclip -selection clipboard'
