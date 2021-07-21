@@ -105,10 +105,10 @@ hi FloatermBorder guibg=#f1f1f1 guifg=#414141
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.8
-let g:floaterm_height = 0.6
+let g:floaterm_height = 0.8
 let g:floaterm_wintype = "float"
 
-nnoremap <silent> <leader>d :FloatermNew nnn<cr>
+nnoremap <silent> <leader>d :FloatermNew nnn -deH<cr>
 nnoremap <silent> <leader>r :FloatermNew rg -g "!{.git,node_modules,vendor}/*" 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew gitui<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>

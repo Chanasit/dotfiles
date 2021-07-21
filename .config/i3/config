@@ -40,6 +40,8 @@ client.background             $bg-color
 for_window [class=".*"]       border pixel 1
 for_window [class="albert"]   border pixel 0
 font                          pango:JetBrains Mono Nerd Font Mono 0
+gaps inner 2
+gaps outer 2
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume  exec    --no-startup-id "pamixer -i 5 && dunstify -t 600 $(pamixer --get-volume-human)"
@@ -48,8 +50,8 @@ bindsym XF86AudioMute         exec    --no-startup-id "pamixer --toggle-mute && 
 bindsym XF86AudioMicMute      exec    --no-startup-id "pamixer --default-source --toggle-mute && if pamixer --default-source --get-mute; then dunstify -t 600 'muted'; else dunstify -t 600 'unmuted'; fi"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
-bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
+bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 2"
+bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 2"
 
 # i3lcok screen https://github.com/i3/i3lock
 bindsym Mod1+Shift+i          exec    --no-startup-id "xkb-switch -s us; i3lock -e -f -i $wallpaper;"
@@ -151,7 +153,7 @@ bindsym Mod1+Shift+0 move container to workspace number $tag10
 mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
   bindsym r exec --no-startup-id systemctl reboot
   bindsym s exec --no-startup-id systemctl suspend; mode "default"
-  bindsym l exit
+  bindsym l exit;
   bindsym p exec --no-startup-id systemctl poweroff
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -215,7 +217,7 @@ exec blueman-applet
 exec albert
 
 # redshift
-exec redshift-gtk
+# exec redshift-gtk
 
 # PulseAudio Tray
 exec pasystray
@@ -223,8 +225,11 @@ exec pasystray
 # Dunst notify https://github.com/dunst-project/dunst
 exec dunst
 
+# Autoload first detected profile
+exec_always autorandr -c
+
 # autolock https://linux.die.net/man/1/xautolock
-exec xautolock -detectsleep -time 15 -notify 15 -notifier "dunstify -t 600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper;"
+exec xautolock -detectsleep -time 5 -notify 15 -notifier "dunstify -t 600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper;"
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper

@@ -105,4 +105,5 @@ alias g3='git log --graph --decorate --oneline'
 alias gf='git fetch --all'
 alias gd='git diff'
 alias n='nnn -deH'
+alias l="ls -lah"
 alias code="code-insiders"
