@@ -114,6 +114,11 @@ nnoremap <silent> <leader>g :FloatermNew gitui<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NERDTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent><leader>n :NERDTreeFocus<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Bracey
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>h :Bracey<cr>
@@ -133,7 +138,7 @@ let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "google_light"
+let g:airline_theme = "lucius"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 1

@@ -4,20 +4,20 @@
 # TOKYO SKYLINE THEME
 # set color variables
 # optional theme colorscheme
-set $grey                     #f9f9f9
+set $grey                     #FFFFFF
 set $valencia                 #e64a19
 set $magenta                  #a673a6
 set $blue                     #7182A8
 set $cyan                     #6da3a1
-set $black                    #555555
-set $white                    #f9f9f9
+set $black                    #696969
+set $white                    #FFFFFF
 set $yellow                   #27c282
 set $red                      #aa0e50
 set $green                    #1dcc9f
 
 # theme colors
-set $bg-color 	              #555555
-set $inactive-bg-color        #f9f9f9
+set $bg-color 	              #696969
+set $inactive-bg-color        #FFFFFF
 set $text-color               #313131
 set $inactive-text-color      #313131
 set $urgent-bg-color          #27c282
@@ -39,15 +39,15 @@ client.background             $bg-color
 
 for_window [class=".*"]       border pixel 1
 for_window [class="albert"]   border pixel 0
-font                          pango:JetBrains Mono Nerd Font Mono 0
-gaps inner 2
-gaps outer 2
+font                          pango:SF Pro 0
+gaps inner 3
+gaps outer 3
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume  exec    --no-startup-id "pamixer -i 5 && dunstify -t 600 $(pamixer --get-volume-human)"
-bindsym XF86AudioLowerVolume  exec    --no-startup-id "pamixer -d 5 && dunstify -t 600 $(pamixer --get-volume-human)"
-bindsym XF86AudioMute         exec    --no-startup-id "pamixer --toggle-mute && dunstify -t 600 $(pamixer --get-volume-human)"
-bindsym XF86AudioMicMute      exec    --no-startup-id "pamixer --default-source --toggle-mute && if pamixer --default-source --get-mute; then dunstify -t 600 'muted'; else dunstify -t 600 'unmuted'; fi"
+bindsym XF86AudioRaiseVolume  exec    --no-startup-id pamixer -i 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
+bindsym XF86AudioLowerVolume  exec    --no-startup-id pamixer -d 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
+bindsym XF86AudioMute         exec    --no-startup-id pamixer --toggle-mute && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
+bindsym XF86AudioMicMute      exec    --no-startup-id "pamixer --default-source --toggle-mute && if pamixer --default-source --get-mute; then dunstify -r 7777 -t 600 'mic muted'; else dunstify -r 7777 -t 600 'mic unmuted'; fi"
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 2"
@@ -76,8 +76,8 @@ bindsym Print                 exec --no-startup-id maim "$HOME/Pictures/$(date)"
 bindsym Shift+Print           exec --no-startup-id maim --select "$HOME/Pictures/$(date)"
 
 ## Clipboard Screenshots https://github.com/naelstrof/maim
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print            exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print      exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # change focus
 bindsym Mod1+$left            focus left
@@ -187,7 +187,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:JetBrains Mono Nerd Font Mono 10
+  font pango:SF Pro 10
   status_command i3status -c $HOME/.config/i3/i3status.conf
 	colors {
 		# whole color settings
@@ -213,6 +213,12 @@ exec nm-applet
 # Bluetooth: https://github.com/blueman-project/blueman
 exec blueman-applet
 
+# cbatticon
+exec cbatticon
+
+# emote
+exec emote
+
 # albert
 exec albert
 
@@ -229,7 +235,7 @@ exec dunst
 exec_always autorandr -c
 
 # autolock https://linux.die.net/man/1/xautolock
-exec xautolock -detectsleep -time 5 -notify 15 -notifier "dunstify -t 600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper;"
+exec xautolock -detectsleep -time 3 -notify 15 -notifier "dunstify -t 1600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force off;"
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
