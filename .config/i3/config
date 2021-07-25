@@ -9,14 +9,14 @@ set $valencia                 #e64a19
 set $magenta                  #a673a6
 set $blue                     #7182A8
 set $cyan                     #6da3a1
-set $black                    #696969
+set $black                    #545454
 set $white                    #FFFFFF
 set $yellow                   #27c282
 set $red                      #aa0e50
 set $green                    #1dcc9f
 
 # theme colors
-set $bg-color 	              #696969
+set $bg-color 	              #545454
 set $inactive-bg-color        #FFFFFF
 set $text-color               #313131
 set $inactive-text-color      #313131
