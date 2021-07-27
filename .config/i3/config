@@ -213,9 +213,6 @@ exec nm-applet
 # Bluetooth: https://github.com/blueman-project/blueman
 exec blueman-applet
 
-# cbatticon
-exec cbatticon
-
 # emote
 exec emote
 

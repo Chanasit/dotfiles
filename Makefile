@@ -10,6 +10,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/nvim/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
 	ln -vsfn ${PWD}/.editorconfig ${HOME}/.editorconfig
 	ln -vsfn ${PWD}/.vimrc ${HOME}/.vimrc
+	ln -vsfn ${PWD}/.gitconfig ${HOME}/.gitconfig
 	ln -vsfn ${PWD}/.vim/colors ${HOME}/.vim/colors
 	ln -vsfn ${PWD}/.zshrc ${HOME}/.zshrc
 	ln -vsfn ${PWD}/.tmux.conf ${HOME}/.tmux.conf

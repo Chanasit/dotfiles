@@ -10,21 +10,11 @@
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
 [pull]
-	rebase = false
+	rebase = true
+[merge]
+  ff = no
+  commit = no
 [push]
 	default = upstream
 [color]
 	ui = auto
-[alias]
-	t = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
-	cb = !git branch | grep ^* | cut -d' ' -f2
-	ci = commit
-	cie = commit --allow-empty-message -m ''
-	cp = cherry-pick
-	br = branch
-	co = checkout
-	df = diff -C --color-words
-	pl = !git pull --rebase origin $(git cb)
-	ps = !git push origin $(git cb)
-	who = shortlog -s --
-	info = !sh -c 'git-info' -    # requires https://github.com/gitbits/git-info
