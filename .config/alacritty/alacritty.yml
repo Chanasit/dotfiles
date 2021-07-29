@@ -15,14 +15,14 @@ colors:
     cyan: "#6f42c1"
     white: "#f9f9f9"
   bright:
-    black: "#000000"
+    black: "#555555"
     red: "#d73a49"
     green: "#3ebc5c"
     yellow: "#f18338"
     blue: "#005cc5"
     magenta: "#6f42c1"
     cyan: "#6f42c1"
-    white: "#f9f9f9"
+    white: "#ffffff"
 mouse:
   hide_when_typing: true
   hints:
