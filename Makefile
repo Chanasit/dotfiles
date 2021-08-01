@@ -19,6 +19,8 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
 	ln -vsfn ${PWD}/.curlrc ${HOME}/.curlrc
 	ln -vsfn ${PWD}/.xinitrc ${HOME}/.xinitrc
+	ln -vsfn ${PWD}/.config/gxkb/gxkb.cfg ${HOME}/.config/gxkb/gxkb.cfg
+	ln -vsfn ${PWD}/.config/gtk-3.0/settings.ini ${HOME}/.config/gtk-3.0/settings.ini
 	ln -vsfn ${PWD}/.gtkrc-2.0 ${HOME}/.gtkrc-2.0
 
 help:
