@@ -38,9 +38,7 @@ client.urgent                 $urgent-bg-color    $urgent-bg-color   $text-color
 client.background             $bg-color
 
 for_window [class=".*"]       border pixel 1
-font                          pango:SF Pro 0
-gaps inner 2
-gaps outer 2
+font                          pango:SF Pro Display 0
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume  exec    --no-startup-id pamixer -i 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
@@ -188,9 +186,9 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:SF Pro 10
+  font pango:SF Pro Display 8
   status_command i3status -c $HOME/.config/i3/i3status.conf
-	colors {
+  colors {
 		# whole color settings
 		background   $black
 		statusline   $white

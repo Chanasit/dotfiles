@@ -15,6 +15,7 @@
   "tsserver.log": "verbose",
   "tsserver.maxTsServerMemory": 8000,
   "tsserver.disableAutomaticTypeAcquisition": true,
+  "angular.experimental-ivy": true,
   "languageserver": {
     "go": {
       "command": "gopls",

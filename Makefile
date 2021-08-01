@@ -19,6 +19,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
 	ln -vsfn ${PWD}/.curlrc ${HOME}/.curlrc
 	ln -vsfn ${PWD}/.xinitrc ${HOME}/.xinitrc
+	ln -vsfn ${PWD}/.gtkrc-2.0 ${HOME}/.gtkrc-2.0
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
