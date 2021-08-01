@@ -30,7 +30,7 @@ endif
 
 let colors_name = "github"
 
-let s:is_dark=(&background == 'light')
+let s:is_dark=(&background == 'dark')
 
 " Helper functions {{{
 " from vim-gotham
@@ -117,7 +117,7 @@ let s:lib.eaeff4     = { 'gui': '#eaeff4', 'cterm': 255 }
 let s:lib.f1f2f3     = { 'gui': '#f1f2f4', 'cterm': 255 }
 let s:lib.f6f8fa     = { 'gui': '#f6f8fa', 'cterm': 255 } " github inline code block bg
 let s:lib.fafbfc     = { 'gui': '#fafbfc', 'cterm': 255 } " github generic light
-let s:lib.white      = { 'gui': '#ffffff', 'cterm': 231 }
+let s:lib.white      = { 'gui': '#fefefe', 'cterm': 231 }
 let s:lib.base0      = { 'gui': '#24292e', 'cterm': 235 } " github text fg
 let s:lib.base05     = { 'gui': '#2b3137', 'cterm': 238 } " lightened from 0
 let s:lib.base05     = { 'gui': '#2d343a', 'cterm': 238 } " lightened from 0
@@ -126,7 +126,7 @@ let s:lib.base2      = { 'gui': '#6a737d', 'cterm': 243 } " github comment
 let s:lib.base3      = s:lib.numDarkest
 
 let s:lib.darktext     = [
-      \{ 'gui': '#fafbfc', 'cterm': 255 },
+      \{ 'gui': '#fefefe', 'cterm': 255 },
       \{ 'gui': '#d2d4d6', 'cterm': 254 },
       \{ 'gui': '#abaeb1', 'cterm': 251 },
       \{ 'gui': '#868a8e', 'cterm': 251 },
