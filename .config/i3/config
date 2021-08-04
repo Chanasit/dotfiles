@@ -38,7 +38,7 @@ client.urgent                 $urgent-bg-color    $urgent-bg-color   $text-color
 client.background             $bg-color
 
 for_window [class=".*"]       border pixel 1
-font                          pango:SF Pro Display 0
+font                          pango:Tahoma 0
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume  exec    --no-startup-id pamixer -i 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
@@ -53,7 +53,7 @@ bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 2"
 # i3lcok screen https://github.com/i3/i3lock
 bindsym Mod1+Shift+i          exec    --no-startup-id "xkb-switch -s us; i3lock -e -f -i $wallpaper;"
 
-bindsym Mod1+Shift+d          exec dmenu_run -fn 'SF Pro Display-10'
+bindsym Mod1+Shift+d          exec dmenu_run -fn 'Tahoma-12'
 
 # start a terminal
 bindsym Mod1+Return           exec alacritty
@@ -113,16 +113,16 @@ bindsym Mod1+Shift+x          layout toggle tabbed splitv split
 
 # We use variables to avoid repeating the names in multiple places.
 # name the workspaces (icons require fontawesome)
-set $tag1                     "1  "
-set $tag2                     "2  "
-set $tag3                     "3  "
-set $tag4                     "4  "
-set $tag5                     "5 辶"
+set $tag1                     "1"
+set $tag2                     "2"
+set $tag3                     "3"
+set $tag4                     "4"
+set $tag5                     "5"
 set $tag6                     "6"
 set $tag7                     "7"
 set $tag8                     "8"
 set $tag9                     "9"
-set $tag10                    "10  "
+set $tag10                    "10"
 
 # switch to workspace
 bindsym Mod1+1 workspace number $tag1
@@ -186,7 +186,7 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:SF Pro Display 10
+  font pango:Tahoma 10
   status_command i3status -c $HOME/.config/i3/i3status.conf
   colors {
 		# whole color settings
@@ -232,6 +232,12 @@ exec xautolock -detectsleep -time 15 -notify 15 -notifier "dunstify -t 1600 'Scr
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
+
+exec xbacklight -set 30
+
+#turn off the display after 5 minutes of idling:
+exec xset +dpms
+exec xset dpms 0 0 300
 
 ## Configure key repeat rate
 exec xset r rate 250 40

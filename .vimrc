@@ -153,7 +153,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COC VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-highlight', 'coc-go', 'coc-prettier', 'coc-emmet', 'coc-python', 'coc-angular']
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-highlight', 'coc-go', 'coc-prettier', 'coc-emmet', 'coc-python']
 inoremap <silent><expr> <Tab> coc#refresh()
 
 function! s:check_back_space() abort

@@ -107,3 +107,4 @@ alias gd='git diff'
 alias n='nnn -deH'
 alias l="ls -lah"
 alias code="code-insiders"
+alias x='startx'
