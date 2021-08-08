@@ -10,7 +10,7 @@
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
 [pull]
-	rebase = false
+	rebase = true
 [merge]
   ff = no
   commit = no

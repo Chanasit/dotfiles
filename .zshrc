@@ -104,6 +104,7 @@ alias gs='git status'
 alias g3='git log --graph --decorate --oneline'
 alias gf='git fetch --all'
 alias gd='git diff'
+alias gb='git branch'
 alias n='nnn -deH'
 alias l="ls -lah"
 alias code="code-insiders"
