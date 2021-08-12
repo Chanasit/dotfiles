@@ -200,9 +200,6 @@ bar {
 	}
 }
 
-# picom
-# exec picom -CG
-
 # Keyboard indicator: https://github.com/christophgysin/pasystray
 exec gxkb
 
@@ -231,9 +228,9 @@ exec xsuspender
 exec xautolock -detectsleep -time 15 -notify 15 -notifier "dunstify -t 1600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force off;"
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
-exec_always feh --bg-scale $wallpaper $wallpaper
+exec feh --bg-scale $wallpaper $wallpaper
 
-exec xbacklight -set 30
+exec xbacklight -set 10
 
 #turn off the display after 5 minutes of idling:
 exec xset +dpms

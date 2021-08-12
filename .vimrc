@@ -63,9 +63,6 @@ set cmdheight=1
 set pumheight=8
 set completeopt=menuone,noinsert,noselect
 
-" clipboard
-set clipboard^=unnamed,unnamedplus
-
 " last line history
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -85,6 +82,9 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
+
+" Clipboard
+set clipboard+=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Indent Line
