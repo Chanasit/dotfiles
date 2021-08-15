@@ -4,22 +4,22 @@
 # TOKYO SKYLINE THEME
 # set color variables
 # optional theme colorscheme
-set $grey                     #FFFFFF
+set $grey                     #e3e3e3
 set $valencia                 #e64a19
 set $magenta                  #a673a6
 set $blue                     #7182A8
 set $cyan                     #6da3a1
-set $black                    #545454
-set $white                    #FFFFFF
+set $black                    #535353
+set $white                    #fefefe
 set $yellow                   #27c282
 set $red                      #aa0e50
 set $green                    #1dcc9f
 
 # theme colors
-set $bg-color 	              #545454
-set $inactive-bg-color        #FFFFFF
-set $text-color               #313131
-set $inactive-text-color      #313131
+set $bg-color 	              #a3a3a3
+set $inactive-bg-color        #fefefe
+set $text-color               #555555
+set $inactive-text-color      #777777
 set $urgent-bg-color          #27c282
 set $wallpaper                $HOME/Wallpapers/default.png
 
@@ -38,7 +38,8 @@ client.urgent                 $urgent-bg-color    $urgent-bg-color   $text-color
 client.background             $bg-color
 
 for_window [class=".*"]       border pixel 1
-font                          pango:Tahoma 0
+for_window [class="albert"]   border pixel 0
+# font                          pango:Tahoma 0
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume  exec    --no-startup-id pamixer -i 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
@@ -47,16 +48,16 @@ bindsym XF86AudioMute         exec    --no-startup-id pamixer --toggle-mute && d
 bindsym XF86AudioMicMute      exec    --no-startup-id "pamixer --default-source --toggle-mute && if pamixer --default-source --get-mute; then dunstify -r 7777 -t 600 'mic muted'; else dunstify -r 7777 -t 600 'mic unmuted'; fi"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 2"
-bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 2"
+bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
+bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
 bindsym Mod1+Shift+i          exec    --no-startup-id "xkb-switch -s us; i3lock -e -f -i $wallpaper;"
 
-bindsym Mod1+Shift+d          exec dmenu_run -fn 'Tahoma-12'
+# bindsym Mod1+Shift+d          exec    dmenu_run -fn 'Tahoma-12'
 
 # start a terminal
-bindsym Mod1+Return           exec alacritty
+bindsym Mod1+Return           exec    alacritty
 
 # kill focused window
 bindsym Mod1+Shift+q          kill
@@ -66,9 +67,6 @@ bindsym Mod1+Shift+c          reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod1+Shift+r          restart
-
-# i3 dmenu
-# bindsym Mod1+Shift+d          exec --no-startup-id dmenu_run -i -nb '$white' -nf '$blue' -sb '$blue'
 
 # Screenshots https://github.com/naelstrof/maim
 bindsym Print                 exec --no-startup-id maim "$HOME/Pictures/$(date)"
@@ -186,22 +184,28 @@ bindsym Mod1+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:Tahoma 10
+  font pango:Tahoma Bold 8
   status_command i3status -c $HOME/.config/i3/i3status.conf
   colors {
 		# whole color settings
-		background   $black
-		statusline   $white
+		background   $white
+		statusline   $black
 		# type             border       backgr.     font
-		focused_workspace  $white       $white      $black
-		active_workspace   $black       $white      $black
-		inactive_workspace $black       $black      $white
-		urgent_workspace   $green       $green      $black
+		focused_workspace  $black       $black      $white
+		active_workspace   $white       $black      $white
+		inactive_workspace $white       $white      $black
+		urgent_workspace   $green       $green      $white
 	}
 }
 
+# X11 Compositor: https://github.com/yshui/picom
+exec picom
+
 # Keyboard indicator: https://github.com/christophgysin/pasystray
 exec gxkb
+
+# Spotlight: https://github.com/albertlauncher/albert
+exec albert
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 exec nm-applet
@@ -218,23 +222,23 @@ exec pasystray
 # Dunst notify https://github.com/dunst-project/dunst
 exec dunst
 
-# Autoload first detected profile
-exec_always autorandr -c
-
-# xsuspender https://kernc.github.io/xsuspender/
-exec xsuspender
-
 # autolock https://linux.die.net/man/1/xautolock
 exec xautolock -detectsleep -time 15 -notify 15 -notifier "dunstify -t 1600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force off;"
-
-# Monitor and Wallpapers https://github.com/l3ib/nitrogen
-exec feh --bg-scale $wallpaper $wallpaper
-
-exec xbacklight -set 10
 
 #turn off the display after 5 minutes of idling:
 exec xset +dpms
 exec xset dpms 0 0 300
 
+# Monitor and Wallpapers https://github.com/l3ib/nitrogen
+exec_always feh --bg-scale $wallpaper $wallpaper
+
+exec_always xbacklight -set 10
+
+# Autoload first detected profile
+exec_always autorandr -c
+
 ## Configure key repeat rate
-exec xset r rate 250 40
+exec_always xset r rate 250 40
+
+# xsuspender https://kernc.github.io/xsuspender/
+exec xsuspender
