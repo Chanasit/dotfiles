@@ -39,7 +39,6 @@ client.background             $bg-color
 
 for_window [class=".*"]       border pixel 1
 for_window [class="albert"]   border pixel 0
-# font                          pango:Tahoma 0
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume  exec    --no-startup-id pamixer -i 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
@@ -52,7 +51,7 @@ bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
-bindsym Mod1+Shift+i          exec    --no-startup-id "betterlockscreen -l dim"
+bindsym Mod1+Shift+i          exec    --no-startup-id "betterlockscreen -l blur"
 
 # bindsym Mod1+Shift+d          exec    dmenu_run -fn 'Tahoma-12'
 
@@ -222,13 +221,11 @@ exec pasystray
 # Dunst notify https://github.com/dunst-project/dunst
 exec dunst
 
-# autolock https://linux.die.net/man/1/xautolock
-# exec xautolock -detectsleep -time 15 -notify 15 -notifier "dunstify -t 1600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force off;"
-exec xidlehook --not-when-audio --not-when-fullscreen --timer 60 "xset dpms force off" "" --timer 300 "betterlockscreen -l pixel" "" --timer 1500 "systemctl suspend" ""
+#https://aur.archlinux.org/packages/autotiling/
+exec_always --no-startup-id autotiling
 
-#turn off the display after 5 minutes of idling:
-# exec xset +dpms
-# exec xset dpms 0 0 300
+# autolock https://linux.die.net/man/1/xautolock
+exec xidlehook --not-when-audio --not-when-fullscreen --timer 60 "xset dpms force off" "" --timer 300 "betterlockscreen -l blur" "" --timer 1500 "systemctl suspend" ""
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
