@@ -52,7 +52,7 @@ bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
-bindsym Mod1+Shift+i          exec    --no-startup-id "xkb-switch -s us; i3lock -e -f -i $wallpaper;"
+bindsym Mod1+Shift+i          exec    --no-startup-id "betterlockscreen -l dim"
 
 # bindsym Mod1+Shift+d          exec    dmenu_run -fn 'Tahoma-12'
 
@@ -223,11 +223,12 @@ exec pasystray
 exec dunst
 
 # autolock https://linux.die.net/man/1/xautolock
-exec xautolock -detectsleep -time 15 -notify 15 -notifier "dunstify -t 1600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force off;"
+# exec xautolock -detectsleep -time 15 -notify 15 -notifier "dunstify -t 1600 'Screen will lock in 15 s'" -locker "xkb-switch -s us; i3lock -e -f -i $wallpaper; sleep 1; xset dpms force off;"
+exec xidlehook --not-when-audio --not-when-fullscreen --timer 60 "xset dpms force off" "" --timer 300 "betterlockscreen -l pixel" "" --timer 1500 "systemctl suspend" ""
 
 #turn off the display after 5 minutes of idling:
-exec xset +dpms
-exec xset dpms 0 0 300
+# exec xset +dpms
+# exec xset dpms 0 0 300
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
