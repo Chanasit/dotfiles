@@ -2,7 +2,7 @@ export OSTYPE = $(shell uname)
 
 config: ## install configuration
 	echo "symlink dotfile config \n"
-	ln -vsfn ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
+	ln -vsfn ${PWD}/.config/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf
 	ln -vsfn ${PWD}/.config/htop/htoprc ${HOME}/.config/htop/htoprc
 	ln -vsfn ${PWD}/.config/i3/config ${HOME}/.config/i3/config
 	ln -vsfn ${PWD}/.config/i3/i3status.conf ${HOME}/.config/i3/i3status.conf

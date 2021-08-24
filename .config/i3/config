@@ -56,7 +56,7 @@ bindsym Mod1+Shift+i          exec    --no-startup-id "betterlockscreen -l dimbl
 # bindsym Mod1+Shift+d          exec    dmenu_run -fn 'Tahoma-12'
 
 # start a terminal
-bindsym Mod1+Return           exec    alacritty
+bindsym Mod1+Return           exec    kitty
 
 # kill focused window
 bindsym Mod1+Shift+q          kill
