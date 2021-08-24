@@ -27,9 +27,11 @@ mouse:
   hide_when_typing: true
   hints:
     modifiers: Shift
-background_opacity: 1
+background_opacity: 0.95
 selection:
-  save_to_clipboard: true
+  save_to_clipboard: false
+cursor:
+  unfocused_hollow: true
 font:
   size: 13
   normal:
