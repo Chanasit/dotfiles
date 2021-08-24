@@ -187,13 +187,13 @@ bar {
   status_command i3status -c $HOME/.config/i3/i3status.conf
   colors {
 		# whole color settings
-		background   $white
-		statusline   $black
+		background   $black
+		statusline   $white
 		# type             border       backgr.     font
-		focused_workspace  $black       $black      $white
-		active_workspace   $white       $black      $white
-		inactive_workspace $white       $white      $black
-		urgent_workspace   $green       $green      $white
+		focused_workspace  $white       $white      $black
+		active_workspace   $black       $white      $black
+		inactive_workspace $black       $black      $white
+		urgent_workspace   $green       $green      $black
 	}
 }
 
