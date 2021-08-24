@@ -55,7 +55,7 @@ set foldlevel=2
 " interface
 set so=8
 set number
-set numberwidth=8
+set numberwidth=3
 set signcolumn=yes
 
 " completion
