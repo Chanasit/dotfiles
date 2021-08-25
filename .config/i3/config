@@ -221,6 +221,9 @@ exec dunst
 #https://aur.archlinux.org/packages/autotiling/
 exec --no-startup-id autotiling
 
+# X11 Compositor: https://github.com/yshui/picom
+exec udiskie
+
 # autolock https://linux.die.net/man/1/xautolock
 exec xidlehook --not-when-audio --not-when-fullscreen --timer 60 "xset dpms force off" "" --timer 300 "betterlockscreen -l blur" "" --timer 1500 "systemctl suspend" ""
 
