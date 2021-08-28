@@ -51,7 +51,7 @@ bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
-bindsym Mod1+Shift+i          exec    --no-startup-id "betterlockscreen -l dimblur"
+bindsym Mod1+Shift+i          exec    --no-startup-id "betterlockscreen -l blur"
 
 # start a terminal
 bindsym Mod1+Return           exec    kitty
