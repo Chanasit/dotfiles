@@ -33,8 +33,8 @@ export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export PATH="$PATH:$HOME/.yarn/bin"
 
 # GO path
-export GOPATH=$HOME/go
-export GOBIN=$HOME/go/bin
+export GOPATH=$HOME/Golang
+export GOBIN=$HOME/Golang/bin
 export GOCACHE=$HOME/.cache
 export GO111MODULE=on
 export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"

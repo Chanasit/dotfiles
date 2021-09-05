@@ -225,7 +225,7 @@ exec --no-startup-id autotiling
 exec udiskie
 
 # autolock https://linux.die.net/man/1/xautolock
-exec xidlehook --not-when-audio --not-when-fullscreen --timer 60 "xset dpms force off" "" --timer 300 "betterlockscreen -l blur" "" --timer 1500 "systemctl suspend" ""
+exec xidlehook --not-when-audio --not-when-fullscreen --timer 60 "xset dpms force off" "" --timer 300 "betterlockscreen -l blur" "" --timer 1500 "systemctl suspend-then-hibernate" ""
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
