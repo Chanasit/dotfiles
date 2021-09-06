@@ -18,6 +18,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -95,13 +96,13 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-set background=light
-colorscheme github
+set background=dark
+colorscheme dracula
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#f1f1f1
-hi FloatermBorder guibg=#f1f1f1 guifg=#414141
+hi Floaterm guibg=#414141
+hi FloatermBorder guibg=#414141 guifg=#f1f1f1
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.8
