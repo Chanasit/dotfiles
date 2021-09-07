@@ -11,11 +11,11 @@ bold_font        auto
 italic_font      auto
 bold_italic_font auto
 
-font_size 8
+font_size 10
 
 #: Font size (in pts)
 
-adjust_line_height 2
+adjust_line_height 1
 adjust_column_width 0
 
 #: Change the size of each character cell kitty renders. You can use
@@ -785,6 +785,6 @@ map ctrl+space send_text all \x10
 
 
 # BEGIN_KITTY_THEME
-# Galaxy
+# Dracula
 include current-theme.conf
 # END_KITTY_THEME
