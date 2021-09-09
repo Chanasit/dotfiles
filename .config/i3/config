@@ -73,7 +73,7 @@ bindsym Shift+Print           exec --no-startup-id maim --select "$HOME/Pictures
 bindsym Ctrl+Print            exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print      exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
-bindsym Mod1+Ctrl+m           exec --no-startup-id QT_SCALE_FACTOR=1.5 emoji-picker
+bindsym Mod1+Ctrl+m           exec --no-startup-id QT_SCALE_FACTOR=1.25 emoji-picker
 
 # change focus
 bindsym Mod1+$left            focus left
@@ -204,7 +204,7 @@ exec picom
 exec gxkb
 
 # Spotlight: https://github.com/albertlauncher/albert
-exec albert
+exec QT_SCALE_FACTOR=1.25 albert
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 exec nm-applet
@@ -219,7 +219,7 @@ exec pasystray
 exec dunst
 
 #https://aur.archlinux.org/packages/autotiling/
-exec --no-startup-id autotiling
+exec_always --no-startup-id autotiling
 
 # X11 Compositor: https://github.com/yshui/picom
 exec udiskie
