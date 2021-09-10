@@ -204,7 +204,7 @@ exec picom
 exec gxkb
 
 # Spotlight: https://github.com/albertlauncher/albert
-exec QT_SCALE_FACTOR=1.25 albert
+exec QT_SCALE_FACTOR=1.1 albert
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 exec nm-applet
@@ -233,7 +233,7 @@ exec_always feh --bg-scale $wallpaper $wallpaper
 exec xbacklight -set 10
 
 # Autoload first detected profile
-exec autorandr -c
+exec xlayoutdisplay
 
 ## Configure key repeat rate
 exec_always xset r rate 250 40

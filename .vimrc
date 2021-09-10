@@ -32,7 +32,7 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 let maplocalleader = ","
-set updatetime=100
+set updatetime=200
 set timeoutlen=1000 ttimeoutlen=50
 set history=10000
 set undofile
@@ -118,7 +118,7 @@ nnoremap <silent> <leader>k :FloatermNew k9s<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent><leader>n :NERDTreeFocus<CR>
+" nnoremap <silent><leader>n :NERDTreeFocus<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Bracey
