@@ -51,12 +51,15 @@ bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
-bindsym Mod1+Shift+i          exec    --no-startup-id "betterlockscreen -l pixel"
+bindsym Mod1+Shift+i          exec    --no-startup-id "betterlockscreen -l blur"
+
+# start a dmenu
+# bindsym Mod1+Shift+d          exec    dmenu_run -fn 'Tahoma-8'
 
 # start a terminal
 bindsym Mod1+Return           exec    kitty
 
-# kill focused window
+
 bindsym Mod1+Shift+q          kill
 
 # reload the configuration file
@@ -219,7 +222,7 @@ exec pasystray
 exec dunst
 
 #https://aur.archlinux.org/packages/autotiling/
-exec_always --no-startup-id autotiling
+exec autotiling
 
 # X11 Compositor: https://github.com/yshui/picom
 exec udiskie
@@ -231,6 +234,8 @@ exec xidlehook --not-when-audio --not-when-fullscreen --timer 60 "xset dpms forc
 exec_always feh --bg-scale $wallpaper $wallpaper
 
 exec xbacklight -set 10
+exec --no-startup-id  pamixer -i 100
+exec --no-startup-id  pamixer --default-source -i 100
 
 # Autoload first detected profile
 exec xlayoutdisplay

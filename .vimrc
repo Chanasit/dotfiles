@@ -6,8 +6,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'christoomey/vim-tmux-navigator'
@@ -138,19 +137,9 @@ let g:VM_maps["Add Cursor Down"]   = '<C-Down>'
 let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Airline
+" => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "github"
-let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
-let g:airline_highlighting_cache = 1
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#tab_min_count = 0
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#tab_nr_type = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:lightline = { 'colorscheme': 'github' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COC VIM
