@@ -785,6 +785,6 @@ map ctrl+space send_text all \x10
 
 
 # BEGIN_KITTY_THEME
-# Clrs
+# Dracula
 include current-theme.conf
 # END_KITTY_THEME

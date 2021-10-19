@@ -53,14 +53,14 @@ set nofoldenable
 set foldlevel=2
 
 " interface
-set so=8
+set so=13
 set number
-set numberwidth=8
+set numberwidth=13
 set signcolumn=yes
 
 " completion
 set cmdheight=1
-set pumheight=8
+set pumheight=13
 set completeopt=menuone,noinsert,noselect
 
 " last line history
