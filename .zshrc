@@ -76,6 +76,11 @@ export NNN_PLUG='p:preview-tui'
 export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
 
+# Network Proxy
+# export HTTP_PROXY=
+# export HTTPS_PROXY=
+export NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
+
 ##############################################################
 # => Alias ZSH Script
 ##############################################################

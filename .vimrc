@@ -6,7 +6,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'christoomey/vim-tmux-navigator'
@@ -21,10 +22,10 @@ Plug 'cormacrelf/vim-colors-github'
 call plug#end()
 
 " Automatically install missing plugins on startup
-" autocmd VimEnter *
-"   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-"   \|   PlugInstall --sync | q
-"   \| endif
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -137,7 +138,7 @@ let g:VM_maps["Add Cursor Down"]   = '<C-Down>'
 let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => lightline
+" => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = { 'colorscheme': 'github' }
 

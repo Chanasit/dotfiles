@@ -51,22 +51,22 @@ bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
-bindsym Mod1+Shift+i          exec    --no-startup-id "betterlockscreen -l blur"
+bindsym Mod4+Shift+i          exec    --no-startup-id "betterlockscreen -l blur"
 
 # start a dmenu
-# bindsym Mod1+Shift+d          exec    dmenu_run -fn 'Tahoma-8'
+# bindsym Mod4+Shift+d          exec    dmenu_run -fn 'Tahoma-8'
 
 # start a terminal
-bindsym Mod1+Return           exec    kitty
+bindsym Mod4+Return           exec    kitty
 
 
-bindsym Mod1+Shift+q          kill
+bindsym Mod4+Shift+q          kill
 
 # reload the configuration file
-bindsym Mod1+Shift+c          reload
+bindsym Mod4+Shift+c          reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod1+Shift+r          restart
+bindsym Mod4+Shift+r          restart
 
 # Screenshots https://github.com/naelstrof/maim
 bindsym Print                 exec --no-startup-id maim "$HOME/Pictures/$(date)"
@@ -76,40 +76,40 @@ bindsym Shift+Print           exec --no-startup-id maim --select "$HOME/Pictures
 bindsym Ctrl+Print            exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print      exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
-bindsym Mod1+Ctrl+m           exec --no-startup-id QT_SCALE_FACTOR=1.25 emoji-picker
+bindsym Mod4+Ctrl+m           exec --no-startup-id QT_SCALE_FACTOR=1.25 emoji-picker
 
 # change focus
-bindsym Mod1+$left            focus left
-bindsym Mod1+$down            focus down
-bindsym Mod1+$up              focus up
-bindsym Mod1+$right           focus right
+bindsym Mod4+$left            focus left
+bindsym Mod4+$down            focus down
+bindsym Mod4+$up              focus up
+bindsym Mod4+$right           focus right
 
 # alternatively, you can use the cursor keys:
-bindsym Mod1+Left             focus left
-bindsym Mod1+Down             focus down
-bindsym Mod1+Up               focus up
-bindsym Mod1+Right            focus right
+bindsym Mod4+Left             focus left
+bindsym Mod4+Down             focus down
+bindsym Mod4+Up               focus up
+bindsym Mod4+Right            focus right
 
 # move focused window
-bindsym Mod1+Shift+$left      move left
-bindsym Mod1+Shift+$down      move down
-bindsym Mod1+Shift+$up        move up
-bindsym Mod1+Shift+$right     move right
+bindsym Mod4+Shift+$left      move left
+bindsym Mod4+Shift+$down      move down
+bindsym Mod4+Shift+$up        move up
+bindsym Mod4+Shift+$right     move right
 
 # alternatively, you can use the cursor keys:
-bindsym Mod1+Shift+Left       move left
-bindsym Mod1+Shift+Down       move down
-bindsym Mod1+Shift+Up         move up
-bindsym Mod1+Shift+Right      move right
+bindsym Mod4+Shift+Left       move left
+bindsym Mod4+Shift+Down       move down
+bindsym Mod4+Shift+Up         move up
+bindsym Mod4+Shift+Right      move right
 
 # enter fullscreen mode for the focused container
-bindsym Mod1+Shift+f          fullscreen toggle
+bindsym Mod4+Shift+f          fullscreen toggle
 
 # pop container
-bindsym Mod1+Shift+p          floating toggle
+bindsym Mod4+Shift+p          floating toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+Shift+x          layout toggle tabbed splitv split
+bindsym Mod4+Shift+x          layout toggle tabbed splitv split
 
 # We use variables to avoid repeating the names in multiple places.
 # name the workspaces (icons require fontawesome)
@@ -125,28 +125,28 @@ set $tag9                     "9"
 set $tag10                    "10"
 
 # switch to workspace
-bindsym Mod1+1 workspace number $tag1
-bindsym Mod1+2 workspace number $tag2
-bindsym Mod1+3 workspace number $tag3
-bindsym Mod1+4 workspace number $tag4
-bindsym Mod1+5 workspace number $tag5
-bindsym Mod1+6 workspace number $tag6
-bindsym Mod1+7 workspace number $tag7
-bindsym Mod1+8 workspace number $tag8
-bindsym Mod1+9 workspace number $tag9
-bindsym Mod1+0 workspace number $tag10
+bindsym Mod4+1 workspace number $tag1
+bindsym Mod4+2 workspace number $tag2
+bindsym Mod4+3 workspace number $tag3
+bindsym Mod4+4 workspace number $tag4
+bindsym Mod4+5 workspace number $tag5
+bindsym Mod4+6 workspace number $tag6
+bindsym Mod4+7 workspace number $tag7
+bindsym Mod4+8 workspace number $tag8
+bindsym Mod4+9 workspace number $tag9
+bindsym Mod4+0 workspace number $tag10
 
 # move focused container to workspace
-bindsym Mod1+Shift+1 move container to workspace number $tag1
-bindsym Mod1+Shift+2 move container to workspace number $tag2
-bindsym Mod1+Shift+3 move container to workspace number $tag3
-bindsym Mod1+Shift+4 move container to workspace number $tag4
-bindsym Mod1+Shift+5 move container to workspace number $tag5
-bindsym Mod1+Shift+6 move container to workspace number $tag6
-bindsym Mod1+Shift+7 move container to workspace number $tag7
-bindsym Mod1+Shift+8 move container to workspace number $tag8
-bindsym Mod1+Shift+9 move container to workspace number $tag9
-bindsym Mod1+Shift+0 move container to workspace number $tag10
+bindsym Mod4+Shift+1 move container to workspace number $tag1
+bindsym Mod4+Shift+2 move container to workspace number $tag2
+bindsym Mod4+Shift+3 move container to workspace number $tag3
+bindsym Mod4+Shift+4 move container to workspace number $tag4
+bindsym Mod4+Shift+5 move container to workspace number $tag5
+bindsym Mod4+Shift+6 move container to workspace number $tag6
+bindsym Mod4+Shift+7 move container to workspace number $tag7
+bindsym Mod4+Shift+8 move container to workspace number $tag8
+bindsym Mod4+Shift+9 move container to workspace number $tag9
+bindsym Mod4+Shift+0 move container to workspace number $tag10
 
 # Create Log out, Reboot, Poweroff bindings
 mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
@@ -157,7 +157,7 @@ mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-bindsym Mod1+Shift+e mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
+bindsym Mod4+Shift+e mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
 
 
 # resize window (you can also use the mouse for that)
@@ -174,13 +174,13 @@ mode "resize" {
   bindsym Up            resize shrink height 12 px or 12 ppt
   bindsym Left          resize grow width 12 px or 12 ppt
 
-  # back to normal: Enter or Escape or Mod1+r
+  # back to normal: Enter or Escape or Mod4+r
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym Mod1+r mode "default"
+  bindsym Mod4+r mode "default"
 }
 
-bindsym Mod1+r mode "resize"
+bindsym Mod4+r mode "resize"
 
 # Start i3bar to display a workspace bar
 bar {
