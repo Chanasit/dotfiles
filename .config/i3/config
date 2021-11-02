@@ -76,7 +76,7 @@ bindsym Shift+Print           exec --no-startup-id maim --select "$HOME/Pictures
 bindsym Ctrl+Print            exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print      exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
-bindsym Mod4+Ctrl+m           exec --no-startup-id QT_SCALE_FACTOR=1.25 emoji-picker
+bindsym Mod4+Shift+m          exec --no-startup-id QT_SCALE_FACTOR=1.25 emoji-picker
 
 # change focus
 bindsym Mod4+$left            focus left
