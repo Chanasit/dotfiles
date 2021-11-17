@@ -203,9 +203,6 @@ bar {
 # X11 Compositor: https://github.com/yshui/picom
 exec picom
 
-# Keyboard indicator: https://github.com/christophgysin/pasystray
-exec gxkb
-
 # Spotlight: https://github.com/albertlauncher/albert
 exec QT_SCALE_FACTOR=1.1 albert
 
@@ -220,9 +217,6 @@ exec pasystray
 
 # Dunst notify https://github.com/dunst-project/dunst
 exec dunst
-
-#https://aur.archlinux.org/packages/autotiling/
-exec autotiling
 
 # X11 Compositor: https://github.com/yshui/picom
 exec udiskie
@@ -242,6 +236,9 @@ exec_always xlayoutdisplay
 
 ## Configure key repeat rate
 exec_always xset r rate 250 40
+
+# Adjust blue light filter
+exec redshift -P -O 5500
 
 # xsuspender https://kernc.github.io/xsuspender/
 exec xsuspender

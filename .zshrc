@@ -79,7 +79,7 @@ export NNN_FIFO='/tmp/nnn.fifo'
 # Network Proxy
 # export HTTP_PROXY=
 # export HTTPS_PROXY=
-export NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
+# export NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
 
 ##############################################################
 # => Alias ZSH Script
@@ -88,7 +88,7 @@ alias rg='rg --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2>
 alias cat='bat --paging=never'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-alias tmux="tmux new -s $USERNAME || tmux attach -t $USERNAME "
+alias t="tmux new -s $USERNAME || tmux attach -t $USERNAME "
 alias vim="nvim"
 alias vi="nvim"
 alias ping='ping -c 5'
