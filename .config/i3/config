@@ -231,6 +231,9 @@ exec xbacklight -set 10
 exec --no-startup-id  pamixer -i 100
 exec --no-startup-id  pamixer --default-source -i 100
 
+# autotiling i3
+exec_always autotiling
+
 # Autoload first detected profile
 exec_always xlayoutdisplay
 
