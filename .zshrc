@@ -16,8 +16,8 @@ fi
 ##############################################################
 # => Export Global Environments Variable
 ##############################################################
-export VISUAL='nvim'
-export EDITOR='nvim'
+export VISUAL='lvim'
+export EDITOR='lvim'
 export ARCHFLAGS="-arch x86_64"
 export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8
@@ -89,8 +89,8 @@ alias cat='bat --paging=never'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias t="tmux new -s $USERNAME || tmux attach -t $USERNAME "
-alias vim="nvim"
-alias vi="nvim"
+alias vim="lvim"
+alias vi="lvim"
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
 alias watch='watch '
