@@ -19,6 +19,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.tmux.conf.local ${HOME}/.tmux.conf.local
 	ln -vsfn ${PWD}/.config/picom/picom.conf ${HOME}/.config/picom/picom.conf
 	ln -vsfn ${PWD}/.config/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
+	ln -vsfn ${PWD}/.config/lvim/config.lua ${HOME}/.config/lvim/config.lua
 	ln -vsfn ${PWD}/.curlrc ${HOME}/.curlrc
 	ln -vsfn ${PWD}/.xinitrc ${HOME}/.xinitrc
 	ln -vsfn ${PWD}/.config/gxkb/gxkb.cfg ${HOME}/.config/gxkb/gxkb.cfg
