@@ -1,0 +1,47 @@
+env:
+  TERM: xterm-256color
+  WINIT_X11_SCALE_FACTOR: "1.0"
+colors:
+  primary:
+    background: "#FFFFFF"
+    foreground: "#000000"
+  normal:
+    black: "#000000"
+    red: "#ff1100"
+    green: "#177F80"
+    yellow: "#ef5939"
+    blue: "#3465a3"
+    magenta: "#ef5939"
+    cyan: "#3465a3"
+    white: "#808080"
+  bright:
+    black: "#818181"
+    red: "#ff4444"
+    green: "#177F80"
+    yellow: "#ef5939"
+    blue: "#3465a3"
+    magenta: "#ef5939"
+    cyan: "#3465a3"
+    white: "#FFFFFF"
+mouse:
+  hide_when_typing: true
+  hints:
+    modifiers: Shift
+background_opacity: 0.95
+selection:
+  save_to_clipboard: true
+font:
+  size: 12
+  normal:
+    family: JetBrainsMono Nerd Font Mono
+    style: Regular
+  bold:
+    family: JetBrainsMono Nerd Font Mono
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font Mono
+    style: Italic
+window:
+  dynamic_padding: false
+  decorations: full
+  startup_mode: Windowed
