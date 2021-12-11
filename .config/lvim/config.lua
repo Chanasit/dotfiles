@@ -3,8 +3,8 @@ lvim.leader = ","
 lvim.format_on_save = true
 lvim.keys.normal_mode = {
   -- Navigate buffers
-  ["<Tab>"] = ":bprevious<CR>",
-  ["<S-Tab>"] = ":bnext<CR>",
+  ["<S-Tab>"] = ":bprevious<CR>",
+  ["<Tab>"] = ":bnext<CR>",
 }
 
 -- unmap a default keymapping
@@ -17,7 +17,7 @@ lvim.builtin.which_key.mappings["r"] = { "<cmd>FloatermNew rg -g '!{.git,node_mo
 lvim.builtin.which_key.mappings["f"] = { "<cmd>FloatermNew fzf<CR>", "FZF" }
 
 -- colors
-lvim.colorscheme = "github"
+lvim.colorscheme = "xcodelight"
 
 -- option
 vim.opt.background = "light"
@@ -36,7 +36,7 @@ vim.opt.numberwidth = 8
 vim.opt.signcolumn = "yes"
 vim.opt.spelllang = "en"
 -- vim.opt.sidescrolloff = 8
--- vim.opt.scrolloff = 8
+vim.opt.scrolloff = 8
 
 -- Configure builtin plugins
 lvim.builtin.lualine.active = true
@@ -83,7 +83,7 @@ vim.list_extend(lvim.lsp.override, { "pyright" })
 
 -- Additional Plugins
 lvim.plugins = {
-    {"cormacrelf/vim-colors-github"},
+    {"arzg/vim-colors-xcode"},
     {
       "mg979/vim-visual-multi",
       config = function ()
