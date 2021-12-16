@@ -18,9 +18,9 @@ fi
 ##############################################################
 export VISUAL='lvim'
 export EDITOR='lvim'
-export ARCHFLAGS="-arch x86_64"
-export MANPATH="/usr/local/man:$MANPATH"
-export LANG=en_US.UTF-8
+
+# Custom binary file (ubuntu)
+export PATH=$PATH:$HOME/.local/bin
 
 # AWS path
 export AWS_CONFIG_FILE="$HOME/.aws/config"
@@ -39,9 +39,6 @@ export GOCACHE=$HOME/.cache
 export GO111MODULE=on
 export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"
 export PATH=$PATH:$GOPATH/bin
-
-# Custom binary file (ubuntu)
-export PATH=$PATH:$HOME/.local/bin
 
 # RUST
 export CARGO_HOME="$HOME/.cargo"

@@ -241,7 +241,6 @@ exec xset r rate 250 40
 # Adjust blue light filter
 exec redshift -P -O 5500
 
-exec fusuma -d --log=/dev/null
 exec syndaemon -i 0.5 -t -K -R
 
 # xsuspender https://kernc.github.io/xsuspender/
