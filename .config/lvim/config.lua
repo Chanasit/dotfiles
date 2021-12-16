@@ -3,8 +3,8 @@ lvim.leader = ","
 lvim.format_on_save = true
 lvim.keys.normal_mode = {
   -- Navigate buffers
-  ["<S-Tab>"] = ":bprevious<CR>",
-  ["<Tab>"] = ":bnext<CR>",
+  ["<Tab>"] = ":bprevious<CR>",
+  ["<S-Tab>"] = ":bnext<CR>",
 }
 
 -- unmap a default keymapping
@@ -13,6 +13,7 @@ lvim.keys.normal_mode = {
 -- lvim.builtin.which_key.mappings["r"] = { "<cmd>Telescope live_grep<CR>", "Grep" }
 -- lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope find_files<CR>", "Find File" }
 lvim.builtin.which_key.mappings["e"] = { "<cmd>RnvimrToggle<CR>", "Ranger" }
+-- lvim.builtin.which_key.mappings["e"] = { "<cmd>FloatermNew nnn -deH<CR>", "n^3" }
 lvim.builtin.which_key.mappings["r"] = { "<cmd>FloatermNew rg -g '!{.git,node_modules,vendor}/*' 2> /dev/null<CR>", "Ripgrep" }
 lvim.builtin.which_key.mappings["f"] = { "<cmd>FloatermNew fzf<CR>", "FZF" }
 
@@ -25,14 +26,14 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 vim.opt.foldexpr = ""
 vim.opt.mouse = ""
-vim.opt.timeoutlen = 200
+vim.opt.timeoutlen = 100
 -- vim.opt.termguicolors = true
 vim.opt.pumheight = 8
 vim.opt.undodir = vim.fn.stdpath "cache" .. "/undo"
 vim.opt.undofile = true
 vim.opt.writebackup = false
-vim.opt.updatetime = 200
-vim.opt.numberwidth = 8
+vim.opt.updatetime = 160
+vim.opt.numberwidth = 13
 vim.opt.signcolumn = "yes"
 vim.opt.spelllang = "en"
 -- vim.opt.sidescrolloff = 8

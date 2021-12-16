@@ -225,7 +225,7 @@ exec xidlehook --not-when-audio --not-when-fullscreen --timer 60 "xset dpms forc
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
 
-exec xbacklight -set 10
+exec xbacklight -set 20
 exec --no-startup-id  pamixer -i 100
 exec --no-startup-id  pamixer --default-source -i 100
 
@@ -237,10 +237,12 @@ exec_always xlayoutdisplay
 
 ## Configure key repeat rate
 exec xset r rate 250 40
-exec syndaemon -i 0.5 -t -K -R
 
 # Adjust blue light filter
 exec redshift -P -O 5500
+
+exec fusuma -d --log=/dev/null
+exec syndaemon -i 0.5 -t -K -R
 
 # xsuspender https://kernc.github.io/xsuspender/
 exec xsuspender
