@@ -95,6 +95,7 @@ alias clang="clang"
 alias python="python3"
 alias pip="pip3"
 alias k="kubectl"
+alias kt='kubetail'
 alias y="yay"
 alias tf="terraform"
 alias gs='git status'

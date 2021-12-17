@@ -51,7 +51,7 @@ bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
-bindsym Mod4+Shift+i          exec    --no-startup-id "betterlockscreen -l blur"
+bindsym Mod4+Shift+i          exec    --no-startup-id "betterlockscreen -l pixel"
 
 # start a dmenu
 # bindsym Mod4+Shift+d          exec    dmenu_run -fn 'Tahoma-8'
