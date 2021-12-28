@@ -51,7 +51,7 @@ bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
 bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
 
 # i3lcok screen https://github.com/i3/i3lock
-bindsym Mod4+Shift+i          exec    --no-startup-id "betterlockscreen -l pixel"
+bindsym Mod4+Shift+i          exec    --no-startup-id "betterlockscreen -l blur"
 
 # start a dmenu
 # bindsym Mod4+Shift+d          exec    dmenu_run -fn 'Tahoma-8'
@@ -220,7 +220,7 @@ exec dunst
 exec udiskie
 
 # autolock https://linux.die.net/man/1/xautolock
-exec xidlehook --not-when-audio --not-when-fullscreen --timer 60 "xset dpms force off" "" --timer 300 "betterlockscreen -l blur" "" --timer 1500 "systemctl suspend-then-hibernate" ""
+exec xidlehook --not-when-audio --not-when-fullscreen --timer 150 "xset dpms force off" "" --timer 300 "betterlockscreen -l blur" "" --timer 1500 "systemctl suspend-then-hibernate" ""
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
@@ -233,7 +233,7 @@ exec --no-startup-id  pamixer --default-source -i 100
 exec_always autotiling
 
 # Autoload first detected profile
-exec_always xlayoutdisplay
+exec_always xlayoutdisplay -m
 
 ## Configure key repeat rate
 exec xset r rate 250 40
