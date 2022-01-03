@@ -38,6 +38,8 @@ client.urgent                 $urgent-bg-color    $urgent-bg-color   $text-color
 client.background             $bg-color
 
 for_window [class=".*"]       border pixel 1
+for_window [class="albert"]   floating enable
+for_window [class="albert"]   sticky enable
 for_window [class="albert"]   border pixel 0
 
 # Use pactl to adjust volume in PulseAudio.
@@ -47,8 +49,8 @@ bindsym XF86AudioMute         exec    --no-startup-id pamixer --toggle-mute && d
 bindsym XF86AudioMicMute      exec    --no-startup-id "pamixer --default-source --toggle-mute && if pamixer --default-source --get-mute; then dunstify -r 7777 -t 600 'mic muted'; else dunstify -r 7777 -t 600 'mic unmuted'; fi"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 5"
-bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 5"
+bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 1"
+bindsym XF86MonBrightnessUp   exec    --no-startup-id "xbacklight -inc 1"
 
 # i3lcok screen https://github.com/i3/i3lock
 bindsym Mod4+Shift+i          exec    --no-startup-id "betterlockscreen -l blur"
