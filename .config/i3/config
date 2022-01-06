@@ -43,10 +43,15 @@ for_window [class="albert"]   sticky enable
 for_window [class="albert"]   border pixel 0
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume  exec    --no-startup-id pamixer -i 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
-bindsym XF86AudioLowerVolume  exec    --no-startup-id pamixer -d 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
-bindsym XF86AudioMute         exec    --no-startup-id pamixer --toggle-mute && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
-bindsym XF86AudioMicMute      exec    --no-startup-id "pamixer --default-source --toggle-mute && if pamixer --default-source --get-mute; then dunstify -r 7777 -t 600 'mic muted'; else dunstify -r 7777 -t 600 'mic unmuted'; fi"
+# bindsym XF86AudioRaiseVolume  exec    --no-startup-id pamixer -i 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
+# bindsym XF86AudioLowerVolume  exec    --no-startup-id pamixer -d 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
+# bindsym XF86AudioMute         exec    --no-startup-id pamixer --toggle-mute && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)" #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)" #decrease sound volume
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute 0 toggle && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)" # mute sound
+bindsym XF86AudioMicMute     exec --no-startup-id "pactl set-source-mute 0 toggle && if pamixer --default-source --get-mute; then dunstify -r 7777 -t 600 'mic muted'; else dunstify -r 7777 -t 600 'mic unmuted'; fi"
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessDown exec    --no-startup-id "xbacklight -dec 1"
@@ -222,7 +227,7 @@ exec dunst
 exec udiskie
 
 # autolock https://linux.die.net/man/1/xautolock
-exec xidlehook --not-when-audio --not-when-fullscreen --timer 150 "xset dpms force off" "" --timer 300 "betterlockscreen -l blur" "" --timer 1500 "systemctl suspend-then-hibernate" ""
+exec xidlehook --not-when-audio --not-when-fullscreen --timer 300 "xset dpms force off" "" --timer 360 "betterlockscreen -l blur" "" --timer 1500 "systemctl suspend-then-hibernate" ""
 
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
