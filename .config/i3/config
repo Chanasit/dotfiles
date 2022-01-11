@@ -76,8 +76,8 @@ bindsym Mod4+Shift+c          reload
 bindsym Mod4+Shift+r          restart
 
 # Screenshots https://github.com/naelstrof/maim
-bindsym Print                 exec --no-startup-id maim "$HOME/Pictures/$(date)"
-bindsym Shift+Print           exec --no-startup-id maim --select "$HOME/Pictures/$(date)"
+bindsym Print                 exec --no-startup-id maim "$HOME/Pictures/$(date).png"
+bindsym Shift+Print           exec --no-startup-id maim --select "$HOME/Pictures/$(date).png"
 
 ## Clipboard Screenshots https://github.com/naelstrof/maim
 bindsym Ctrl+Print            exec --no-startup-id maim | xclip -selection clipboard -t image/png
@@ -192,7 +192,7 @@ bindsym Mod4+r mode "resize"
 bar {
   position top
   tray_output primary
-  font pango:Tahoma Bold 8
+  font pango:Arial Bold 8
   status_command i3status -c $HOME/.config/i3/i3status.conf
   colors {
 		# whole color settings
