@@ -68,7 +68,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow -g "!{.git,node_modu
 # NNN file manager
 BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
-export NNN_COLORS='#0a1b2c3d'
+export NNN_COLORS='2136'
 export NNN_PLUG='p:preview-tui'
 export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
@@ -105,5 +105,4 @@ alias gd='git diff'
 alias gb='git branch'
 alias n='nnn -deH'
 alias l="ls -lah"
-alias code="code-insiders"
 alias x='startx'

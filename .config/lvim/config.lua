@@ -8,7 +8,8 @@ lvim.format_on_save = true
 
 -- unmap a default keymapping
 -- Use which-key to add extra bindings with the leader-key prefix
-lvim.builtin.which_key.mappings["e"] = { "<cmd>RnvimrToggle<CR>", "Ranger" }
+-- lvim.builtin.which_key.mappings["e"] = { "<cmd>RnvimrToggle<CR>", "Ranger" }
+lvim.builtin.which_key.mappings["d"] = { "<cmd>FloatermNew nnn -deH<CR>", "NNN" }
 lvim.builtin.which_key.mappings["r"] = { "<cmd>FloatermNew rg -g '!{.git,node_modules,vendor}/*' 2> /dev/null<CR>", "Ripgrep" }
 lvim.builtin.which_key.mappings["f"] = { "<cmd>FloatermNew fzf<CR>", "FZF" }
 
@@ -105,14 +106,5 @@ lvim.plugins = {
       "ray-x/lsp_signature.nvim",
       config = function() require"lsp_signature".on_attach() end,
       event = "BufRead"
-    },
-    {
-      "kevinhwang91/rnvimr",
-      cmd = "RnvimrToggle",
-      config = function()
-      vim.g.rnvimr_bw_enable = 1
-      vim.g.rnvimr_draw_border = 1
-      vim.g.rnvimr_pick_enable = 1
-      end,
     }
 }
