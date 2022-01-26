@@ -14,14 +14,13 @@ lvim.builtin.which_key.mappings["r"] = { "<cmd>FloatermNew rg -g '!{.git,node_mo
 lvim.builtin.which_key.mappings["f"] = { "<cmd>FloatermNew fzf<CR>", "FZF" }
 
 -- colors
-lvim.colorscheme = "xcodelight"
+lvim.colorscheme = "xcodedark"
 
 -- option
-vim.opt.background = "light"
+vim.opt.background = "dark"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 vim.opt.foldexpr = ""
-vim.opt.mouse = ""
 vim.opt.timeoutlen = 300
 -- vim.opt.termguicolors = true
 vim.opt.pumheight = 8
@@ -32,8 +31,6 @@ vim.opt.updatetime = 200
 vim.opt.numberwidth = 13
 vim.opt.signcolumn = "yes"
 vim.opt.spelllang = "en"
--- vim.opt.sidescrolloff = 8
-vim.opt.scrolloff = 8
 
 -- Configure builtin plugins
 lvim.builtin.lualine.active = true
@@ -48,6 +45,21 @@ lvim.builtin.nvimtree.active = false
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 
+vim.cmd([[
+  set mouse=
+  nnoremap <up> <nop>
+  nnoremap <down> <nop>
+  nnoremap <left> <nop>
+  nnoremap <right> <nop>
+  inoremap <up> <nop>
+  inoremap <down> <nop>
+  inoremap <left> <nop>
+  inoremap <right> <nop>
+  vnoremap <up> <nop>
+  vnoremap <down> <nop>
+  vnoremap <left> <nop>
+  vnoremap <right> <nop>
+]])
 -- Disable virtual text
 lvim.lsp.diagnostics.virtual_text = false
 
@@ -91,7 +103,6 @@ lvim.plugins = {
     {"weirongxu/plantuml-previewer.vim"},
     {"tyru/open-browser.vim"},
     {"editorconfig/editorconfig-vim"},
-    {"christoomey/vim-tmux-navigator"},
     {
       "voldikss/vim-floaterm",
       config = function()
