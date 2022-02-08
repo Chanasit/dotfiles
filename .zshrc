@@ -94,6 +94,7 @@ alias watch='watch '
 alias clang="clang"
 alias python="python3"
 alias pip="pip3"
+alias mk='minikube'
 alias k="kubectl"
 alias kt='kubetail'
 alias y="yay"
