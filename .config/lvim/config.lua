@@ -103,6 +103,7 @@ lvim.plugins = {
     {"weirongxu/plantuml-previewer.vim"},
     {"tyru/open-browser.vim"},
     {"editorconfig/editorconfig-vim"},
+    {"instant-markdown/vim-instant-markdown"},
     {
       "voldikss/vim-floaterm",
       config = function()
@@ -112,10 +113,5 @@ lvim.plugins = {
       vim.g.floaterm_height = 0.8
       vim.g.floaterm_wintype = "float"
       end,
-    },
-    {
-      "ray-x/lsp_signature.nvim",
-      config = function() require"lsp_signature".on_attach() end,
-      event = "BufRead"
     }
 }
