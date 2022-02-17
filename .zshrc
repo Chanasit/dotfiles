@@ -100,7 +100,7 @@ alias kt='kubetail'
 alias y="yay"
 alias tf="terraform"
 alias gs='git status'
-alias g3='git log --graph --decorate --oneline'
+alias g3='git log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"'
 alias gf='git fetch --all'
 alias gd='git diff'
 alias gb='git branch'
