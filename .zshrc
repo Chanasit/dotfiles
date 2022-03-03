@@ -16,8 +16,8 @@ fi
 ##############################################################
 # => Export Global Environments Variable
 ##############################################################
-export VISUAL='lvim'
-export EDITOR='lvim'
+export VISUAL='nvim'
+export EDITOR='nvim'
 
 # Custom binary file (ubuntu)
 export PATH=$PATH:$HOME/.local/bin
@@ -73,6 +73,9 @@ export NNN_PLUG='p:preview-tui'
 export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
 
+# Google Cloud SDK
+export CLOUDSDK_PYTHON=/usr/bin/python3
+
 # Network Proxy
 # export HTTP_PROXY=
 # export HTTPS_PROXY=
@@ -86,8 +89,8 @@ alias cat='bat --paging=never'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias t="tmux new -s $USERNAME || tmux attach -t $USERNAME "
-alias vim="lvim"
-alias vi="lvim"
+alias vim="nvim"
+alias vi="nvim"
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
 alias watch='watch '
