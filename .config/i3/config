@@ -232,7 +232,7 @@ exec xidlehook --not-when-audio --not-when-fullscreen --timer 300 "xset dpms for
 # Monitor and Wallpapers https://github.com/l3ib/nitrogen
 exec_always feh --bg-scale $wallpaper $wallpaper
 
-exec xbacklight -set 20
+exec xbacklight -set 10
 exec --no-startup-id  pamixer -i 100
 exec --no-startup-id  pamixer --default-source -i 100
 
