@@ -246,7 +246,7 @@ exec_always xlayoutdisplay -m
 exec xset r rate 250 40
 
 # Adjust blue light filter
-exec redshift -P -O 5500
+exec redshift -P -O 6000
 
 exec syndaemon -i 0.5 -t -K -R
 
