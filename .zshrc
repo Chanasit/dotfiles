@@ -84,11 +84,16 @@ export CLOUDSDK_PYTHON=/usr/bin/python3
 ##############################################################
 # => Alias ZSH Script
 ##############################################################
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  alias pbcopy='pbcopy'
+  alias pbpaste='pbpaste'
+fi
 alias rg='rg --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
 alias cat='bat --paging=never'
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-alias t="tmux new -s $USERNAME || tmux attach -t $USERNAME "
+alias t="tmux new -s hjkl || tmux attach -t hjkl "
 alias vim="nvim"
 alias vi="nvim"
 alias ping='ping -c 5'
