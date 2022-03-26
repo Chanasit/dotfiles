@@ -38,9 +38,7 @@ client.urgent                 $urgent-bg-color    $urgent-bg-color   $text-color
 client.background             $bg-color
 
 for_window [class=".*"]       border pixel 1
-for_window [class="albert"]   floating enable
-for_window [class="albert"]   sticky enable
-for_window [class="albert"]   border pixel 0
+for_window [window_role="albert"] floating enable, move position center
 
 # Use pactl to adjust volume in PulseAudio.
 # bindsym XF86AudioRaiseVolume  exec    --no-startup-id pamixer -i 5 && dunstify -r 7777 -t 600 "volume $(pamixer --get-volume-human)"
