@@ -80,7 +80,6 @@ bindsym Shift+Print           exec --no-startup-id maim --select "$HOME/Pictures
 ## Clipboard Screenshots https://github.com/naelstrof/maim
 bindsym Ctrl+Print            exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print      exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym Mod4+Shift+m          exec --no-startup-id emoji-picker
 
 # change focus
 bindsym Mod4+$left            focus left
