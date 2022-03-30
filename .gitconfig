@@ -1,7 +1,8 @@
 # This is Git's per-user configuration file.
-[user]
-	name = Chanasit
-	email = kai.chr160@gmail.com
+[includeIf "gitdir:~/"]
+  path = .gitconfig-me
+[includeIf "gitdir:~/Golang/src/tdshop/"]
+  path = .gitconfig-td
 [core]
 	editor = nvim
 	ignorecase = false
