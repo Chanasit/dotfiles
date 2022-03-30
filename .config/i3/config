@@ -74,8 +74,8 @@ bindsym Mod4+Shift+c          reload
 bindsym Mod4+Shift+r          restart
 
 # Screenshots https://github.com/naelstrof/maim
-bindsym Delete                 exec --no-startup-id maim "$HOME/Pictures/$(date).png"
-bindsym Shift+Delete           exec --no-startup-id maim --select "$HOME/Pictures/$(date).png"
+bindsym Delete                 exec --no-startup-id maim "$HOME/Pictures/$(date +%m-%d-%Y-%H-%M).png"
+bindsym Shift+Delete           exec --no-startup-id maim --select "$HOME/Pictures/$(date +%m-%d-%Y-%H-%M).png"
 
 ## Clipboard Screenshots https://github.com/naelstrof/maim
 bindsym Ctrl+Delete            exec --no-startup-id maim | xclip -selection clipboard -t image/png
