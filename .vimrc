@@ -157,7 +157,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_global_extensions = [
       \'coc-sh',
-      \'coc-json',
       \'coc-git',
       \'coc-tsserver',
       \'coc-highlight',
