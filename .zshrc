@@ -115,6 +115,3 @@ alias gb='git branch'
 alias n='nnn -deH'
 alias l="ls -lah"
 alias x='startx'
-
-#### SSH agent #####
-source $HOME/.sshrc &> /dev/null
