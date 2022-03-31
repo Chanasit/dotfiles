@@ -166,10 +166,10 @@ bindsym Mod4+Shift+e mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"
 # resize window (you can also use the mouse for that)
 mode "resize" {
   # Pressing down will grow the window’s height.
-  bindsym $left         resize shrink width 12 px or 12 ppt
+  bindsym $right        resize shrink width 12 px or 12 ppt
   bindsym $down         resize grow height 12 px or 12 ppt
   bindsym $up           resize shrink height 12 px or 12 ppt
-  bindsym $right        resize grow width 12 px or 12 ppt
+  bindsym $left         resize grow width 12 px or 12 ppt
 
   # same bindings, but for the arrow keys
   bindsym Right         resize shrink width 12 px or 12 ppt
