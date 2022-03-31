@@ -1,7 +1,5 @@
 # Dotfiles
 
-![screenshot](./assets/screen_shot.png)
-
 ## Vim Plugs
 
 Follow is [link](https://github.com/junegunn/vim-plug) for pre-installation [vim-plug](https://github.com/junegunn/vim-plug) module
