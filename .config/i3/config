@@ -232,7 +232,6 @@ exec_always feh --bg-scale $wallpaper $wallpaper
 exec xbacklight -set 10
 exec --no-startup-id  pamixer -i 100
 exec --no-startup-id  pamixer --default-source -i 100
-exec --no-startup-id  setxkbmap -layout us,th -option grp:alt_shift_toggle
 
 # autotiling i3
 exec_always autotiling
@@ -241,7 +240,8 @@ exec_always autotiling
 exec_always xlayoutdisplay
 
 ## Configure key repeat rate
-exec xset r rate 250 40
+exec_always --no-startup-id  xset r rate 250 40
+exec_always --no-startup-id  setxkbmap -layout us,th -option grp:alt_shift_toggle
 
 # Adjust blue light filter
 exec redshift -P -O 6000
