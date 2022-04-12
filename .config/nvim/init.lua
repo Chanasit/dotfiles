@@ -82,6 +82,14 @@ vim.cmd([[
 
   " Clipboard
   set clipboard+=unnamedplus
+
+  " floatern
+  let g:floaterm_opener = "tabe"
+  nnoremap <silent> <leader>d :FloatermNew nnn -deH<cr>
+  nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,node_modules,vendor}/*" . 2> /dev/null<cr>
+  nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
+  nnoremap <silent> <leader>f :FloatermNew fzf<cr>
+  nnoremap <silent> <leader>k :FloatermNew k9s<cr>
 ]])
 
 -- Setup nvim-cmp.
