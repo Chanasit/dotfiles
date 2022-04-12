@@ -94,8 +94,6 @@ fi
 alias rg='rg --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
 alias cat='bat --paging=never'
 alias t="tmux new -s hjkl || tmux attach -t hjkl "
-alias vim="nvim"
-alias vi="nvim"
 alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
 alias watch='watch '
