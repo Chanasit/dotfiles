@@ -90,6 +90,9 @@ vim.cmd([[
   nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
   nnoremap <silent> <leader>f :FloatermNew fzf<cr>
   nnoremap <silent> <leader>k :FloatermNew k9s<cr>
+
+  " indent line
+  let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 ]])
 
 -- Setup nvim-cmp.
@@ -238,6 +241,20 @@ lualine.setup {
     disabled_filetypes = {},
     always_divide_middle = true,
     globalstatus = false,
+    lualine_a = {
+      {
+        'tabs',
+        max_length = vim.o.columns / 8, -- Maximum width of tabs component.
+        mode = 0, -- 0: Shows tab_nr
+                  -- 1: Shows tab_name
+                  -- 2: Shows tab_nr + tab_name
+        tabs_color = {
+          -- Same values as the general color option can be used here.
+          active = 'lualine_{section}_normal',     -- Color for active tab.
+          inactive = 'lualine_{section}_inactive', -- Color for inactive tab.
+        },
+      }
+    },
   },
   sections = {
     lualine_a = {'mode'},
@@ -257,7 +274,7 @@ lualine.setup {
   },
   tabline = {
     lualine_a = {'buffers'},
-    lualine_b = {'branch'},
+    lualine_b = {},
     lualine_c = {'filename'},
     lualine_x = {},
     lualine_y = {},
