@@ -23,6 +23,7 @@ require('packer').startup(function()
   use { 'tyru/open-browser.vim' }
   use { 'weirongxu/plantuml-previewer.vim' }
   use { 'turbio/bracey.vim' }
+  use { 'norcalli/nvim-colorizer.lua' }
 end)
 vim.cmd('colorscheme base16-github')
 vim.cmd([[
@@ -95,6 +96,9 @@ vim.cmd([[
   let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 ]])
 
+-- colorizer
+require 'colorizer'.setup()
+
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 cmp.setup({
@@ -117,6 +121,8 @@ cmp.setup({
       c = cmp.mapping.close(),
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ["<Tab>"] = cmp.mapping.select_next_item({behavior=cmp.SelectBehavior.Insert}),
+    ["<S-Tab>"] = cmp.mapping.select_prev_item({behavior=cmp.SelectBehavior.Insert}),
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },

@@ -20,6 +20,7 @@ export VISUAL='nvim'
 export EDITOR='nvim'
 
 # Custom binary file (ubuntu)
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.local/bin
 
 # AWS path
@@ -37,15 +38,12 @@ export GOPATH=$HOME/Golang
 export GOBIN=$HOME/Golang/bin
 export GOCACHE=$HOME/.cache
 export GO111MODULE=on
-export GOPRIVATE="gitlab.com/botnoi-sme,bitbucket.org/botnoi-sme,github.com/botnoi-sme"
+export GOPRIVATE=""
 export PATH=$PATH:$GOPATH/bin
 
 # RUST
 export CARGO_HOME="$HOME/.cargo"
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# Terraform Config
-export TF_LOG=
 
 # Android Home
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -81,6 +79,10 @@ export CLOUDSDK_PYTHON=/usr/bin/python3
 # export HTTPS_PROXY=
 # export NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
 
+# Terraform Config
+export TF_VERSION=0.12.31
+export TF_LOG=trace
+
 ##############################################################
 # => Alias ZSH Script
 ##############################################################
@@ -111,5 +113,6 @@ alias gf='git fetch --all'
 alias gd='git diff'
 alias gb='git branch'
 alias n='nnn -deH'
+alias vi='nvim'
 alias l="ls -lah"
 alias x='startx'
