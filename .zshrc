@@ -73,6 +73,7 @@ export NNN_FIFO='/tmp/nnn.fifo'
 
 # Google Cloud SDK
 export CLOUDSDK_PYTHON=/usr/bin/python3
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # Network Proxy
 # export HTTP_PROXY=
@@ -97,7 +98,6 @@ alias rg='rg --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2>
 alias cat='bat --paging=never'
 alias t="tmux new -s hjkl || tmux attach -t hjkl "
 alias ping='ping -c 5'
-alias fastping='ping -c 100 -s.2'
 alias watch='watch '
 alias clang="clang"
 alias python="python3"
@@ -108,7 +108,7 @@ alias kt='kubetail'
 alias y="yay"
 alias tf="terraform"
 alias gs='git status'
-alias g3='git log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"'
+alias g3='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
 alias gf='git fetch --all'
 alias gd='git diff'
 alias gb='git branch'
