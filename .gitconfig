@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [includeIf "gitdir:~/"]
-  path = .gitconfig-me
+	path = .gitconfig-me
 [includeIf "gitdir:~/Golang/src/tdshop/"]
-  path = .gitconfig-td
+	path = .gitconfig-td
 [core]
 	editor = nvim
 	ignorecase = false
@@ -11,10 +11,10 @@
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 [merge]
-  ff = no
-  commit = no
+	ff = no
+	commit = no
 [push]
 	default = upstream
 [color]
