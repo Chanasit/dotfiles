@@ -8,7 +8,8 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/htop/htoprc ${HOME}/.config/htop/htoprc
 	ln -vsfn ${PWD}/.config/i3/config ${HOME}/.config/i3/config
 	ln -vsfn ${PWD}/.config/i3/i3status.conf ${HOME}/.config/i3/i3status.conf
-	ln -vsfn ${PWD}/.config/nvim/init.lua ${HOME}/.config/nvim/init.lua
+	# ln -vsfn ${PWD}/.config/nvim/init.lua ${HOME}/.config/nvim/init.lua
+	ln -vsfn ${PWD}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
 	ln -vsfn ${PWD}/.config/k9s/skin.yml ${HOME}/.config/k9s/skin.yml
 	ln -vsfn ${PWD}/.config/k9s/config.yml ${HOME}/.config/k9s/config.yml
 	ln -vsfn ${PWD}/.editorconfig ${HOME}/.editorconfig
@@ -18,7 +19,6 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.tmux.conf.local ${HOME}/.tmux.conf.local
 	ln -vsfn ${PWD}/.config/picom/picom.conf ${HOME}/.config/picom/picom.conf
 	ln -vsfn ${PWD}/.config/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
-	ln -vsfn ${PWD}/.config/lvim/config.lua ${HOME}/.config/lvim/config.lua
 	ln -vsfn ${PWD}/.curlrc ${HOME}/.curlrc
 	ln -vsfn ${PWD}/.vimrc ${HOME}/.vimrc
 	ln -vsfn ${PWD}/.config/gxkb/gxkb.cfg ${HOME}/.config/gxkb/gxkb.cfg

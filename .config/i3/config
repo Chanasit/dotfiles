@@ -241,7 +241,7 @@ exec_always xlayoutdisplay
 
 ## Configure key repeat rate
 exec_always --no-startup-id  xset r rate 250 40
-exec_always --no-startup-id  setxkbmap -layout us,th -option grp:alt_shift_toggle -option caps:none
+exec_always --no-startup-id  setxkbmap -layout us,th -option grp:alt_space_toggle -option caps:none
 
 # Adjust blue light filter
 exec redshift -P -O 6000
