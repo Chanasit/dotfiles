@@ -23,6 +23,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.vimrc ${HOME}/.vimrc
 	ln -vsfn ${PWD}/.config/gxkb/gxkb.cfg ${HOME}/.config/gxkb/gxkb.cfg
 	ln -vsfn ${PWD}/.config/gtk-3.0/settings.ini ${HOME}/.config/gtk-3.0/settings.ini
+	ln -vsfn ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 	# depend on each resolution
 	# ln -vsfn ${PWD}/.xinitrc ${HOME}/.xinitrc
 
