@@ -62,7 +62,7 @@ bindsym Mod4+Shift+i          exec    --no-startup-id "betterlockscreen -l blur"
 # bindsym Mod4+Shift+d          exec    dmenu_run -fn 'Tahoma-8'
 
 # start a terminal
-bindsym Mod4+Return           exec    kitty
+bindsym Mod4+Return           exec    alacritty
 
 
 bindsym Mod4+Shift+q          kill
