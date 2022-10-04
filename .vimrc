@@ -32,7 +32,7 @@ autocmd VimEnter *
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 let maplocalleader = ","
-set updatetime=150
+set updatetime=300
 set timeoutlen=1000 ttimeoutlen=50
 set history=10000
 set undofile
@@ -108,7 +108,8 @@ let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
 let g:floaterm_wintype = "float"
 
-nnoremap <silent> <leader>d :FloatermNew nnn -deH<cr>
+nnoremap <silent> <leader>t :FloatermNew --opener=tabe nnn -deH<cr>
+nnoremap <silent> <leader>v :FloatermNew --opener=vsplit nnn -deH<cr>
 nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,node_modules,vendor}/*" . 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
