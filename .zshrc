@@ -61,7 +61,7 @@ export KUBECONFIG=$HOME/.kube/config
 
 # FZF config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow -g "!{.git,node_modules,vendor,venv,__pycache__}/*" 2> /dev/null'
 
 # NNN file manager
 BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
@@ -122,3 +122,6 @@ alias n='nnn -deH'
 alias vi='nvim'
 alias l="ls -lah"
 alias x='startx'
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

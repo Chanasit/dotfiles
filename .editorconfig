@@ -40,7 +40,10 @@ indent_size = 4
 indent_size = 4
 
 [*.yml]
-indent_size = 4
+indent_size = 2
+
+[*.yaml]
+indent_size = 2
 
 [Makefile]
 indent_style = tab
