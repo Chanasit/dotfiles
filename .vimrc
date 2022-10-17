@@ -110,7 +110,7 @@ let g:floaterm_wintype = "float"
 
 nnoremap <silent> <leader>t :FloatermNew --opener=tabe nnn -deH<cr>
 nnoremap <silent> <leader>v :FloatermNew --opener=vsplit nnn -deH<cr>
-nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,node_modules,vendor,venv.__pycache__}/*" . 2> /dev/null<cr>
+nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,**/node_modules,**/vendor,**/__pycache__,**/venv}" . 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
 nnoremap <silent> <leader>k :FloatermNew k9s<cr>
