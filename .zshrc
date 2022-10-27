@@ -86,7 +86,7 @@ export TF_LOG=trace
 
 # NVM
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/nvm.sh --no-use
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
 
@@ -101,7 +101,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   alias pbpaste='pbpaste'
 fi
 alias rg='rg --no-ignore --hidden --follow -g "!{.git,node_modules,vendor}/*" 2> /dev/null'
-alias cat='bat --paging=never'
 alias t="tmux new -s hjkl || tmux attach -t hjkl "
 alias ping='ping -c 5'
 alias watch='watch '
@@ -122,6 +121,3 @@ alias n='nnn -deH'
 alias vi='nvim'
 alias l="ls -lah"
 alias x='startx'
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
