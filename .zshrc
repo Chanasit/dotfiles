@@ -23,16 +23,6 @@ export EDITOR='nvim'
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.local/bin
 
-# AWS path
-export AWS_CONFIG_FILE="$HOME/.aws/config"
-export AWS_SHARED_CREDENTIALS_FILE="$HOME/.aws/credentials"
-
-# SSH path
-export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
-
-# yarn path
-export PATH="$PATH:$HOME/.yarn/bin"
-
 # GO path
 export GOPATH=$HOME/Golang
 export GOBIN=$HOME/Golang/bin
