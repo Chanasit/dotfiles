@@ -30,7 +30,7 @@ mouse:
 selection:
     save_to_clipboard: true
 font:
-    size: 10
+    size: 12
     normal:
         family: JetBrainsMono Nerd Font
         style: Regular
