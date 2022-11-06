@@ -15,147 +15,9 @@ k9s:
     fullScreenLogs: false
     textWrap: false
     showTime: false
-  currentContext: gke_tdshop-sandbox-crp_asia-southeast1_gke-crp-sg
-  currentCluster: gke_tdshop-sandbox-crp_asia-southeast1_gke-crp-sg
+  currentContext: minikube
+  currentCluster: minikube
   clusters:
-    gke_tdshop-nonprod_asia-southeast1-a_tdshop-nonprod-airflow:
-      namespace:
-        active: all
-        lockFavorites: false
-        favorites:
-        - default
-      view:
-        active: po
-      featureGates:
-        nodeShell: false
-      shellPod:
-        image: busybox:1.31
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-      portForwardAddress: localhost
-    gke_tdshop-nonprod_asia-southeast1_tdshop-nonprod-backend:
-      namespace:
-        active: all
-        lockFavorites: false
-        favorites:
-        - all
-        - default
-      view:
-        active: po
-      featureGates:
-        nodeShell: false
-      shellPod:
-        image: busybox:1.31
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-      portForwardAddress: localhost
-    gke_tdshop-nonprod_asia-southeast1_tdshop-nonprod-chaos:
-      namespace:
-        active: all
-        lockFavorites: false
-        favorites:
-        - all
-        - default
-      view:
-        active: po
-      featureGates:
-        nodeShell: false
-      shellPod:
-        image: busybox:1.31
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-      portForwardAddress: localhost
-    gke_tdshop-nonprod_asia-southeast1_tdshop-nonprod-devops:
-      namespace:
-        active: all
-        lockFavorites: false
-        favorites:
-        - all
-        - default
-      view:
-        active: po
-      featureGates:
-        nodeShell: false
-      shellPod:
-        image: busybox:1.31
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-      portForwardAddress: localhost
-    gke_tdshop-sandbox-crp_asia-southeast1_gke-crp-sg:
-      namespace:
-        active: all
-        lockFavorites: false
-        favorites:
-        - default
-      view:
-        active: po
-      featureGates:
-        nodeShell: false
-      shellPod:
-        image: busybox:1.35.0
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-      portForwardAddress: localhost
-    gke_tdshop-sandbox-ops_asia-southeast1-a_gke-ops-sg:
-      namespace:
-        active: all
-        lockFavorites: false
-        favorites:
-        - all
-        - default
-      view:
-        active: po
-      featureGates:
-        nodeShell: false
-      shellPod:
-        image: busybox:1.31
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-      portForwardAddress: localhost
-    gke_tdshop-shared-service-nonprod_asia-southeast1_gke-nonprod-observability:
-      namespace:
-        active: all
-        lockFavorites: false
-        favorites:
-        - all
-        - default
-      view:
-        active: po
-      featureGates:
-        nodeShell: false
-      shellPod:
-        image: busybox:1.31
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-      portForwardAddress: localhost
     minikube:
       namespace:
         active: all
@@ -164,7 +26,7 @@ k9s:
         - all
         - default
       view:
-        active: po
+        active: pod
       featureGates:
         nodeShell: false
       shellPod:
