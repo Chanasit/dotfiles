@@ -108,7 +108,7 @@ let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
 let g:floaterm_wintype = "float"
 
-nnoremap <silent> <leader>d :FloatermNew --opener=tabe ranger<cr>
+nnoremap <silent> <leader>d :FloatermNew --opener=tabe nnn<cr>
 nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,**/node_modules,**/vendor,**/__pycache__,**/venv}" . 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
