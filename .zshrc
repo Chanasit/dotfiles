@@ -74,6 +74,11 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 export TF_VERSION=0.12.31
 export TF_LOG=trace
 
+# Pyenv Config
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 ##############################################################
 # => Alias ZSH Script
 ##############################################################
@@ -89,7 +94,6 @@ alias t="tmux new -s hjkl || tmux attach -t hjkl "
 alias ping='ping -c 5'
 alias watch='watch '
 alias clang="clang"
-alias python="python3"
 alias pip="pip3"
 alias mk='minikube'
 alias k="kubectl"

@@ -20,7 +20,7 @@ k9s:
   clusters:
     minikube:
       namespace:
-        active: default
+        active: all
         lockFavorites: false
         favorites:
         - all
