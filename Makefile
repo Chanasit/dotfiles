@@ -8,7 +8,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/htop/htoprc ${HOME}/.config/htop/htoprc
 	ln -vsfn ${PWD}/.config/i3/config ${HOME}/.config/i3/config
 	ln -vsfn ${PWD}/.config/i3/i3status.conf ${HOME}/.config/i3/i3status.conf
-	# ln -vsfn ${PWD}/.config/nvim/init.lua ${HOME}/.config/nvim/init.lua
+	ln -vsfn ${PWD}/.config/nvim/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
 	ln -vsfn ${PWD}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
 	ln -vsfn ${PWD}/.config/k9s/skin.yml ${HOME}/.config/k9s/skin.yml
 	ln -vsfn ${PWD}/.config/k9s/config.yml ${HOME}/.config/k9s/config.yml

@@ -157,7 +157,7 @@ let g:coc_global_extensions = [
         \'coc-go',
         \'coc-prettier',
         \'coc-emmet',
-        \'coc-python',
+        \'coc-pyright',
         \'coc-java'
     \]
 
