@@ -158,7 +158,8 @@ let g:coc_global_extensions = [
         \'coc-prettier',
         \'coc-emmet',
         \'coc-pyright',
-        \'coc-java'
+        \'coc-java',
+        \'coc-markdownlint',
     \]
 
 " Use tab for trigger completion with characters ahead and navigate.

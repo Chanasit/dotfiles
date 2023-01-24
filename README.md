@@ -1,21 +1,21 @@
 # Dotfiles
 
-#### Configuation for [symlink](https://linuxize.com/post/how-to-create-symbolic-links-in-linux-using-the-ln-command) to necessary dotfiles
+#### Configuation for [symlink]() to necessary dotfiles
 
 [vim](https://www.vim.org/) user
 
 ```shell
-$ ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
-$ ln -vsf ${PWD}/.editorconfig ${HOME}/.editorconfig
+ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
+ln -vsf ${PWD}/.editorconfig ${HOME}/.editorconfig
 ```
 
 [neovim](https://github.com/neovim/neovim) user
 
 ```shell
-$ ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
-$ ln -vsf ${PWD}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
-$ ln -vsf ${PWD}/.config/nvim/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
-$ ln -vsf ${PWD}/.editorconfig ${HOME}/.editorconfig
+ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
+ln -vsf ${PWD}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
+ln -vsf ${PWD}/.config/nvim/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
+ln -vsf ${PWD}/.editorconfig ${HOME}/.editorconfig
 ```
 
 ## Alacritty
@@ -25,7 +25,7 @@ $ ln -vsf ${PWD}/.editorconfig ${HOME}/.editorconfig
 #### Configuation for symlink necessary dotfiles
 
 ```shell
-$ ln -vsf ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
+ln -vsf ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 ```
 
 #### Tip
@@ -39,5 +39,5 @@ Follow this link for [tmux](https://github.com/tmux/tmux) and [oh-my-tmux](https
 #### Configuation for symlink necessary dotfiles
 
 ```shell
-$ ln -vsf ${PWD}/.tmux.conf.local ${HOME}/.tmux.conf.local
+ln -vsf ${PWD}/.tmux.conf.local ${HOME}/.tmux.conf.local
 ```
