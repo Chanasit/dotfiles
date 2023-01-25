@@ -104,15 +104,15 @@ hi Floaterm guibg=#f1f1f1
 hi FloatermBorder guibg=#f1f1f1 guifg=#414141
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
-let g:floaterm_width = 0.8
-let g:floaterm_height = 0.8
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
 let g:floaterm_wintype = "float"
+let g:floaterm_position = "center"
 
-nnoremap <silent> <leader>d :FloatermNew --opener=tabe nnn<cr>
+nnoremap <silent> <leader>d :FloatermNew ranger<cr>
 nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,**/node_modules,**/vendor,**/__pycache__,**/venv}" . 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
-nnoremap <silent> <leader>k :FloatermNew k9s<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Bracey
