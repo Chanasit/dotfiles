@@ -32,7 +32,7 @@ autocmd VimEnter *
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 let maplocalleader = ","
-set updatetime=300
+set updatetime=200
 set timeoutlen=1000 ttimeoutlen=50
 set history=10000
 set undofile
@@ -135,7 +135,7 @@ let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "cyberpunk"
+let g:airline_theme = "github"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 1
