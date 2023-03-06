@@ -8,6 +8,7 @@ k9s:
   readOnly: false
   noExitOnCtrlC: false
   noIcons: false
+  skipLatestRevCheck: false
   logger:
     tail: 100
     buffer: 5000
@@ -15,28 +16,28 @@ k9s:
     fullScreenLogs: false
     textWrap: false
     showTime: false
-  currentContext: minikube
-  currentCluster: minikube
+  currentContext: ""
+  currentCluster: ""
   clusters:
-    minikube:
+    "":
       namespace:
-        active: all
+        active: default
         lockFavorites: false
         favorites:
-        - all
         - default
       view:
-        active: pod
+        active: po
       featureGates:
         nodeShell: false
       shellPod:
-        image: busybox:1.31
+        image: busybox:1.35.0
         command: []
         args: []
         namespace: default
         limits:
           cpu: 100m
           memory: 100Mi
+        labels: {}
       portForwardAddress: localhost
   thresholds:
     cpu:

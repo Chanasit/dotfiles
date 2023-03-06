@@ -243,6 +243,9 @@ exec_always xlayoutdisplay
 exec_always --no-startup-id  xset r rate 250 40
 exec_always --no-startup-id  setxkbmap -layout us,th -option grp:alt_space_toggle -option caps:none
 
+# Auto connect
+exec pactl load-module module-switch-on-connect
+
 # Adjust blue light filter
 exec redshift -P -O 6000
 
