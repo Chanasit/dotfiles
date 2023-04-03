@@ -42,15 +42,15 @@ mouse:
 selection:
     save_to_clipboard: true
 font:
-    size: 12
+    size: 16
     normal:
-        family: JetBrainsMono Nerd Font
+        family: Menlo
         style: Regular
     bold:
-        family: JetBrainsMono Nerd Font
+        family: Menlo
         style: Bold
     italic:
-        family: JetBrainsMono Nerd Font
+        family: Menlo
         style: Italic
 window:
     dynamic_padding: false
