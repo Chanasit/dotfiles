@@ -87,6 +87,9 @@ noremap <leader>0 :tablast<cr>
 " Clipboard
 set clipboard=unnamedplus
 
+" Remove kye binding
+map <F1> <Nop>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Indent Line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
