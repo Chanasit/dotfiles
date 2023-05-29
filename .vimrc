@@ -72,7 +72,7 @@ noremap <C-j> <Down>
 noremap <C-k> <Up>
 noremap <C-l> <Right>
 
-" Go to tab by number
+" go to tab by number
 noremap <leader>1 1gt
 noremap <leader>2 2gt
 noremap <leader>3 3gt
@@ -84,10 +84,13 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-" Clipboard
+" clipboard
 set clipboard=unnamedplus
 
-" Remove kye binding
+" no mouse
+set mouse=
+
+" remove key binding
 map <F1> <Nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
