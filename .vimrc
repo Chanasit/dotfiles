@@ -102,7 +102,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-set background=light
+set background=dark
 colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm

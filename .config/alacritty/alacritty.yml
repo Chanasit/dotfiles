@@ -54,7 +54,7 @@ font:
         style: Italic
 window:
     dynamic_padding: false
-    decorations: full
+    decorations: None
     startup_mode: Windowed
     opacity: 0.95
 key_bindings:
