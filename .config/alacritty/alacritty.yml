@@ -42,7 +42,7 @@ mouse:
 selection:
     save_to_clipboard: true
 font:
-    size: 16
+    size: 14
     normal:
         family: Menlo
         style: Regular
