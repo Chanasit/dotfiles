@@ -107,8 +107,8 @@ colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#f1f1f1
-hi FloatermBorder guibg=#f1f1f1 guifg=#414141
+hi Floaterm guibg=#414141
+hi FloatermBorder guibg=#414141 guifg=#f1f1f1
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.9
@@ -141,7 +141,7 @@ let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "github"
+let g:airline_theme = "serene"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 0
