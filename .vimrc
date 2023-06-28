@@ -162,6 +162,7 @@ let g:coc_global_extensions = [
         \'coc-tsserver',
         \'coc-highlight',
         \'coc-go',
+        \'coc-yaml',
         \'coc-emmet',
         \'coc-html',
         \'coc-pyright',
