@@ -72,7 +72,7 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # Terraform Config
 export TF_VERSION=0.12.31
-export TF_LOG=trace
+export TF_LOG=1
 
 # Pyenv Config
 if command -v pyenv 1>/dev/null 2>&1; then

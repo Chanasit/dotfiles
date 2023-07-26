@@ -1,5 +1,6 @@
 {
     "python.formatting.provider": "black",
+    "java.compile.nullAnalysis.mode": "automatic",
     "python.linting.flake8Enabled": true,
     "colors.enable": true,
     "pyright.disableDiagnostics": true,
