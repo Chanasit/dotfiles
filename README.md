@@ -1,10 +1,16 @@
 # Dotfiles
 
+#### Clone
+```
+git clone git@github.com:chanasit/dotfiles $HOME/.dotfiles
+```
+
 #### Configuation for [symlink]() to necessary dotfiles
 
 [vim](https://www.vim.org/) user
 
 ```shell
+cd $HOME/.dotfiles
 ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
 ln -vsf ${PWD}/.editorconfig ${HOME}/.editorconfig
 ```
@@ -12,6 +18,7 @@ ln -vsf ${PWD}/.editorconfig ${HOME}/.editorconfig
 [neovim](https://github.com/neovim/neovim) user
 
 ```shell
+cd $HOME/.dotfiles
 ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
 ln -vsf ${PWD}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
 ln -vsf ${PWD}/.config/nvim/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
@@ -25,6 +32,7 @@ ln -vsf ${PWD}/.editorconfig ${HOME}/.editorconfig
 #### Configuation for symlink necessary dotfiles
 
 ```shell
+cd $HOME/.dotfiles
 ln -vsf ${PWD}/.config/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 ```
 
@@ -39,5 +47,6 @@ Follow this link for [tmux](https://github.com/tmux/tmux) and [oh-my-tmux](https
 #### Configuation for symlink necessary dotfiles
 
 ```shell
+cd $HOME/.dotfiles
 ln -vsf ${PWD}/.tmux.conf.local ${HOME}/.tmux.conf.local
 ```

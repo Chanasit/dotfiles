@@ -3,7 +3,5 @@
     "python.linting.flake8Enabled": true,
     "colors.enable": true,
     "pyright.disableDiagnostics": true,
-    "yaml.schemas": {
-      "kubernetes": "/*.yaml"
-    }
+    "yaml.schemas": {}
 }
