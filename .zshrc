@@ -35,6 +35,17 @@ export PATH=$PATH:$GOPATH/bin
 export CARGO_HOME="$HOME/.cargo"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# JAVA
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
+  export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
+
+  alias java17='export JAVA_HOME=$JAVA_17_HOME'
+  alias java8='export JAVA_HOME=$JAVA_8_HOME'
+  java8
+fi
+
 # Android Home
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
