@@ -76,10 +76,15 @@ export NNN_FIFO='/tmp/nnn.fifo'
 export CLOUDSDK_PYTHON=/usr/bin/python3
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
+# Ngrok CLI
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
+
 # Network Proxy
-# export HTTP_PROXY=
-# export HTTPS_PROXY=
-# export NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
+export HTTP_PROXY=
+export HTTPS_PROXY=
+export NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
 
 # Terraform Config
 export TF_VERSION=0.12.31
