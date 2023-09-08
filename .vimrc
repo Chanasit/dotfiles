@@ -102,13 +102,13 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-set background=dark
+set background=light
 colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#414141
-hi FloatermBorder guibg=#414141 guifg=#f1f1f1
+hi Floaterm guibg=#f1f1f1
+hi FloatermBorder guibg=#f1f1f1 guifg=#414141
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.9
@@ -116,7 +116,8 @@ let g:floaterm_height = 0.9
 let g:floaterm_wintype = "float"
 let g:floaterm_position = "center"
 
-nnoremap <silent> <leader>d :FloatermNew nnn<cr>
+nnoremap <silent> <leader>D :FloatermNew ranger;<cr>
+nnoremap <silent> <leader>d :FloatermNew ranger<cr>
 nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,**/node_modules,**/vendor,**/__pycache__,**/venv}" . 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
@@ -141,7 +142,7 @@ let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "serene"
+let g:airline_theme = "base16_adwaita"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 0
