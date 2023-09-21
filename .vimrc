@@ -56,7 +56,7 @@ set foldlevel=2
 " interface
 set so=13
 set number
-set numberwidth=8
+set numberwidth=13
 set signcolumn=yes
 
 " completion
@@ -88,7 +88,7 @@ noremap <leader>0 :tablast<cr>
 set clipboard=unnamedplus
 
 " no mouse
-set mouse=
+set mouse-=a
 
 " remove key binding
 map <F1> <Nop>
