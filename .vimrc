@@ -56,7 +56,7 @@ set foldlevel=2
 " interface
 set so=13
 set number
-set numberwidth=13
+set numberwidth=8
 set signcolumn=yes
 
 " completion
@@ -116,7 +116,6 @@ let g:floaterm_height = 0.9
 let g:floaterm_wintype = "float"
 let g:floaterm_position = "center"
 
-nnoremap <silent> <leader>D :FloatermNew ranger;<cr>
 nnoremap <silent> <leader>d :FloatermNew ranger<cr>
 nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,**/node_modules,**/vendor,**/__pycache__,**/venv}" . 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
@@ -128,16 +127,16 @@ nnoremap <silent> <leader>f :FloatermNew fzf<cr>
 nnoremap <silent> <leader>h :Bracey<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Visual Multi
+" => Visual, Multi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:VM_leader = '\'
 let g:VM_theme = "lightpurple2"
 let g:VM_maps = {}
 let g:VM_maps["Select All"]        = '<leader>a'
-let g:VM_maps["Visual All"]        = '<leader>a'
+let g:VM_maps["Visual, All"]       = '<leader>a'
 let g:VM_maps["Align"]             = '<leader>A'
-let g:VM_maps["Add Cursor Down"]   = '<C-Down>'
-let g:VM_maps["Add Cursor Up"]     = '<C-Up>'
+let g:VM_maps["Add Cursor Down"]   = '<a-Down>'
+let g:VM_maps["Add Cursor Up"]     = '<a-Up>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
