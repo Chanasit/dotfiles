@@ -4,5 +4,20 @@
     "python.linting.flake8Enabled": true,
     "colors.enable": true,
     "pyright.disableDiagnostics": true,
-    "yaml.schemas": {}
+    "yaml.schemas": {},
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-1.7",
+        "path": "${JAVA_7_HOME}",
+        "default": true
+      },
+      {
+        "name": "JavaSE-1.8",
+        "path": "${JAVA_8_HOME}"
+      },
+      {
+        "name": "JavaSE-11",
+        "path": "${JAVA_11_HOME}"
+      }
+    ]
 }
