@@ -19,6 +19,7 @@ Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'cormacrelf/vim-colors-github'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -116,10 +117,18 @@ let g:floaterm_height = 0.9
 let g:floaterm_wintype = "float"
 let g:floaterm_position = "center"
 
-nnoremap <silent> <leader>d :FloatermNew ranger<cr>
+nnoremap <silent> <leader>d :FloatermNew nnn -eDH<cr>
 nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,**/node_modules,**/vendor,**/__pycache__,**/venv}" . 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NERDTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Bracey

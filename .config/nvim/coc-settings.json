@@ -5,6 +5,18 @@
     "colors.enable": true,
     "pyright.disableDiagnostics": true,
     "yaml.schemas": {},
+    "languageserver": {
+        "terraform": {
+            "command": "terraform-ls",
+            "args": ["serve"],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {},
+            "settings": {}
+        }
+    },
     "java.configuration.runtimes": [
       {
         "name": "JavaSE-1.7",
