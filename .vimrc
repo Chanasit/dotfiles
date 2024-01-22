@@ -20,6 +20,7 @@ Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'cormacrelf/vim-colors-github'
 Plug 'preservim/nerdtree'
+Plug 'terramate-io/vim-terramate'
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -47,6 +48,7 @@ set nowrap
 set noswapfile
 set nocursorline
 set shortmess+=c
+set autoread
 
 " folding
 set foldmethod=indent
@@ -89,7 +91,7 @@ noremap <leader>0 :tablast<cr>
 set clipboard=unnamedplus
 
 " no mouse
-set mouse-=a
+set mouse=
 
 " remove key binding
 map <F1> <Nop>
@@ -129,6 +131,10 @@ nnoremap <leader>n :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Bracey
