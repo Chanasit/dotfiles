@@ -84,7 +84,7 @@ fi
 # Network Proxy
 export HTTP_PROXY=
 export HTTPS_PROXY=
-export NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24
+export NO_PROXY=localhost,127.0.0.1
 
 # Terraform Config
 export TF_VERSION=0.12.31
