@@ -50,3 +50,4 @@ ln -vsf ${PWD}/.tmux.conf.local ${HOME}/.tmux.conf.local
 [NNN](https://github.com/jarun/nnn)  (n³) is a full-featured terminal file manager. It's tiny, nearly 0-config
 
 [https://github.com/jarun/nnn/wiki](https://github.com/jarun/nnn/wiki)
+

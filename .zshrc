@@ -125,3 +125,4 @@ alias n='nnn -deH'
 alias vi='nvim'
 alias l="ls -lah"
 alias x='startx'
+

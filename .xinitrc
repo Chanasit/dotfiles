@@ -6,3 +6,4 @@ export GDK_DPI_SCALE=0.75
 export GDK_SCALE=0
 echo "Xft.dpi: 156" | xrdb -merge
 exec i3
+
