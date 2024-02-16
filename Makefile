@@ -2,7 +2,6 @@ export OSTYPE = $(shell uname)
 
 config: ## install configuration
 	echo "symlink dotfile config \n"
-	ln -vsfn ${PWD}/.config/bat/config ${HOME}/.config/bat/config
 	ln -vsfn ${PWD}/.config/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf
 	ln -vsfn ${PWD}/.config/kitty/current-theme.conf ${HOME}/.config/kitty/current-theme.conf
 	ln -vsfn ${PWD}/.config/htop/htoprc ${HOME}/.config/htop/htoprc

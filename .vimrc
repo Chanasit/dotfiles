@@ -173,7 +173,6 @@ let g:coc_global_extensions = [
         \'coc-highlight',
         \'coc-go',
         \'coc-yaml',
-        \'coc-emmet',
         \'coc-html',
         \'coc-pyright',
         \'coc-java',

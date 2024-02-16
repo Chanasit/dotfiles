@@ -39,12 +39,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
-  export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
-
+  export JAVA_18_HOME=$(/usr/libexec/java_home -v 18)
   alias java17='export JAVA_HOME=$JAVA_17_HOME'
-  alias java8='export JAVA_HOME=$JAVA_8_HOME'
-  java8
+  alias java18='export JAVA_HOME=$JAVA_18_HOME'
 fi
+java18
 
 # Android Home
 export ANDROID_HOME=$HOME/Android/Sdk
