@@ -64,8 +64,8 @@ export KUBECONFIG=$HOME/.kube/config
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow -g "!{.git,**/node_modules,**/vendor,venv,**/__pycache__,**/venv}" 2> /dev/null'
 
 # NNN file manager
-# BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
-# export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 export NNN_COLORS='2136'
 export NNN_PLUG='p:preview-tui'
 export NNN_OPTS='H'
