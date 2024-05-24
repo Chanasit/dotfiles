@@ -57,14 +57,14 @@ set nofoldenable
 set foldlevel=2
 
 " interface
-set so=13
+set so=8
 set number
-set numberwidth=13
+set numberwidth=8
 set signcolumn=yes
 
 " completion
 set cmdheight=1
-set pumheight=13
+set pumheight=8
 set completeopt=menuone,noinsert,noselect
 
 " last line history
@@ -100,6 +100,12 @@ map <F1> <Nop>
 " => Indent Line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Github Theme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:github_colors_block_diffmark = 1
+let g:github_colors_soft = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theme
