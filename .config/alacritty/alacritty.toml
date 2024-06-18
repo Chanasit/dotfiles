@@ -1,36 +1,39 @@
-[colors.bright]
-black = "0x4d4d4d"
-blue = "0xcaa9fa"
-cyan = "0xaa91e3"
-green = "0x5af78e"
-magenta = "0xff92d0"
-red = "0xff6e67"
-white = "0xe6e6e6"
-yellow = "0xeaf08d"
+# github Alacritty Colors
 
-[colors.dim]
-black = "0x000000"
-blue = "0x530aba"
-cyan = "0x433364"
-green = "0x049f2b"
-magenta = "0xbb006b"
-red = "0xa90000"
-white = "0x5f5f5f"
-yellow = "0xa3b106"
-
-[colors.normal]
-black = "0x000000"
-blue = "0xbd93f9"
-cyan = "0x8d79ba"
-green = "0x50fa7b"
-magenta = "0xff79c6"
-red = "0xff5555"
-white = "0xbfbfbf"
-yellow = "0xeffa78"
-
+# Default colors
 [colors.primary]
-background = "0x191622"
-foreground = "0xe1e1e6"
+background = '#ffffff'
+foreground = '#0E1116'
+
+# Normal colors
+[colors.normal]
+black   = '#24292f'
+red     = '#cf222e'
+green   = '#116329'
+yellow  = '#4d2d00'
+blue    = '#0969da'
+magenta = '#8250df'
+cyan    = '#1b7c83'
+white   = '#6e7781'
+
+# Bright colors
+[colors.bright]
+black   = '#57606a'
+red     = '#a40e26'
+green   = '#1a7f37'
+yellow  = '#633c01'
+blue    = '#218bff'
+magenta = '#a475f9'
+cyan    = '#3192aa'
+white   = '#8c959f'
+
+[[colors.indexed_colors]]
+index = 16
+color = '#d18616'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#a40e26'
 
 [env]
 TERM = "xterm-256color"
@@ -367,16 +370,6 @@ key = "Space"
 mods = "Control"
 
 [[keyboard.bindings]]
-chars = "\u001B`"
-key = "Grave"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001B~"
-key = "Grave"
-mods = "Alt|Shift"
-
-[[keyboard.bindings]]
 chars = "\u001B."
 key = "Period"
 mods = "Alt"
@@ -428,9 +421,6 @@ mods = "Alt|Shift"
 
 [mouse]
 hide_when_typing = true
-
-[mouse.hints]
-modifiers = "Shift"
 
 [selection]
 save_to_clipboard = true
