@@ -325,14 +325,14 @@ tmux_conf_copy_to_os_clipboard=true
 set -g default-terminal "screen-256color"
 
 # increase history size
-set -g history-limit 10000
+set -g history-limit 5000
 
 # decrease command delay (increases vim responsiveness)
-set -sg escape-time 1
+set -sg escape-time 1.5
 
 # Lower escape timing from 500ms to 50ms for quicker response to scroll-buffer access.
 # Basically allows for faster key repetition
-set -s escape-time 50
+set -s escape-time 100
 
 # start with mouse mode enabled
 set -g mouse off
