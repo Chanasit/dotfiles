@@ -5,6 +5,7 @@
     "colors.enable": true,
     "pyright.disableDiagnostics": true,
     "yaml.schemas": {},
+    "coc.preferences.formatOnSaveFiletypes":  ["*"],
     "languageserver": {
         "terraform": {
             "command": "terraform-ls",

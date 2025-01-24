@@ -111,7 +111,7 @@ let g:github_colors_soft = 1
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-set background=light
+set background=dark
 colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
@@ -183,6 +183,7 @@ let g:coc_global_extensions = [
         \'coc-html',
         \'coc-pyright',
         \'coc-java',
+        \'coc-rls',
         \'coc-markdownlint',
     \]
 

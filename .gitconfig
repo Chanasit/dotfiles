@@ -4,7 +4,7 @@
 [includeIf "gitdir:~/Golang/src/github.com/tdshop/"]
 	path = .gitconfig-td
 [core]
-	editor = nvim
+	editor = vim
 	ignorecase = false
 [url "git@github.com:"]
 	insteadOf = https://github.com/
