@@ -1,11 +1,16 @@
 # The syntax is "key = value". The whitespace around the
 # equals doesn't matter.
-font-size = 14
-background = 282c34
-foreground = ffffff
+font-size = 15
+
+theme = clrs
+cursor-color = #626880
+cursor-text = #c6d0f5
+selection-background = #626880
+selection-foreground = #c6d0f5
+
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
-adjust-cell-height = 13%
+adjust-cell-height = 3%
 copy-on-select = clipboard
 
 # Comments start with a `#` and are only valid on their own line.
@@ -15,4 +20,4 @@ copy-on-select = clipboard
 # keybind = ctrl+d=new_split:right
 
 # Empty values reset the configuration to the default value
-font-family = Menlo
+font-family = JetBrains Mono

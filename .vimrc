@@ -111,7 +111,7 @@ let g:github_colors_soft = 1
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-set background=dark
+set background=light
 colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
