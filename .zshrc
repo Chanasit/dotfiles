@@ -42,8 +42,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export JAVA_18_HOME=$(/usr/libexec/java_home -v 18)
   alias java17='export JAVA_HOME=$JAVA_17_HOME'
   alias java18='export JAVA_HOME=$JAVA_18_HOME'
+  java18
 fi
-java18
 
 # Android Home
 export ANDROID_HOME=$HOME/Android/Sdk
