@@ -18,9 +18,10 @@ Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-Plug 'cormacrelf/vim-colors-github'
+" Plug 'cormacrelf/vim-colors-github'
 Plug 'preservim/nerdtree'
 Plug 'terramate-io/vim-terramate'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -111,13 +112,13 @@ let g:github_colors_soft = 1
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-set background=light
-colorscheme github
+set bg=dark
+colorscheme dracula
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#f1f1f1
-hi FloatermBorder guibg=#f1f1f1 guifg=#414141
+hi Floaterm guibg=#414141
+hi FloatermBorder guibg=#414141 guifg=#f1f1f1
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.9
@@ -125,7 +126,7 @@ let g:floaterm_height = 0.9
 let g:floaterm_wintype = "float"
 let g:floaterm_position = "center"
 
-nnoremap <silent> <leader>d :FloatermNew nnn<cr>
+nnoremap <silent> <leader>d :FloatermNew ranger<cr>
 nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,**/node_modules,**/vendor,**/__pycache__,**/venv}" . 2> /dev/null<cr>
 nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
@@ -170,6 +171,12 @@ let g:airline#extensions#tabline#tab_min_count = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NerdTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COC VIM
