@@ -18,10 +18,9 @@ Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-" Plug 'cormacrelf/vim-colors-github'
+Plug 'projekt0n/github-nvim-theme'
 Plug 'preservim/nerdtree'
 Plug 'terramate-io/vim-terramate'
-Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -103,22 +102,16 @@ map <F1> <Nop>
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Github Theme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:github_colors_block_diffmark = 1
-let g:github_colors_soft = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
-set bg=dark
-colorscheme dracula
+set bg=light
+colorscheme github_light
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#414141
-hi FloatermBorder guibg=#414141 guifg=#f1f1f1
+hi Floaterm guibg=#f1f1f1
+hi FloatermBorder guibg=#f1f1f1 guifg=#414141
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.9
@@ -160,7 +153,7 @@ let g:VM_maps["Add Cursor Up"]     = '<a-Up>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "github"
+let g:airline_theme = "badwolf"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 0
