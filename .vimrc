@@ -21,6 +21,7 @@ Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'projekt0n/github-nvim-theme'
 Plug 'preservim/nerdtree'
 Plug 'terramate-io/vim-terramate'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Automatically install missing plugins on startup
