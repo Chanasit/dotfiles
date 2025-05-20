@@ -22,6 +22,7 @@ Plug 'projekt0n/github-nvim-theme'
 Plug 'preservim/nerdtree'
 Plug 'terramate-io/vim-terramate'
 Plug 'ryanoasis/vim-devicons'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Automatically install missing plugins on startup
