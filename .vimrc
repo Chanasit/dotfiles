@@ -108,7 +108,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors
 set bg=light
-colorscheme github_light
+colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -123,7 +123,7 @@ let g:floaterm_position = "center"
 
 nnoremap <silent> <leader>d :FloatermNew ranger<cr>
 nnoremap <silent> <leader>r :FloatermNew rg --follow -g "!{.git,**/node_modules,**/vendor,**/__pycache__,**/venv}" . 2> /dev/null<cr>
-nnoremap <silent> <leader>g :FloatermNew git log --graph --decorate --oneline<cr>
+nnoremap <silent> <leader>g :FloatermNew lazygit<cr>
 nnoremap <silent> <leader>f :FloatermNew fzf<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,7 +155,7 @@ let g:VM_maps["Add Cursor Up"]     = '<a-Up>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme = "badwolf"
+let g:airline_theme = "github_dark"
 let g:airline_extensions = ['tabline', 'coc', 'fugitiveline', 'wordcount', 'branch']
 let g:airline_highlighting_cache = 1
 let g:airline_powerline_fonts = 0
