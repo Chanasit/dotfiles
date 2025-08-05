@@ -112,8 +112,8 @@ colorscheme github
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FloatTerm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi Floaterm guibg=#f1f1f1
-hi FloatermBorder guibg=#f1f1f1 guifg=#414141
+hi Floaterm guibg=#e8e8e8
+hi FloatermBorder guibg=#e8e8e8 guifg=#414141
 let g:floaterm_opener = "tabe"
 let g:floaterm_autoclose = 2
 let g:floaterm_width = 0.9
