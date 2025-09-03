@@ -43,15 +43,15 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 size = 14
 
 [font.bold]
-family = "Menlo"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "Menlo"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "Menlo"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -426,7 +426,7 @@ hide_when_typing = true
 save_to_clipboard = true
 
 [window]
-decorations = "None"
-dynamic_padding = false
+# decorations = "None"
+dynamic_padding = true
 opacity = 0.95
 startup_mode = "Windowed"

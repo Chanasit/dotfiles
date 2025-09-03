@@ -20,8 +20,8 @@
     },
     "java.configuration.runtimes": [
       {
-        "name": "JavaSE-1.7",
-        "path": "${JAVA_7_HOME}",
+        "name": "JavaSE-17",
+        "path": "${JAVA_17_HOME}",
         "default": true
       },
       {
