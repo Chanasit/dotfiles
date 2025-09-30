@@ -6,6 +6,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/kitty/current-theme.conf ${HOME}/.config/kitty/current-theme.conf
 	ln -vsfn ${PWD}/.config/htop/htoprc ${HOME}/.config/htop/htoprc
 	ln -vsfn ${PWD}/.config/i3/config ${HOME}/.config/i3/config
+	ln -vsfn ${PWD}/.config/ghostty/config ${HOME}/.config/ghostty/config
 	ln -vsfn ${PWD}/.config/i3/i3status.conf ${HOME}/.config/i3/i3status.conf
 	ln -vsfn ${PWD}/.config/nvim/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
 	ln -vsfn ${PWD}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim

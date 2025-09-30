@@ -2,7 +2,7 @@
 # equals doesn't matter.
 font-size = 15
 
-theme = clrs
+theme = Dracula
 cursor-color = #626880
 cursor-text = #c6d0f5
 selection-background = #626880
