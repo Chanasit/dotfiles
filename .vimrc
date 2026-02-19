@@ -187,6 +187,7 @@ let g:coc_global_extensions = [
         \'coc-java',
         \'coc-rls',
         \'coc-markdownlint',
+        \'coc-rust-analyzer',
     \]
 
 " Use tab for trigger completion with characters ahead and navigate.
