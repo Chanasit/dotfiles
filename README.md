@@ -68,7 +68,7 @@ Feature-rich text editor. Config includes `init.vim` and CoC (Conquer of Complet
 mkdir -p ~/.config/nvim
 
 ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
-ln -vsf ${PWD}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
+ln -vsf ${PWD}/.config/nvim/init.lua ${HOME}/.config/nvim/init.lua
 ln -vsf ${PWD}/.config/nvim/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
 ln -vsf ${PWD}/.editorconfig ${HOME}/.editorconfig
 ```
