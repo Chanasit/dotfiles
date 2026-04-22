@@ -97,7 +97,7 @@ if [ -f ~/GoogleSDK/completion.zsh.inc ]; then . ~/GoogleSDK/completion.zsh.inc;
 
 # Google Cloud SDK
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
-export CLOUDSDK_PYTHON=/usr/bin/python3
+export CLOUDSDK_PYTHON=$(which python3)
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 ##############################################################
