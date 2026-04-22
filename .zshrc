@@ -100,6 +100,9 @@ export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export CLOUDSDK_PYTHON=$(which python3)
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
+# K9S
+export K9S_CONFIG_DIR="$HOME/.config/k9s"
+
 ##############################################################
 # => Alias ZSH Script
 ##############################################################
