@@ -9,7 +9,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/ghostty/config ${HOME}/.config/ghostty/config
 	ln -vsfn ${PWD}/.config/i3/i3status.conf ${HOME}/.config/i3/i3status.conf
 	ln -vsfn ${PWD}/.config/nvim/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
-	ln -vsfn ${PWD}/.config/nvim/init.vim ${HOME}/.config/nvim/init.vim
+	ln -vsfn ${PWD}/.config/nvim/init.lua ${HOME}/.config/nvim/init.lua
 	ln -vsfn ${PWD}/.config/k9s/skin.yaml ${HOME}/.config/k9s/skin.yaml
 	ln -vsfn ${PWD}/.config/k9s/config.yaml ${HOME}/.config/k9s/config.yaml
 	ln -vsfn ${PWD}/.editorconfig ${HOME}/.editorconfig

@@ -87,8 +87,10 @@ vim.keymap.set("", "<F1>", "<Nop>", { noremap = true })
 require("lazy").setup({
   -- Appearance / UI
   { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
-  -- { "ryanoasis/vim-devicons" },         -- still needed by many
-  { "mhinz/vim-startify" },
+  { "projekt0n/github-nvim-theme",
+    lazy = false,    -- load during startup
+    priority = 1000 -- make sure it loads before other UI plugins
+  },
 
   -- File / Project navigation
   { "preservim/nerdtree" },
@@ -114,7 +116,6 @@ require("lazy").setup({
 
   -- Others (commented ones skipped or replaced)
   { "lewis6991/gitsigns.nvim" },
-
   rocks = {
     enabled = false,
     hererocks = false,        -- ← Add this line (or set to false)
@@ -124,6 +125,9 @@ require("lazy").setup({
 -- =================================================================
 --  Plugin configurations
 -- =================================================================
+
+vim.opt.termguicolors = true
+vim.cmd("colorscheme github_light")
 
 -- lualine (replacement for airline)
 require("lualine").setup({
