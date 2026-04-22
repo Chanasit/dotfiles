@@ -35,11 +35,9 @@ export PATH="$PATH:$HOME/.yarn/bin"
 # java path
 export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
-export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 
 alias java17='export JAVA_HOME=$JAVA_17_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
 java17
 
 # GO path
@@ -94,14 +92,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOME/Binary/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/Binary/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '$HOME/Binary/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/Binary/google-cloud-sdk/completion.zsh.inc'; fi
-
-export PATH=$PATH:$HOME/Binary/google-cloud-sdk/bin
-export PATH=$PATH:$HOME/Binary/
+# Replace ~/GoogleSDK with your actual installation path
+if [ -f ~/GoogleSDK/path.zsh.inc ]; then . ~/GoogleSDK/path.zsh.inc; fi
+if [ -f ~/GoogleSDK/completion.zsh.inc ]; then . ~/GoogleSDK/completion.zsh.inc; fi
 
 # Google Cloud SDK
 export CLOUDSDK_PYTHON_SITEPACKAGES=1

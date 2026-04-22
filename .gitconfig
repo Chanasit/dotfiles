@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [includeIf "gitdir:~/"]
 	path = .gitconfig-me
-[includeIf "gitdir:~/Golang/src/github.com/tdshop/"]
+[includeIf "gitdir:~/Golang/src/github.com/Tookdee88/"]
 	path = .gitconfig-td
 [core]
 	editor = vim
@@ -30,6 +30,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	email = kai.chr160@gmail.com
-	name = hjkl
