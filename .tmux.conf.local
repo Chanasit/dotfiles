@@ -1,0 +1,7 @@
+# status bar
+set -g status on
+set -g status-position top
+set -g status-style "fg=#000000 bg=#7CFC00 bold"
+set -g status-left " #[bold]hjkl #[default] "
+set -g status-right " %H:%M #[bold]DONE #[default] "
+set -g window-status-current-style "reverse,bold"
