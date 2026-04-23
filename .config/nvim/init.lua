@@ -87,10 +87,6 @@ vim.keymap.set("", "<F1>", "<Nop>", { noremap = true })
 require("lazy").setup({
   -- Appearance / UI
   { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
-  { "projekt0n/github-nvim-theme",
-    lazy = false,    -- load during startup
-    priority = 1000 -- make sure it loads before other UI plugins
-  },
 
   -- File / Project navigation
   { "preservim/nerdtree" },
@@ -126,13 +122,12 @@ require("lazy").setup({
 --  Plugin configurations
 -- =================================================================
 
-vim.opt.termguicolors = true
-vim.cmd("colorscheme github_light")
+vim.cmd("colorscheme delek")
 
 -- lualine (replacement for airline)
 require("lualine").setup({
   options = {
-    theme = "auto",                     -- will pick up github theme
+    theme = "github",                     -- will pick up github theme
     icons_enabled = true,
     component_separators = { left = "", right = "" },
     section_separators   = { left = "", right = "" },
@@ -206,7 +201,6 @@ vim.g.coc_global_extensions = {
   "coc-pyright",
   "coc-java",
   "coc-rls",
-  "coc-markdownlint",
   "coc-rust-analyzer",
 }
 

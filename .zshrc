@@ -26,12 +26,6 @@ export PATH=$PATH:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin
 export AWS_CONFIG_FILE="$HOME/.aws/config"
 export AWS_SHARED_CREDENTIALS_FILE="$HOME/.aws/credentials"
 
-# SSH path
-export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
-
-# yarn path
-export PATH="$PATH:$HOME/.yarn/bin"
-
 # java path
 export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
@@ -138,7 +132,6 @@ alias x='startx'
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C $HOME/Golang/bin/terramate terramate
-
 
 # functions
 function curl() {
