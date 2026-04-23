@@ -15,6 +15,7 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.editorconfig ${HOME}/.editorconfig
 	ln -vsfn ${PWD}/.gitconfig ${HOME}/.gitconfig
 	ln -vsfn ${PWD}/.zshrc ${HOME}/.zshrc
+	ln -vsfn ${PWD}/.inputrc ${HOME}/.inputrc
 	ln -vsfn ${PWD}/.tmux.conf ${HOME}/.tmux.conf
 	ln -vsfn ${PWD}/.config/picom/picom.conf ${HOME}/.config/picom/picom.conf
 	ln -vsfn ${PWD}/.config/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
