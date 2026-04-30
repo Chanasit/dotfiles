@@ -29,7 +29,7 @@ vim.opt.ttimeoutlen      = 50
 vim.opt.history          = 10000
 vim.opt.undofile         = true
 vim.opt.hidden           = true
-vim.opt.undolevels       = 100     -- lower than before, but still generous
+vim.opt.undolevels       = 100
 vim.opt.wrap             = false
 vim.opt.swapfile         = false
 vim.opt.cursorline       = false
@@ -92,9 +92,8 @@ require("lazy").setup({
     priority = 1000,
     opts = {},
     config = function()
-        -- require("jb").setup({transparent = true})
-        vim.cmd("colorscheme jb")
-        vim.o.background = "light"
+      vim.cmd("colorscheme jb")
+      vim.o.background = "light"
     end,
   },
   {
@@ -139,7 +138,7 @@ require("lazy").setup({
 -- lualine (replacement for airline)
 require("lualine").setup({
   options = {
-    theme = "auto",                     -- will pick up github theme
+    theme = "auto",
     icons_enabled = true,
     component_separators = { left = "", right = "" },
     section_separators   = { left = "", right = "" },

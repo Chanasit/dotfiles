@@ -20,4 +20,4 @@ copy-on-select = clipboard
 # keybind = ctrl+d=new_split:right
 
 # Empty values reset the configuration to the default value
-font-family = JetBrains Mono
+font-family = JetBrainsMono Nerd Font Mono
