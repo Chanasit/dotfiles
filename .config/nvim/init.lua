@@ -86,10 +86,28 @@ vim.keymap.set("", "<F1>", "<Nop>", { noremap = true })
 -- =================================================================
 require("lazy").setup({
   -- Appearance / UI
-  { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+  {
+    "nickkadutskyi/jb.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+        -- require("jb").setup({transparent = true})
+        vim.cmd("colorscheme jb")
+        vim.o.background = "light"
+    end,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    priority = 9998
+  },
 
   -- File / Project navigation
-  { "preservim/nerdtree" },
+  {
+    "preservim/nerdtree",
+    priority = 9997
+  },
   { "voldikss/vim-floaterm" },
 
   -- Editing helpers
@@ -112,22 +130,16 @@ require("lazy").setup({
 
   -- Others (commented ones skipped or replaced)
   { "lewis6991/gitsigns.nvim" },
-  rocks = {
-    enabled = false,
-    hererocks = false,        -- ← Add this line (or set to false)
-  },
 })
 
 -- =================================================================
 --  Plugin configurations
 -- =================================================================
 
-vim.cmd("colorscheme delek")
-
 -- lualine (replacement for airline)
 require("lualine").setup({
   options = {
-    theme = "github",                     -- will pick up github theme
+    theme = "auto",                     -- will pick up github theme
     icons_enabled = true,
     component_separators = { left = "", right = "" },
     section_separators   = { left = "", right = "" },
@@ -200,7 +212,6 @@ vim.g.coc_global_extensions = {
   "coc-html",
   "coc-pyright",
   "coc-java",
-  "coc-rls",
   "coc-rust-analyzer",
 }
 
