@@ -1,7 +1,26 @@
 # status bar
+
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*:Tc"
+set -as terminal-features ",xterm-256color:RGB"
+
 set -g status on
 set -g status-position top
 set -g status-style "fg=#000000 bg=#FFFFFF bold"
 set -g status-left " #[bold]hjkl #[default] "
 set -g status-right " %H:%M #[bold]DONE #[default] "
 set -g window-status-current-style "reverse,bold"
+set -g mode-style "bg=#000000,fg=#00FF00"
+set -g message-style "bg=#00FF00,fg=#000000"
+
+set -sg escape-time 0
+set -g history-limit 100000
+set -g mouse on
+set -g set-clipboard on
+setw -g mode-keys vi
+
+set -g status-interval 5
+set -g repeat-time 300
+
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
