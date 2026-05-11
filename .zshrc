@@ -100,6 +100,9 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # K9S
 export K9S_CONFIG_DIR="$HOME/.config/k9s"
 
+# ASDF (terraform, hashicorp)
+export PATH="$HOME/.asdf/shims:$PATH"
+
 ##############################################################
 # => Alias ZSH Script
 ##############################################################

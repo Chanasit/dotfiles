@@ -1,3 +1,7 @@
+-- =========================================================
+-- Fast Lua loader (Neovim 0.9+)
+-- =========================================================
+vim.loader.enable()
 -- =================================================================
 --  Lazy.nvim bootstrap
 -- =================================================================
@@ -99,16 +103,68 @@ require("lazy").setup({
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    priority = 9998
+    priority = 9998,
+    config = function()
+    require("lualine").setup({
+      options = {
+        theme = "auto",
+        icons_enabled = true,
+        component_separators = { left = "", right = "" },
+        section_separators   = { left = "", right = "" },
+      },
+      extensions = { "quickfix", "fugitive" },
+    })
+    end
   },
-
-  -- File / Project navigation
   {
-    "preservim/nerdtree",
-    priority = 9997
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("bufferline").setup{}
+    end
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("nvim-tree").setup({
+        sort = { sorter = "case_sensitive" },
+        view = {
+          width = 33,
+          side = "left",
+        },
+        renderer = {
+          group_empty = true,
+          highlight_git = true,
+          icons = {
+            show = {
+              file = true,
+              folder = true,
+              folder_arrow = true,
+              git = true,
+            },
+          },
+        },
+        actions = {
+          open_file = {
+            quit_on_open = false,     -- keep tree open after opening file
+            resize_window = true,
+            window_picker = {
+              enable = true,
+            },
+          },
+        },
+        filters = {
+          dotfiles = false,
+          git_ignored = false,
+        },
+      })
+    end,
   },
   { "voldikss/vim-floaterm" },
-
   -- Editing helpers
   { "Yggdroot/indentLine" },
   { "tpope/vim-commentary" },
@@ -135,17 +191,6 @@ require("lazy").setup({
 --  Plugin configurations
 -- =================================================================
 
--- lualine (replacement for airline)
-require("lualine").setup({
-  options = {
-    theme = "auto",
-    icons_enabled = true,
-    component_separators = { left = "", right = "" },
-    section_separators   = { left = "", right = "" },
-  },
-  extensions = { "quickfix", "fugitive", "nerdtree" },
-})
-
 -- indentLine
 vim.g.indentLine_char_list = { "|", "¦", "┆", "┊" }
 
@@ -165,43 +210,29 @@ vim.keymap.set("n", "<leader>r", ":FloatermNew rg --follow -g '!{.git,**/node_mo
 vim.keymap.set("n", "<leader>g", ":FloatermNew lazygit<CR>", { silent = true })
 vim.keymap.set("n", "<leader>f", ":FloatermNew fzf<CR>",     { silent = true })
 
--- NERDTree
-vim.keymap.set("n", "<leader>n",  ":NERDTreeMirror<CR>:NERDTreeFocus<CR>", { silent = true })
-vim.keymap.set("n", "<C-n>",      ":NERDTree<CR>",      { silent = true })
-vim.keymap.set("n", "<C-t>",      ":NERDTreeToggle<CR>", { silent = true })
-vim.keymap.set("n", "<C-f>",      ":NERDTreeFind<CR>",   { silent = true })
-
--- Auto open NERDTree mirror in new tabs
-vim.api.nvim_create_autocmd("BufWinEnter", {
-  pattern = "*",
-  callback = function()
-    if vim.bo.buftype ~= "quickfix" and vim.fn.getcmdwintype() == "" then
-      vim.cmd("silent NERDTreeMirror")
-    end
-  end,
-})
-
--- Change cwd to current file dir (you had this)
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*",
-  command = "lcd %:p:h",
-})
+-- Buffer Line: Open file with Enter in a new tab
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", ":bprev<CR>", { desc = "Prev buffer" })
+vim.keymap.set("n", "<leader>bd", ":bd<CR>",    { desc = "Delete buffer" })
+vim.keymap.set("n", "<Tab>",     ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-Tab>",   ":bprev<CR>", { desc = "Prev buffer" })
 
 -- Bracey
 vim.keymap.set("n", "<leader>h", ":Bracey<CR>", { silent = true })
 
 -- Visual-multi
-vim.g.VM_leader = [[\]]
+vim.g.VM_leader = "\\"
 vim.g.VM_theme  = "lightpurple2"
 vim.g.VM_maps   = {
-  ["Select All"]      = "<leader>a",
-  ["Visual, All"]     = "<leader>a",
-  ["Align"]           = "<leader>A",
   ["Add Cursor Down"] = "<A-Down>",
   ["Add Cursor Up"]   = "<A-Up>",
 }
 
--- CoC (almost same mappings – lua style)
+-- Tree
+local api = require("nvim-tree.api")
+vim.keymap.set("n", "<leader>n", api.tree.toggle, { desc = "Toggle nvim-tree" })
+
+-- CoC - plugins
 vim.g.coc_global_extensions = {
   "coc-sh",
   "coc-tsserver",
@@ -217,26 +248,26 @@ vim.g.coc_global_extensions = {
 local keymap = vim.keymap.set
 local opts   = { silent = true, noremap = true, expr = true }
 
--- Tab / S-Tab completion (expr mapped)
+
+-- COC - Tab / S-Tab completion (expr mapped)
 keymap("i", "<TAB>",   [[coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "<Tab>" : coc#refresh()]], opts)
 keymap("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "<C-h>"]], opts)
 
 keymap("i", "<CR>",    [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
--- <c-space> trigger
 keymap("i", "<C-Space>", "coc#refresh()", { silent = true, expr = true })
 
--- Diagnostics
+-- COC - Diagnostics
 keymap("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
 keymap("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
 
--- GoTo
-keymap("n", "gd", "<Plug>(coc-definition)",      { silent = true })
+-- COC - Def
+-- keymap("n", "gd", "<Plug>(coc-definition)",      { silent = true })
+keymap("n", "gd", ":call CocActionAsync('jumpDefinition', 'tabe')<CR>", { silent = true })
 keymap("n", "gy", "<Plug>(coc-type-definition)",  { silent = true })
 keymap("n", "gi", "<Plug>(coc-implementation)",   { silent = true })
 keymap("n", "gr", "<Plug>(coc-references)",       { silent = true })
 
--- Documentation
 vim.keymap.set("n", "K", function()
   if vim.fn.CocAction("hasProvider", "hover") then
     vim.fn.CocActionAsync("doHover")
@@ -245,20 +276,20 @@ vim.keymap.set("n", "K", function()
   end
 end, { silent = true })
 
--- Others (rename, code action, format…)
+-- COC - Others (rename, code action, format…)
 keymap("n", "<leader>rn", "<Plug>(coc-rename)",        { silent = true })
 keymap("n", "<leader>ac", "<Plug>(coc-codeaction)",    { silent = true })
 keymap("n", "<leader>qf", "<Plug>(coc-fix-current)",   { silent = true })
 keymap("n", "<leader>cl", "<Plug>(coc-codelens-action)", { silent = true })
 
--- CoCList
+-- COC - List
 keymap("n", "<space>a", ":<C-u>CocList diagnostics<cr>",  { silent = true, nowait = true })
 keymap("n", "<space>e", ":<C-u>CocList extensions<cr>",   { silent = true, nowait = true })
 keymap("n", "<space>c", ":<C-u>CocList commands<cr>",     { silent = true, nowait = true })
 keymap("n", "<space>o", ":<C-u>CocList outline<cr>",      { silent = true, nowait = true })
 keymap("n", "<space>s", ":<C-u>CocList -I symbols<cr>",   { silent = true, nowait = true })
 
--- Optional: add these if you still want :Format / :OR commands
+-- COC - Optional: add these if you still want :Format / :OR commands
 vim.api.nvim_create_user_command("Format", function()
   vim.fn.CocActionAsync("format")
 end, {})
@@ -266,4 +297,4 @@ vim.api.nvim_create_user_command("OR", function()
   vim.fn.CocActionAsync("runCommand", "editor.action.organizeImport")
 end, {})
 
-print("Lua config loaded – welcome to modern Neovim!")
+print("!")

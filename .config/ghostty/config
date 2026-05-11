@@ -1,8 +1,8 @@
 # The syntax is "key = value". The whitespace around the
 # equals doesn't matter.
-font-size = 15
+font-size = 13
 
-theme = Dracula
+theme = github-light
 cursor-color = #626880
 cursor-text = #c6d0f5
 selection-background = #626880
