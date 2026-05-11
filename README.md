@@ -60,7 +60,7 @@ Then follow the symlink instructions for each tool below.
 
 ### Neovim
 
-Feature-rich text editor. Config includes `init.vim` and CoC (Conquer of Completion) settings.
+Feature-rich text editor. Config includes `init.lua` and CoC (Conquer of Completion) settings.
 
 **Symlink:**
 
@@ -299,7 +299,7 @@ dotfiles/
     ├── kitty/
     │   └── kitty.conf
     ├── nvim/
-    │   ├── init.vim
+    │   ├── init.lua
     │   └── coc-settings.json
     ├── picom/
     │   └── picom.conf
