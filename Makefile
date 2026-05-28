@@ -21,7 +21,6 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.tmux.conf.local ${HOME}/.tmux.conf.local
 	ln -vsfn ${PWD}/.config/picom/picom.conf ${HOME}/.config/picom/picom.conf
 	ln -vsfn ${PWD}/.config/dunst/dunstrc ${HOME}/.config/dunst/dunstrc
-	ln -vsfn ${PWD}/.vimrc ${HOME}/.vimrc
 	ln -vsfn ${PWD}/.config/gxkb/gxkb.cfg ${HOME}/.config/gxkb/gxkb.cfg
 	ln -vsfn ${PWD}/.config/gtk-3.0/settings.ini ${HOME}/.config/gtk-3.0/settings.ini
 	ln -vsfn ${PWD}/.config/alacritty/alacritty.toml ${HOME}/.config/alacritty/alacritty.toml

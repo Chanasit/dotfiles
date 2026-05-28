@@ -27,12 +27,8 @@ export AWS_CONFIG_FILE="$HOME/.aws/config"
 export AWS_SHARED_CREDENTIALS_FILE="$HOME/.aws/credentials"
 
 # java path
-export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
-
-alias java17='export JAVA_HOME=$JAVA_17_HOME'
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
-java17
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # GO path
 export GOPATH=$HOME/Golang

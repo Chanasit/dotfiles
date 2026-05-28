@@ -101,6 +101,19 @@ require("lazy").setup({
     end,
   },
   {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      ensure_installed = {
+        "hcl", "terraform", "lua", "vim", "markdown", "json", "yaml", "bash"
+      },
+      highlight = { enable = true },
+      indent = { enable = true },
+      incremental_selection = { enable = true },
+    }
+  },
+  {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     priority = 9998,
@@ -176,7 +189,7 @@ require("lazy").setup({
   { "neoclide/coc.nvim", branch = "release" },
 
   -- Markdown & preview
-  { "instant-markdown/vim-instant-markdown", ft = "markdown" },
+  { "instant-markdown/vim-instant-markdown" },
 
   -- PlantUML
   { "aklt/plantuml-syntax" },
@@ -296,5 +309,14 @@ end, {})
 vim.api.nvim_create_user_command("OR", function()
   vim.fn.CocActionAsync("runCommand", "editor.action.organizeImport")
 end, {})
+
+-- Force show quotes in JSON files
+vim.api.nvim_create_autocmd({ "FileType", "BufRead", "BufNewFile", "BufEnter" }, {
+  pattern = { "*.json", "*.jsonc", "package.json" },
+  callback = function()
+    vim.opt_local.conceallevel = 0
+    vim.opt_local.concealcursor = ""
+  end,
+})
 
 print("!")
