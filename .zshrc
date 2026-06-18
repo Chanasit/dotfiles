@@ -19,38 +19,50 @@ fi
 export VISUAL='nvim'
 export EDITOR='nvim'
 
-# Custom binary file
-export PATH="/opt/homebrew/bin:$PATH:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin"
+# Custom binary paths. zsh's unique array keeps PATH stable and duplicate-free.
+typeset -U path PATH
+path=(
+  /opt/homebrew/bin
+  "$HOME/.local/bin"
+  /usr/local/bin
+  /usr/bin
+  /bin
+  "$HOME/.jenv/bin"
+  "$HOME/.jenv/shims"
+  "$HOME/.pyenv/bin"
+  "$HOME/.pyenv/shims"
+  "$HOME/.cargo/bin"
+  "$HOME/.asdf/shims"
+  $path
+)
+export PATH
 
 # AWS path
 export AWS_CONFIG_FILE="$HOME/.aws/config"
 export AWS_SHARED_CREDENTIALS_FILE="$HOME/.aws/credentials"
 
-# java path
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 # GO path
-export GOPATH=$HOME/Golang
-export GOBIN=$HOME/Golang/bin
-export GOCACHE=$HOME/.cache
+export GOPATH="$HOME/Golang"
+export GOBIN="$GOPATH/bin"
+export GOCACHE="$HOME/.cache"
 export GO111MODULE=on
 export GOPRIVATE="gitlab.com/chanasit,github.com/chanasit"
-export PATH="$PATH:$(go env GOPATH)/bin"
+path+=("$GOBIN")
 
 # RUST
 export CARGO_HOME="$HOME/.cargo"
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # Terraform Config
 export TF_LOG=
 
 # Android Home
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_HOME="$HOME/Android/Sdk"
+path+=(
+  "$ANDROID_HOME/emulator"
+  "$ANDROID_HOME/tools"
+  "$ANDROID_HOME/tools/bin"
+  "$ANDROID_HOME/platform-tools"
+)
 
 # DOCKER CONFIG
 export COMPOSE_DOCKER_CLI_BUILD=1
@@ -71,18 +83,18 @@ export NNN_PLUG='p:preview-tui'
 export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
 
-# PyENV
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# Rustup
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# NVM
+# NVM: load on first use to keep new shell startup fast.
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+_load_nvm() {
+  unfunction nvm node npm npx yarn pnpm 2>/dev/null
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+  "$@"
+}
+for _nvm_cmd in nvm node npm npx yarn pnpm; do
+  eval "function ${_nvm_cmd}() { _load_nvm ${_nvm_cmd} \"\$@\" }"
+done
+unset _nvm_cmd
 
 # Replace ~/GoogleSDK with your actual installation path
 if [ -f ~/GoogleSDK/path.zsh.inc ]; then . ~/GoogleSDK/path.zsh.inc; fi
@@ -90,14 +102,13 @@ if [ -f ~/GoogleSDK/completion.zsh.inc ]; then . ~/GoogleSDK/completion.zsh.inc;
 
 # Google Cloud SDK
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
-export CLOUDSDK_PYTHON=$(which python3)
+if command -v python3 >/dev/null 2>&1; then
+  export CLOUDSDK_PYTHON="$(command -v python3)"
+fi
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # K9S
 export K9S_CONFIG_DIR="$HOME/.config/k9s"
-
-# ASDF (terraform, hashicorp)
-export PATH="$HOME/.asdf/shims:$PATH"
 
 ##############################################################
 # => Alias ZSH Script
@@ -132,8 +143,11 @@ alias n='nnn -deH'
 alias l="ls -lah"
 alias x='codex'
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C $HOME/Golang/bin/terramate terramate
+autoload -Uz bashcompinit
+bashcompinit
+if [ -x "$HOME/Golang/bin/terramate" ]; then
+  complete -o nospace -C "$HOME/Golang/bin/terramate" terramate
+fi
 
 # functions
 function curl() {
