@@ -20,7 +20,7 @@ export VISUAL='nvim'
 export EDITOR='nvim'
 
 # Custom binary file
-export PATH=$PATH:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin
+export PATH="/opt/homebrew/bin:$PATH:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin"
 
 # AWS path
 export AWS_CONFIG_FILE="$HOME/.aws/config"
@@ -130,7 +130,7 @@ alias gb='git branch'
 alias gp='git branch | grep -v -E "main|master|develop" | xargs git branch -D'
 alias n='nnn -deH'
 alias l="ls -lah"
-alias x='startx'
+alias x='codex'
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C $HOME/Golang/bin/terramate terramate
