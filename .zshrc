@@ -85,16 +85,8 @@ export NNN_FIFO='/tmp/nnn.fifo'
 
 # NVM: load on first use to keep new shell startup fast.
 export NVM_DIR="$HOME/.nvm"
-_load_nvm() {
-  unfunction nvm node npm npx yarn pnpm 2>/dev/null
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-  "$@"
-}
-for _nvm_cmd in nvm node npm npx yarn pnpm; do
-  eval "function ${_nvm_cmd}() { _load_nvm ${_nvm_cmd} \"\$@\" }"
-done
-unset _nvm_cmd
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
 # Replace ~/GoogleSDK with your actual installation path
 if [ -f ~/GoogleSDK/path.zsh.inc ]; then . ~/GoogleSDK/path.zsh.inc; fi

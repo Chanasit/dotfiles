@@ -245,6 +245,9 @@ vim.g.VM_maps   = {
 local api = require("nvim-tree.api")
 vim.keymap.set("n", "<leader>n", api.tree.toggle, { desc = "Toggle nvim-tree" })
 
+--- Coc
+vim.g.coc_node_path = vim.fn.trim(vim.fn.system('nvm which current 2>/dev/null'))
+
 -- CoC - plugins
 vim.g.coc_global_extensions = {
   "coc-sh",
