@@ -1,0 +1,56 @@
+{
+  "model": "opus[1m]",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "terraform|terramate",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [[ \"$TOOL_OUTPUT\" == *\"terraform\"* || \"$TOOL_OUTPUT\" == *\"terramate\"* ]]; then .claude/hooks/summarize-terraform.sh \"$TOOL_OUTPUT\"; fi"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write.*\\.tf",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd $(dirname \"$FILE_PATH\") && terraform validate 2>&1 | head -30"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "caveman@caveman": true,
+    "mempalace@mempalace": true
+  },
+  "extraKnownMarketplaces": {
+    "mempalace": {
+      "source": {
+        "source": "github",
+        "repo": "MemPalace/mempalace"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    }
+  },
+  "theme": "auto",
+  "editorMode": "vim"
+}

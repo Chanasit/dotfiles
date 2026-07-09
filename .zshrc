@@ -134,6 +134,8 @@ alias gp='git branch | grep -v -E "main|master|develop" | xargs git branch -D'
 alias n='nnn -deH'
 alias l="ls -lah"
 alias x='codex'
+alias ce='claude'
+alias mp='mempalace'
 
 autoload -Uz bashcompinit
 bashcompinit
