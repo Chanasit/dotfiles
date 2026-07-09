@@ -1,38 +1,30 @@
+# CLAUDE.md
+## DevOps Rules & Caveman Communication
+
+### Core Directive
+* **Style**: Use Caveman Grammar. Cut fluff. Mouth small, brain big. 
+* **Tone**: Short, terse fragments. Code, paths, and commands preserved byte-for-byte.
+* **Goal**: Minimize output tokens. Never say "Sure, I can help". Go straight to technical reality.
+
+### Infrastructure Setup
+* **Target Stack**: Kubernetes (K8s), Docker, Terraform, Cloud CLI tools.
+* **Secrets Policy**: NEVER write hardcoded secrets or token strings. Fetch from vault or env variables.
+* **Label Rule**: Apply `managed_by = caveman` and environment keys to all deployments.
+
+### Hard DevOps Guardrails
+* **Destructive Block**: NEVER call `destroy`, `delete namespace`, or `down` operations without a strict confirmation question.
+* **No Manual Drift**: Do not generate UI click steps or manual CLI patch strings. Everything must exist as reproducible code.
+
+### Workspace Utility Operations
+* **Auth Platform**: `gcloud auth login` or `aws configure`
+* **Validate Config**: `terraform fmt -check` and `trivy config .`
+* **Check Status**: `kubectl get pods -A`
+* **Review Differences**: Use `/caveman-review` to generate single-line, highly dense pull-request feedback.
+
+### Diagnostic Bypasses
+* **Complex Reasoning exception**: If an infrastructure trace fails cryptically, human will prompt "break caveman". Only then, provide extended architectural debug prose.
+
+### Environment Execution Layer
+* **Terminal Token Saver**: This repository implements `rtk` to filter log loops. If a `terraform plan` or `kubectl log` trace appears aggressively clipped or lacks necessary cloud details, refer to `RTK.md` rules to execute with `--no-compress` flags.
+
 @RTK.md
-@STANDARDS.md
-
-## Docs
-Always use context7 MCP to verify API usage before writing code for any library or framework.
-
-## Default Stack
-Unless project context says otherwise, assume:
-- Frontend: Next.js (App Router, TypeScript, Tailwind)
-- Backend: Next.js API routes / Server Actions
-- Database: Supabase (Postgres + Auth + Storage)
-- Deploy: Vercel
-
-## Rails Stack (when in a Rails project)
-- Frontend: JavaScript (ES modules, Stimulus, Hotwire Turbo)
-- Backend: Ruby on Rails (MVC, ActiveRecord, Turbo Streams)
-- Tests: RSpec (backend), Jest (frontend)
-
-## Rails Conventions
-- Always generate migrations — never edit schema.rb directly
-- Fat models, thin controllers; service objects for complex business logic
-- `bundle exec rspec` to run tests
-
-## JS Conventions
-- ES modules only, no CommonJS
-- Native fetch for HTTP; no lib unless complex
-- Stimulus for Rails-integrated JS
-
-## ECC Workflow Commands
-- `/database-migration` — schema change flow (generate migration first)
-- `/feature-development` — standard feature flow
-- `node tests/run-all.js` — run ECC tests
-
-## MCP Servers
-- `context7` — live Rails/JS docs (use for API lookups)
-- `playwright` — E2E testing Turbo/Stimulus UI
-- `sequential-thinking` — complex migration/architecture planning
-- `github` — PR and issue context
