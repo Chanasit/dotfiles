@@ -123,6 +123,7 @@ alias k="kubectl"
 alias kt='kubetail'
 alias y="yay"
 alias tf="terraform"
+alias tfp='terraform plan -parallelism=64'
 alias vg="vagrant"
 alias tg="terragrunt"
 alias tm="terramate"

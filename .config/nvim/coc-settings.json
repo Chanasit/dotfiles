@@ -35,16 +35,14 @@
     "java.configuration.runtimes": [
       {
         "name": "JavaSE-17",
-        "path": "${JAVA_17_HOME}",
+        "path": "~/.jenv/versions/17",
         "default": true
       },
       {
         "name": "JavaSE-1.8",
-        "path": "${JAVA_8_HOME}"
-      },
-      {
-        "name": "JavaSE-11",
-        "path": "${JAVA_11_HOME}"
+        "path": "~/.jenv/versions/1.8"
       }
-    ]
+    ],
+    "java.import.gradle.java.home": "~/.jenv/shims/java",
+    "java.import.maven.java.home": "~/.jenv/shims/java"
 }

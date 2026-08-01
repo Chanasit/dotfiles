@@ -5,7 +5,7 @@ vim.loader.enable()
 -- =================================================================
 --  Lazy.nvim bootstrap
 -- =================================================================
-local lazypath = vim.fn.stdpath("data") .. "~/.local/share/nvim/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -23,6 +23,9 @@ vim.opt.rtp:prepend(lazypath)
 -- =================================================================
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
+
+-- Python3 provider (pynvim in dedicated venv; required by Bracey)
+vim.g.python3_host_prog = vim.fn.expand("~/.config/nvim/.venv/bin/python")
 
 -- =================================================================
 --  General settings
@@ -101,17 +104,8 @@ require("lazy").setup({
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
-    opts = {
-      ensure_installed = {
-        "hcl", "terraform", "lua", "vim", "markdown", "json", "yaml", "bash"
-      },
-      highlight = { enable = true },
-      indent = { enable = true },
-      incremental_selection = { enable = true },
-    }
+    "turbio/bracey.vim",
+    build = "npm install --prefix server",
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -178,6 +172,8 @@ require("lazy").setup({
     end,
   },
   { "voldikss/vim-floaterm" },
+  -- Helm filetype detection (templates -> gotmpl treesitter parser)
+  { "towolf/vim-helm", ft = "helm" },
   -- Editing helpers
   { "Yggdroot/indentLine" },
   { "tpope/vim-commentary" },
