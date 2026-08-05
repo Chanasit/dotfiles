@@ -79,7 +79,7 @@ export FZF_DEFAULT_COMMAND='rg --files --follow -g "!{.git,node_modules,vendor}/
 BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 export NNN_COLORS='2136'
-export NNN_PLUG='p:preview-tui'
+export NNN_PLUG=''
 export NNN_OPTS='H'
 export NNN_FIFO='/tmp/nnn.fifo'
 
@@ -138,6 +138,7 @@ alias gp='git branch | grep -v -E "main|master|develop" | xargs git branch -D'
 alias n='nnn -deH'
 alias l="ls -lah"
 alias x='codex'
+alias lg='lazygit' # https://github.com/jesseduffield/lazygit
 alias ce='claude' # https://github.com/anthropics/claude-code
 alias mp='mempalace' # https://github.com/mempalace/mempalace
 alias csql='cloud-sql-proxy' # https://github.com/GoogleCloudPlatform/cloud-sql-proxy
