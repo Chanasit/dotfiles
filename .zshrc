@@ -105,6 +105,9 @@ export K9S_CONFIG_DIR="$HOME/.config/k9s"
 # Vault
 export VAULT_ADDR="http://127.0.0.1:8200"
 
+# Garmin SDK
+export PATH=$PATH:`cat "$HOME/Library/Application Support/Garmin/ConnectIQ/current-sdk.cfg"`/bin
+
 ##############################################################
 # => Alias ZSH Script
 ##############################################################
