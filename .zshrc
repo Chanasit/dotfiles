@@ -146,6 +146,7 @@ alias ce='claude' # https://github.com/anthropics/claude-code
 alias mp='mempalace' # https://github.com/mempalace/mempalace
 alias csql='cloud-sql-proxy' # https://github.com/GoogleCloudPlatform/cloud-sql-proxy
 alias aap='alloydb-auth-proxy' # https://github.com/GoogleCloudPlatform/alloydb-auth-proxy
+alias cl='claude' # claude code
 
 autoload -Uz bashcompinit
 bashcompinit
@@ -157,3 +158,5 @@ fi
 function curl() {
   command curl "$@" | less -R
 }
+
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
