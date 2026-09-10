@@ -140,13 +140,14 @@ alias gb='git branch'
 alias gp='git branch | grep -v -E "main|master|develop" | xargs git branch -D'
 alias n='nnn -deH'
 alias l="ls -lah"
-alias x='codex'
 alias lg='lazygit' # https://github.com/jesseduffield/lazygit
 alias ce='claude' # https://github.com/anthropics/claude-code
 alias mp='mempalace' # https://github.com/mempalace/mempalace
 alias csql='cloud-sql-proxy' # https://github.com/GoogleCloudPlatform/cloud-sql-proxy
 alias aap='alloydb-auth-proxy' # https://github.com/GoogleCloudPlatform/alloydb-auth-proxy
-alias cl='claude' # claude code
+alias x='codex'
+alias cl='claude' # https://claude.ai/
+alias ag='agy' # https://antigravity.google/
 
 autoload -Uz bashcompinit
 bashcompinit
