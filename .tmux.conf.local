@@ -9,7 +9,12 @@ set -g status-position top
 set -g status-style "fg=#000000 bg=#FFFFFF bold"
 set -g status-left " #[bold]hjkl #[default] "
 set -g status-right " %H:%M #[bold]DONE #[default] "
-set -g window-status-current-style "reverse,bold"
+set -g window-status-style "fg=#777777 bg=#FFFFFF"
+set -g window-status-current-style "fg=#000000 bg=#00FF00 bold"
+set -g window-status-format " #I:#W "
+set -g window-status-current-format " #I:#W "
+set -g pane-border-style "fg=#D0D0D0"
+set -g pane-active-border-style "fg=#00FF00"
 set -g mode-style "bg=#000000,fg=#00FF00"
 set -g message-style "bg=#00FF00,fg=#000000"
 
