@@ -81,7 +81,7 @@ export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SO
 export NNN_COLORS='2136'
 export NNN_PLUG=''
 export NNN_OPTS='H'
-export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_FIFO="${TMPDIR:-/tmp}/nnn-${UID:-$(id -u)}.fifo"
 
 # NVM: load on first use to keep new shell startup fast.
 export NVM_DIR="$HOME/.nvm"
@@ -106,7 +106,11 @@ export K9S_CONFIG_DIR="$HOME/.config/k9s"
 export VAULT_ADDR="http://127.0.0.1:8200"
 
 # Garmin SDK
-export PATH=$PATH:`cat "$HOME/Library/Application Support/Garmin/ConnectIQ/current-sdk.cfg"`/bin
+garmin_cfg="$HOME/Library/Application Support/Garmin/ConnectIQ/current-sdk.cfg"
+if [[ -s "$garmin_cfg" ]]; then
+  path+=("$(< "$garmin_cfg")/bin")
+fi
+unset garmin_cfg
 
 ##############################################################
 # => Alias ZSH Script
@@ -137,7 +141,7 @@ alias g3='git log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(res
 alias gf='git fetch --all'
 alias gd='git diff'
 alias gb='git branch'
-alias gp='git branch | grep -v -E "main|master|develop" | xargs git branch -D'
+alias gbclean='git branch | grep -v -E "main|master|develop" | xargs git branch -D'
 alias n='nnn -deH'
 alias l="ls -lah"
 alias lg='lazygit' # https://github.com/jesseduffield/lazygit
@@ -157,7 +161,11 @@ fi
 
 # functions
 function curl() {
-  command curl "$@" | less -R
+  if [[ -t 1 ]]; then
+    command curl "$@" | less -R
+  else
+    command curl "$@"
+  fi
 }
 
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"

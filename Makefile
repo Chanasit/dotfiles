@@ -13,8 +13,12 @@ config: ## install configuration
 	ln -vsfn ${PWD}/.config/nvim/init.lua ${HOME}/.config/nvim/init.lua
 	ln -vsfn ${PWD}/.config/k9s/skin.yml ${HOME}/.config/k9s/skin.yml
 	ln -vsfn ${PWD}/.config/k9s/config.yaml ${HOME}/.config/k9s/config.yaml
+	ln -vsfn ${PWD}/.config/k9s/plugins.yaml ${HOME}/.config/k9s/plugins.yaml
+	ln -vsfn ${PWD}/.config/k9s/aliases.yaml ${HOME}/.config/k9s/aliases.yaml
 	ln -vsfn ${PWD}/.editorconfig ${HOME}/.editorconfig
 	ln -vsfn ${PWD}/.gitconfig ${HOME}/.gitconfig
+	ln -vsfn ${PWD}/.gitconfig-me ${HOME}/.gitconfig-me
+	ln -vsfn ${PWD}/.gitconfig-td ${HOME}/.gitconfig-td
 	ln -vsfn ${PWD}/.zshrc ${HOME}/.zshrc
 	ln -vsfn ${PWD}/.inputrc ${HOME}/.inputrc
 	ln -vsfn ${PWD}/.tmux.conf ${HOME}/.tmux.conf

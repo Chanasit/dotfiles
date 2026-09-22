@@ -49,7 +49,7 @@ Local [HashiCorp Vault](https://developer.hashicorp.com/vault) dev server for se
 
 ```
 dotfiles/
-├── .zshrc .gitconfig .tmux.conf .editorconfig .inputrc
+├── .zshrc .gitconfig .gitconfig-me .gitconfig-td .tmux.conf .editorconfig .inputrc
 ├── Makefile
 └── .config/
     ├── alacritty/ ghostty/ kitty/   # terminals

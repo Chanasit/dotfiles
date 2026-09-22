@@ -4,14 +4,18 @@
 
 set -euo pipefail
 
-COMMAND_OUTPUT="$1"  # Full output passed by Claude hook
+if [ $# -gt 0 ]; then
+    COMMAND_OUTPUT="$1"
+else
+    COMMAND_OUTPUT="$(cat)"
+fi
 
 # Detect if it's a plan or apply
 if echo "$COMMAND_OUTPUT" | grep -qE "(Plan:|No changes|Changes to|Resources:.*added|changed|destroyed)"; then
     echo "=== Terraform Plan Summary (Reduced) ==="
 
     # Basic summary extraction
-    echo "$COMMAND_OUTPUT" | grep -E "(Plan:|No changes\.|Resources:|added|changed|destroyed|will be|must be)" | head -20
+    echo "$COMMAND_OUTPUT" | grep -E "(Plan:|No changes\.|Resources:|added|changed|destroyed|will be|must be)" | head -20 || true
 
     echo ""
     echo "Key changes:"

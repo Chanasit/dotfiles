@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if [[ \"$TOOL_OUTPUT\" == *\"terraform\"* || \"$TOOL_OUTPUT\" == *\"terramate\"* ]]; then .claude/hooks/summarize-terraform.sh \"$TOOL_OUTPUT\"; fi"
+            "command": "if [[ \"$TOOL_OUTPUT\" == *\"terraform\"* || \"$TOOL_OUTPUT\" == *\"terramate\"* ]]; then printf '%s\\n' \"$TOOL_OUTPUT\" | \"$HOME/.dotfiles/.claude/hooks/summarize-terraform.sh\"; fi"
           }
         ]
       }
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd $(dirname \"$FILE_PATH\") && terraform validate 2>&1 | head -30"
+            "command": "cd \"$(dirname \"$FILE_PATH\")\" && terraform validate 2>&1 | head -30"
           }
         ]
       },

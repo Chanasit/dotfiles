@@ -172,8 +172,6 @@ require("lazy").setup({
     end,
   },
   { "voldikss/vim-floaterm" },
-  -- Helm filetype detection (templates -> gotmpl treesitter parser)
-  { "towolf/vim-helm", ft = "helm" },
   -- Editing helpers
   { "Yggdroot/indentLine" },
   { "tpope/vim-commentary" },

@@ -12,7 +12,10 @@ plugins:
     background: false
     args:
     - -c
-    - "watch -n 5 kubectl get events --context $CONTEXT --all-namespaces --field-selector involvedObject.name=$NAME"
+    - 'watch -n 5 kubectl get events --context "$1" --all-namespaces --field-selector "involvedObject.name=$2"'
+    - --
+    - $CONTEXT
+    - $NAME
   remove_finalizers:
     shortCut: Ctrl-F
     confirm: true
@@ -47,12 +50,18 @@ plugins:
     args:
       - -c
       - |
-        LABELS=$(kubectl get $RESOURCE_NAME $NAME -n $NAMESPACE  --context $CONTEXT  --show-labels | awk '{print $NF}' | awk '{if(NR>1)print}')
-        krr simple --cluster $CONTEXT --selector $LABELS
+        RESOURCE_NAME="$1"; NAME="$2"; NAMESPACE="$3"; CONTEXT="$4"
+        LABELS=$(kubectl get "$RESOURCE_NAME" "$NAME" -n "$NAMESPACE" --context "$CONTEXT" --show-labels | awk '{print $NF}' | awk 'NR>1')
+        krr simple --cluster "$CONTEXT" --selector "$LABELS"
         echo "Press 'q' to exit"
         while : ; do
-        read -n 1 k <&1
-        if [[ $k = q ]] ; then
-        break
-        fi
+          read -n 1 k <&1
+          if [[ "$k" = "q" ]] ; then
+            break
+          fi
         done
+      - --
+      - $RESOURCE_NAME
+      - $NAME
+      - $NAMESPACE
+      - $CONTEXT
