@@ -1,7 +1,13 @@
 # This is Git's per-user configuration file.
 [includeIf "gitdir:~/"]
 	path = .gitconfig-me
+[includeIf "gitdir:~/Golang/src/github.com/chanasit/"]
+	path = .gitconfig-me
+[includeIf "gitdir:~/Golang/src/github.com/sideline88888888/"]
+	path = .gitconfig-me
 [includeIf "gitdir:~/Golang/src/github.com/tookdee88/"]
+	path = .gitconfig-td
+[includeIf "gitdir:~/Golang/src/github.com/cjmart-co-th/"]
 	path = .gitconfig-td
 [core]
 	editor = vim

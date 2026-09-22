@@ -8,7 +8,12 @@
 !/bin
 
 # Don't include files with sensitive data
-# /.zshrc-secrets
+/.zshrc-secrets
+*.secret
+*.token
+*.pem
+*.key
+*.env.local
 
 # iJunk
 .DS_Store
