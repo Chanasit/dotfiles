@@ -43,7 +43,7 @@ Symlinks use `ln -vsfn` — overwrites existing, prints each link.
 
 ## Vault
 
-Local [HashiCorp Vault](https://developer.hashicorp.com/vault) dev server for secrets. `VAULT_ADDR` set in `.zshrc`. Full guide: [VAULT.md](VAULT.md).
+Local [HashiCorp Vault](https://developer.hashicorp.com/vault) dev server for secrets. `VAULT_ADDR` set in `.zshrc`. Full guide: [vault/VAULT.md](vault/VAULT.md).
 
 ## Directory Structure
 

@@ -24,7 +24,7 @@ Personal dotfiles and DevOps configuration repository for macOS and Linux (Arch 
    - NEVER execute destructive actions (`terraform destroy`, `kubectl delete namespace`, `docker compose down -v`, `git reset --hard`, `git push --force`) without explicit confirmation from the user.
 2. **Strict Secrets Policy**:
    - NEVER commit or hardcode credentials, API tokens, passwords, or private keys into tracked files.
-   - Reference environment variables or HashiCorp Vault (`VAULT_ADDR="http://127.0.0.1:8200"`, see [VAULT.md](VAULT.md)).
+   - Reference environment variables or HashiCorp Vault (`VAULT_ADDR="http://127.0.0.1:8200"`, see [vault/VAULT.md](vault/VAULT.md)).
 3. **No Manual Drift**:
    - Avoid manual UI steps or untracked ad-hoc configurations. All environment states and configurations must exist as reproducible code.
 
@@ -52,7 +52,7 @@ Personal dotfiles and DevOps configuration repository for macOS and Linux (Arch 
 | Terramate | `terramate run -- terraform <cmd>` | Multi-module execution |
 | Cluster status | `kubectl get pods -A` or `k9s` | Inspect all pods or run K9s TUI |
 | Cloud Proxies | `cloud-sql-proxy` (`csql`) / `alloydb-auth-proxy` (`aap`) | Secure DB connections |
-| Local Vault | `vault server -dev` | Dev mode server (see [VAULT.md](VAULT.md)) |
+| Local Vault | `vault server -dev` | Dev mode server (see [vault/VAULT.md](vault/VAULT.md)) |
 | Token filter | `rtk <command>` | Filter and condense CLI output |
 
 ---
