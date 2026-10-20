@@ -346,9 +346,9 @@ vim.api.nvim_create_user_command("OR", function()
   vim.fn.CocActionAsync("runCommand", "editor.action.organizeImport")
 end, {})
 
--- Force show quotes in JSON files
+-- Disable conceal (set globally by indentLine) for JSON and Markdown
 vim.api.nvim_create_autocmd({ "FileType", "BufRead", "BufNewFile", "BufEnter" }, {
-  pattern = { "*.json", "*.jsonc", "package.json" },
+  pattern = { "*.json", "*.jsonc", "package.json", "*.md", "*.markdown" },
   callback = function()
     vim.opt_local.conceallevel = 0
     vim.opt_local.concealcursor = ""
