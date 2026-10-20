@@ -64,9 +64,8 @@ vault token create -policy=admin
 ## 4. Store / read secrets
 
 ```sh
-vault kv put kv/myapp db_password=s3cret api_key=abc123
-vault kv get kv/myapp
-vault kv get -field=db_password kv/myapp
+vault kv put kv/td-jira version="1.0" status="active" api_key="TODO"
+vault kv get -field=api_key kv/td-jira
 ```
 
 ## Security notes
